@@ -1,0 +1,225 @@
+/* Start Work Together Section */
+
+.start {
+  background: #fff;
+  padding: 10px 10px;
+   border-radius: 8px;
+  padding: 30px 40px !important;
+  width: 100%;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+}
+
+.startwork-letstart_work_heading {
+  font-size: 36px;
+  font-weight: 600;
+  color: #0A4376;
+}
+
+.join {
+  font-size: 36px;
+  font-weight: 600;
+  color: #0A4376;
+}
+
+.startwork-para-work {
+  font-size: 24px;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.startwork-custom-line {
+  width: 250px;
+  height: 4px;
+  background: #e8a725;
+  margin-top: 18px;
+}
+  
+.startwork-social-icons {
+  margin-bottom: 1px; /* reduce from 55px to something smaller */
+}
+
+.startwork-social-icons a {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+   flex-direction: row !important;
+   
+  justify-content: center; /* or space-between */
+  gap: 10px;
+  width: 40px;
+  height: auto;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 55px;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  transition: all 0.3s ease;
+  padding: 6px;
+}
+
+.startwork-social-icons a,
+.startwork-social-icons div {
+
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  padding: 12px!important;
+  transition: 0.3s;
+}
+
+
+.startwork-social-icons img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.startwork-social-icons a:hover {
+  transform: scale(1.1);
+}
+
+.startwork-get-quote a  {
+  font-size: 28px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #e8a725!important;
+   
+
+  
+}
+
+.startwork-get_quote_icon a {
+  width: 38px;
+  height: 38px;
+}
+
+.startwork-social-icons {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 12px !important;
+  width: 100%;
+}
+
+
+
+/* ======================= */
+/* 🔽 Extra Large (1200px+) */
+/* ======================= */
+@media (min-width: 1200px) {
+  .startwork-letstart_work_heading {
+    font-size: 36px;
+  }
+  .startwork-social-icons {
+    justify-content: flex-start;
+    gap: 18px;
+  }
+}
+
+
+/* ======================= */
+/* 🔽 Large Devices */
+/* Laptops: 992px - 1199px */
+/* ======================= */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .startwork-letstart_work_heading {
+    font-size: 32px;
+  }
+  .startwork-social-icons {
+    justify-content: flex-start;
+    gap: 16px;
+  }
+ 
+}
+
+
+/* ======================= */
+/* 🔽 Tablets */
+/* Portrait: 768px - 991px */
+/* ======================= */
+@media (max-width: 991px) and (min-width: 768px) {
+  .startwork-letstart_work_heading {
+    font-size: 28px;
+    text-align: left;
+  }
+  
+  .startwork-para-work {
+    font-size: 20px;
+    text-align: left;
+  }
+  .startwork-social-icons {
+    justify-content: flex-start;
+  }
+
+}
+
+
+/* ======================= */
+/* 🔽 Mobile Devices */
+/* Landscape 576px - 767px */
+/* ======================= */
+@media (max-width: 767px) and (min-width: 576px) {
+  .startwork-letstart_work_heading {
+    font-size: 24px;
+  }
+  .startwork-para-work {
+    font-size: 18px;
+  }
+  .startwork-custom-line {
+    width: 130px;
+  }
+  .startwork-social-icons {
+    justify-content: center !important;
+    gap: 10px;
+  }
+  .startwork-social-icons a {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+
+/* ======================= */
+/* 🔽 Small Phones */
+/* Below 575px */
+/* ======================= */
+@media (max-width: 575px) {
+  .startwork-letstart_work_heading {
+    font-size: 26px;
+  }
+  .startwork-para-work {
+    font-size: 18px;
+  }
+  .startwork-custom-line {
+    width: 100px;
+  }
+  .startwork-social-icons {
+    justify-content: center !important;
+    gap: 8px;
+    padding-right: 10px;
+  }
+  .startwork-social-icons a {
+    width: 42px;
+    height: 42px;
+  }
+  .startwork-social-icons img {
+    width: 18px;
+    height: 18px;
+    
+  }
+  .startwork-get-quote a  {
+  font-size: 24px;
+  padding-right: 12px;
+  
+  
+}
+}

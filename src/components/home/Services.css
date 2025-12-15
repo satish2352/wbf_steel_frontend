@@ -1,0 +1,229 @@
+/*  OUR SERVICES SECTION  */
+.services-section {
+  background: #fff;
+}
+
+/* Section title */
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 20px;
+  color: #000;
+  margin-left: 12px;
+}
+
+
+
+/* Service cards */
+.service-card {
+  border-radius: 2px;
+  padding: 10px 30px;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+
+ 
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Card colors */
+.yellow-card {
+  background-color: #FFC442;
+}
+
+.blue-card {
+  background-color: #055597;
+  color: #fff;
+}
+
+/* Icon */
+.service-icon {
+  font-size: 35px;
+  margin-bottom: 8px;
+}
+
+/* Title */
+.service-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Description */
+.service-text {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Read More link */
+.service-link {
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+  letter-spacing: 0.5px;
+  margin-top: auto;
+  margin-bottom: 2px;
+}
+
+.yellow-card .service-link {
+  color: #000;
+}
+
+.blue-card .service-link {
+  color: #fff;
+}
+
+/* Shadow styling */
+.shadow-sm {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* ================================
+   LARGE DEVICES (Desktops ≤ 1200px)
+================================ */
+@media (max-width: 1200px) {
+  .service-card {
+    padding: 20px 25px;
+  }
+
+  .service-title {
+    font-size: 1.2rem;
+  }
+
+  .service-text {
+    font-size: 0.95rem;
+  }
+
+  .service-img-icon {
+    width: 52px;
+    height: 52px;
+  }
+  
+}
+
+
+/* ================================
+   MEDIUM DEVICES (Tablets ≤ 992px)
+================================ */
+@media (max-width: 992px) {
+
+  .section-title {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .service-card {
+    padding: 20px 20px;
+  }
+
+  .service-img-icon {
+    width: 55px;
+    height: 55px;
+  }
+
+  .service-title {
+    text-align: center;
+  }
+
+  .service-text {
+    text-align: center;
+  }
+
+  .service-link {
+    text-align: center;
+  }
+}
+
+
+/* ================================
+   SMALL TABLETS (≤ 768px)
+================================ */
+@media (max-width: 768px) {
+
+  .service-card {
+    padding: 18px 20px;
+  }
+
+  .service-img-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 10px auto;
+    display: block;
+  }
+
+  .service-title {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .service-text {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+
+
+/* ================================
+   MOBILE DEVICES (≤ 576px)
+================================ */
+@media (max-width: 576px) {
+
+  .section-title {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .service-card {
+    padding: 15px 18px;
+  }
+
+  .service-img-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .service-title {
+    font-size: 1.05rem;
+  }
+
+  .service-text {
+    font-size: 0.9rem;
+  }
+
+  .service-link {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ================================
+   EXTRA SMALL MOBILE (≤ 400px)
+================================ */
+@media (max-width: 400px) {
+
+  .service-card {
+    padding: 14px 14px;
+  }
+
+  .service-img-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .service-title {
+    font-size: 1rem;
+  }
+
+  .service-text {
+    font-size: 0.85rem;
+  }
+}

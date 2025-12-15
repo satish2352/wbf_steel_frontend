@@ -1,0 +1,257 @@
+/*  PROJECTS SECTION */
+.projects-section {
+  background-color: #fff;
+  padding: 20px 5px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1.8fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* LEFT MAIN PROJECT */
+.project-main {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  margin-left: 5px;
+}
+
+.project-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.overlay-content h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.overlay-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn-yellow {
+  background-color: #ffc107;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-yellow:hover {
+  color: #fff;
+}
+
+/* RIGHT PROJECTS */
+.project-side {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+/* Image */
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Dark overlay — below text */
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* darker overlay for contrast */
+  z-index: 2;
+}
+
+/* White title text above overlay */
+.card-title {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff !important; /* force white text */
+  z-index: 3; /* keep text above overlay */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  pointer-events: none; /* prevents blocking hover effect */
+}
+
+/* Hover zoom effect */
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.card-title {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  z-index: 3; /* ensure it's above overlay */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Make right images bright and clear */
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* increased from 0.1 to 0.35 */
+  z-index: 2;
+}
+
+/* RESPONSIVE  */
+@media (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .overlay-content h2 {
+    font-size: 40px;
+  }
+
+  .overlay-content p {
+    font-size: 20px;
+  }
+
+  .project-side {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 40px 20px;
+  }
+
+  .overlay-content h2 {
+    font-size: 32px;
+  }
+
+  .overlay-content p {
+    font-size: 18px;
+  }
+
+  .btn-yellow {
+    font-size: 16px;
+    padding: 12px 25px;
+  }
+
+  .project-side {
+    grid-template-columns: 1fr;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+
+   .projects-section {
+    padding: 5px 20px;
+  }
+
+  .overlay-content h2 {
+    font-size: 26px;
+  }
+
+  .overlay-content p {
+    font-size: 16px;
+  }
+
+  .btn-yellow {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+.projects-section,
+.projects-grid,
+.project-main,
+.project-side,
+.project-card {
+  overflow-x: hidden !important;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+.projects-grid {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.project-main,
+.project-card {
+  aspect-ratio: 16 / 12;  /* controls the shape */
+  height: auto;
+}
+
+.project-main img,
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-main,
+.project-card {
+  aspect-ratio: 4 / 3;   /* same shape for all cards */
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.project-main img,
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

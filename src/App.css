@@ -1,0 +1,30 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  font-family: 'Outfit', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+} */
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('/Outfit/static/Outfit-Regular.ttf') format('truetype'),
+       url('/Outfit/static/Outfit-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif !important;                            
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: "Century Gothic" !important;                                         
+}
+
+.text-justify{
+  text-align: justify !important;
+}
+
+

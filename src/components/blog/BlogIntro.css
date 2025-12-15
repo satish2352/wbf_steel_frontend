@@ -1,0 +1,70 @@
+/* MAIN SECTION */
+.blogIntro {
+  width: 100%;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: center;
+  text-align: center !important;
+  background: #fff;
+}
+
+/* Inner Wrapper — no bootstrap allowed */
+.blogInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center !important;
+  justify-content: center !important;
+}
+
+/* Force override Bootstrap containers if they leak into component */
+.blogIntro .container,
+.blogIntro .container-fluid,
+.blogIntro .container-sm,
+.blogIntro .container-md,
+.blogIntro .container-lg,
+.blogIntro .container-xl {
+  padding: 0 !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+/* HEADING STYLE */
+.blogTitle {
+  font-size: 50px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+/* PARAGRAPH STYLE */
+.blogDesc {
+  font-size: 22px;
+  color: #333;
+  line-height: 1.7;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .blogTitle {
+    font-size: 44px;
+  }
+  .blogDesc {
+    font-size: 20px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 600px) {
+  .blogTitle {
+    font-size: 32px;
+  }
+  .blogDesc {
+    font-size: 17px;
+  }
+}

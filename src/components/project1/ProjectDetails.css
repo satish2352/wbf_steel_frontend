@@ -1,0 +1,88 @@
+/* ===== MAIN SECTION ===== */
+.project-details {
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+  background: #f8f8f8;
+}
+
+/* ===== WHITE BOX WRAPPER ===== */
+.white-box {
+  background: #fff;
+  box-shadow: 0 4px 22px rgba(0,0,0,0.12);
+  border-radius: 14px;
+  padding: 40px 50px;
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== FLEX CONTAINER ===== */
+.project-container {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+/* ===== LEFT COLUMN (THUMBNAILS) ===== */
+.image-list {
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.arrow-btn {
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.image-thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.image-thumbnails img {
+  width: 120px;
+  height: 90px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.image-thumbnails img.active {
+  border-color: #000;
+}
+
+/* ===== CENTER COLUMN (MAIN IMAGE + TITLE) ===== */
+.main-image-section {
+  width: 500px;
+}
+
+.project-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ===== RIGHT COLUMN (YELLOW INFO BOX) ===== */
+.info-box {
+  width: 350px;
+  background: #f7c948;
+  padding: 30px;
+  border-radius: 12px;
+  font-size: 17px;
+  line-height: 1.6;
+}

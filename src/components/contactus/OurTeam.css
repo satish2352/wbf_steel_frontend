@@ -1,0 +1,195 @@
+/* Grid Container */
+.team-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 550px));
+  gap: 50px; /* smaller gap for mobile */
+  justify-content: center;
+  padding: 5px 10px;
+  padding-bottom: 30px;
+}
+
+.our-team-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Card Layout (unchanged) */
+.team-card {
+  display: flex;
+  background-color: #fff;
+  color: black;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.team-card-left {
+  flex: 1;
+  min-width: 270px;
+  height: 100%;
+}
+
+.team-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-card-right {
+  min-width: 280px;
+  flex: 2;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #0D1678;
+  color: #fff;
+}
+
+.team-card-description {
+  margin-bottom: 10px;
+  font-size: 0.98rem;
+}
+
+.team-card-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 5px 0;
+  color: #ffd24d;
+}
+
+.team-card-designation {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.linkedin-icon img {
+  margin-top: 10px;
+  filter: brightness(0) invert(1);
+}
+
+/* Responsive Media Queries */
+
+/* Tablets / Medium Screens */
+@media (max-width: 1024px) {
+  .team-card-right {
+    padding: 18px;
+  }
+  .team-card-description {
+    font-size: 0.95rem;
+  }
+  .team-card-name {
+    font-size: 1.15rem;
+  }
+  .team-card-designation {
+    font-size: 1rem;
+  }
+}
+
+/* Small Tablets / Large Phones */
+@media (max-width: 768px) {
+   .team-card {
+    flex-direction: column;
+  } 
+  .team-card-left {
+    min-height: 220px;
+  }
+  .team-card-right {
+    padding: 15px;
+  }
+  .team-card-description {
+    font-size: 0.9rem;
+  }
+  .team-card-name {
+    font-size: 1.1rem;
+  }
+  .team-card-designation {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+@media screen and (max-width: 576px) {
+
+  .team-cards {
+    grid-template-columns: 1fr !important;
+    padding: 0 12px !important;
+    gap: 20px !important;
+  }
+
+  .team-card {
+    width: 100% !important;
+    flex-direction: column !important;
+  }
+
+  .team-card-left {
+    width: 100% !important;
+    min-width: 100% !important;
+    height: 0px !important;
+    padding-top: 0 !important;
+  }
+
+  .team-card-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .team-card-right {
+    width: 100% !important;
+    min-width: 100% !important;
+    padding: 14px !important;
+    flex: none !important;
+  }
+
+  .team-card-description {
+    font-size: 17!important;
+    line-height: 1.4 !important;
+  }
+
+  .team-card-name {
+    font-size: 1rem !important;
+  }
+
+  .team-card-designation {
+    font-size: 0.9rem !important;
+  }
+
+  .linkedin-icon img {
+    width: 18px !important;
+    height: 18px !important;
+  }
+}
+/* ========================== */
+/* iPad Portrait & Landscape (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .team-cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px !important;
+  }
+
+  .team-card {
+    flex-direction: column !important;  /* STACK image + content */
+  }
+
+  .team-card-left {
+    width: 100% !important;
+    min-width: 100% !important;
+    height: auto !important;
+  }
+
+  .team-card-img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+  }
+
+  .team-card-right {
+    width: 100% !important;
+    min-width: 100% !important;
+    padding: 20px !important;
+  }
+}

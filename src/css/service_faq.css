@@ -1,0 +1,541 @@
+.background_color_faq {
+    background-color: #545454 !important;
+    color: white;
+}
+
+.count {
+    font-family: "Outfit", sans-serif !important;
+    font-size: 48px !important;
+    /* Desktop font size */
+    font-weight: 600 !important;
+    line-height: 100%;
+    letter-spacing: 0.0em;
+    text-align: center;
+    margin-top: 40px;
+    white-space: nowrap;
+}
+
+.title_colum {
+    font-family: "Outfit", sans-serif !important;
+    font-size: 30px !important;
+    font-weight: 400 !important;
+    line-height: 100%;
+    letter-spacing: 0.0em;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.title_para {
+    text-align: center !important;
+    font-family: "Outfit", sans-serif !important;
+    font-size: 23px !important;
+    line-height: 100%;
+    letter-spacing: 0.0em;
+    font-weight: 10
+}
+
+@media (max-width: 992px) {
+
+    /* Tablets and smaller */
+    .count {
+        font-size: 50px !important;
+    }
+
+    .title_colum {
+        font-size: 26px !important;
+    }
+
+    .title_para {
+        font-size: 16px !important;
+    }
+}
+
+@media (max-width: 576px) {
+
+    /* Mobile devices */
+    .count {
+        font-size: 60px !important;
+    }
+
+    .title_colum {
+        font-size: 30px !important;
+    }
+
+    .title_para {
+        font-size: 24px !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+
+    /* Bootstrap md breakpoint for tablets */
+    .title_colum {
+        white-space: normal !important;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+}
+
+@media (max-width: 991.98px) {
+
+    /* Tablet breakpoint */
+    .number_data {
+        display: flex;
+        justify-content: space-between;
+        /* equal space between */
+        align-items: center;
+    }
+
+    .number_data .count {
+        margin: 30 10px;
+        /* equal margins on left and right */
+        white-space: nowrap;
+        /* keep numbers on one line */
+        flex: 1;
+        /* optional: distribute space evenly */
+        text-align: center;
+    }
+}
+
+.tablet-break {
+    display: inline;
+}
+
+/* Tablet view: break the line */
+@media (max-width: 991.98px) {
+    .tablet-break {
+        display: block;
+        /* Moves "Expertise" to next line */
+    }
+}
+
+/* Mobile view: inline again */
+@media (max-width: 575.98px) {
+    .tablet-break {
+        display: inline;
+        /* Same line on small screens */
+    }
+}
+
+.horizontal-line {
+    width: 100%;
+    /* Full width of container */
+    height: 2px;
+    /* Thickness of the line */
+    background-color: white;
+    /* Color of the line */
+    margin-top: 20px;
+    /* Space above the line */
+    clear: both;
+    /* Ensure it clears floats if any */
+}
+
+.line-with-dots {
+    position: relative;
+    padding-bottom: 80px;
+    /* increased bottom padding */
+}
+
+.line-with-dots .line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    height: 2px;
+    background: #fff;
+    z-index: 1;
+}
+
+.dot {
+    position: absolute;
+    bottom: -10px;
+    /* dot moved further down */
+    left: 50%;
+    top: 260px;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 2px solid rgb(228, 222, 222);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Position dots centered in each column */
+.line-with-dots>.col-lg-4,
+.line-with-dots>.col-md-4,
+.line-with-dots>.col-sm-12 {
+    position: relative;
+}
+
+.line-with-dots>.col-lg-4 .dot,
+.line-with-dots>.col-md-4 .dot,
+.line-with-dots>.col-sm-12 .dot {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Optional adjustment for smaller screens */
+@media (max-width: 767.98px) {
+    .line-with-dots {
+        padding-bottom: 60px;
+    }
+
+    .line-with-dots .line {
+        bottom: 15px;
+    }
+
+    .dot {
+        bottom: 5px;
+        width: 15px;
+        height: 15px;
+    }
+}
+
+
+/* new FAQ */
+.faq_backimg_service {
+    background-image: url('../../src/assets/services/faq_service_back.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    /* positions image at top center */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 50px 5%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+
+
+
+.faq_backimg_service {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 50px 5%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.service_FAQ {
+    font-family: "Outfit", sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #000;
+    text-align: left;
+    padding-left: 0px !important;
+
+    width: 100%;
+}
+
+.faq_section_para {
+    font-family: "Outfit", sans-serif;
+    font-size: 22px;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #333;
+    margin-top: 10px;
+    max-width: 700px;
+}
+
+
+
+/* Tablet view (768px and below) */
+@media (max-width: 992px) {
+    .service_FAQ {
+        font-size: 36px;
+        padding-left: 0px !important;
+        padding-top: 30px;
+    }
+
+    .faq_section_para {
+        font-size: 20px;
+    }
+
+    .faq_backimg_service {
+        padding: 30px 4%;
+    }
+
+    .contactUs_name {
+        padding-left: 0px !important;
+    }
+}
+
+/* Mobile view (576px and below) */
+@media (max-width: 576px) {
+    .service_FAQ {
+        font-size: 28px;
+        padding-left: 0px !important;
+    }
+
+
+
+    .faq_section_para {
+        font-size: 18px;
+    }
+
+    .faq_backimg_service {
+        padding: 20px 3%;
+    }
+
+    .contactUs_name {
+        padding-left: 0px !important;
+    }
+}
+
+.contactUs_name {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 24px;
+}
+
+/* Optional: ensure the parent container aligns content left */
+.contactUs_container {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.contactUs_name .text {
+    text-decoration: none;
+}
+
+
+.contactUs_name::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #e8a725, transparent);
+
+    background-size: 200% 100%;
+    background-position: 0% 0%;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover — start continuous animation */
+.contactUs_name:hover::after {
+    opacity: 1;
+    animation: moveLine 1.2s linear infinite;
+}
+
+/* Animation keyframes */
+@keyframes moveLine {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 200% 0%;
+    }
+}
+
+/* Hover color change */
+.contactUs_name:hover,
+.contactUs_name:hover .link-icons {
+    color: #e8a725 !important;
+}
+
+.link-icons {
+    font-size: clamp(16px, 2vw, 22px);
+    color: inherit;
+    /* match text color */
+    font-size: 18px;
+}
+
+
+.backbtn_color {
+    background-color: #C8C7C7 !important;
+    text-align: left !important;
+    width: 100%;
+    display: block;
+    /* makes button fill container width, aligns text left */
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+    font-size: 22px !important;
+    padding: 15px 16px !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Mobile view (576px and below) */
+@media (max-width: 576px) {
+    .backbtn_color {
+        font-size: 18px !important;
+
+    }
+
+}
+
+.icon_box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+
+    /* Square size, adjust as needed */
+    height: 25px;
+    border: 2px solid white;
+    /* Blue border */
+    border-radius: 4px;
+    /* 0 for sharp corners, 4px for soft squares */
+    margin-right: 12px;
+    /* Spacing between icon and text */
+    background: transparent;
+}
+
+.icon_faq {
+    color: white !important;
+    font-weight: 600 !important;
+    font-size: 20px;
+
+    /* Size of icon inside box */
+}
+
+.servicefaq {
+    border: none !important;
+    border-radius: 0px !important;
+    font-size: 22px !important;
+}
+
+.collapse {
+    text-align: left;
+}
+
+.backbtn_color:focus,
+.backbtn_color:active,
+.backbtn_color:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.icon_box:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+
+
+.servicefaq {
+    text-align: left;
+    font-family: "Outfit", sans-serif;
+    padding-top: 10px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    font-size: 22px !important;
+    color: #333;
+}
+
+@media (max-width: 576px) {
+
+    .servicefaq {
+        font-size: 18px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .servicefaq {
+        font-size: 18px !important;
+    }
+
+    .backbtn_color {
+        font-size: 18px !important;
+    }
+}
+
+.backbtn_color .icon_faq {
+    transition: transform 0.3s;
+}
+
+/* When collapsed (panel is closed) */
+.backbtn_color.collapsed .icon_faq {
+    transform: rotate(0deg);
+}
+
+/* When open (panel is expanded) */
+.backbtn_color:not(.collapsed) .icon_faq {
+    transform: rotate(-180deg);
+    /* Rotates up */
+}
+
+.contactUs_container .contactUs_name {
+    color: black;
+    cursor: pointer;
+    transition: 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.contactUs_container .contactUs_name .link-icons {
+    color: black;
+    transition: 0.3s ease;
+}
+
+.contactUs_container:hover .contactUs_name,
+.contactUs_container:hover .contactUs_name .link-icons {
+    color: #e8a725 !important;
+}
+
+/* Default: dot visible */
+/* Column base */
+.faq-column {
+    position: relative;
+    padding-bottom: 50px;
+}
+
+/* White Dot */
+.faq-column::after {
+    content: "";
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Horizontal line intersecting dot center */
+.faq-column::before {
+    content: "";
+    position: absolute;
+    bottom: 24px;
+    /* vertically align to dot center */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #FFFFFF4D;
+    z-index: 1;
+}
+
+/* Hide both dot + line on mobile */
+@media (max-width: 767px) {
+
+    .faq-column::after,
+    .faq-column::before {
+        display: none;
+    }
+}

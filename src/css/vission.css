@@ -1,0 +1,286 @@
+.cards-container {
+    display: flex;
+    gap: 20px;
+    /* spacing between cards */
+    align-items: stretch;
+    /* make cards equal height regardless of content */
+    flex-wrap: wrap;
+    /* allow wrapping on small screens */
+}
+
+.vissionpara {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #8a8a8a;
+    font-family: "Outfit", sans-serif !important;
+    font-size: 1.2rem!important;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    margin: 0 auto;
+    font-weight: 400 !important;
+    gap: 20px;
+}
+
+.vission_card_start {
+    padding: 30px;
+    padding-left: 10px;
+    background-color: #E5E5E5 !important;
+    border-top-right-radius: 150px !important;
+    border-bottom-right-radius: 150px !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+
+.mission_card_start {
+    padding: 30px;
+    padding-left: 10px;
+    background-color: #0D1678 !important;
+    border-top-left-radius: 150px !important;
+    border-bottom-left-radius: 150px !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px !important;
+}
+
+.missionpara {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #8a8a8a;
+    font-family: "Outfit", sans-serif !important;
+    font-size: 1.2rem!important;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    margin: 0 auto;
+    font-weight: 400 !important;
+    gap: 20px;
+
+}
+
+.vision-image {
+    max-width: 160px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+.card_mission {
+
+    background-color: #0D1678 !important;
+    border-top-left-radius: 150px !important;
+    border-bottom-left-radius: 150px !important;
+    border: 0;
+}
+
+.missionpara {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-family: "Outfit", sans-serif !important;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    margin: 0 auto;
+    font-weight: 400;
+    gap: 20px;
+}
+
+.row-equal-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row-equal-height>.col,
+.row-equal-height>div[class*="col-"] {
+    display: flex;
+    flex-direction: column;
+}
+
+.card_vission,
+.card_mission {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.vissionpara,
+.missionpara {
+    flex-grow: 1;
+}
+
+.card_name {
+    color: #0D1678;
+    font-family: "Outfit", sans-serif !important;
+    font-size: 2.1rem;
+    font-weight: 500;
+    margin: 0px 0px 10px 0px !important;
+}
+
+.mission_name {
+    padding-left: 580px;
+}
+
+@media (max-width: 768px) {
+
+    /* Hide the image */
+    .vision-image {
+        display: none;
+    }
+
+    /* Remove right border-radius */
+    .vission_card_start {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+
+    .mission_card_start {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+    }
+
+    .mission_name {
+        padding-right: 20px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .vision-image {
+        display: block;
+        /* Ensure the image is visible */
+    }
+
+    .vission_card_start {
+        border-top-right-radius: 150px !important;
+        border-bottom-right-radius: 150px !important;
+    }
+
+    .mission_card_start {
+        border-top-left-radius: 150px !important;
+        border-bottom-left-radius: 150px !important;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .vissionpara,
+    .missionpara {
+        font-size: 12px;
+
+    }
+
+
+}
+
+@media (max-width: 480px) {
+
+    .vissionpara,
+    .missionpara {
+        font-size: 18px;
+    }
+
+    .namecard {
+        text-align: end;
+
+    }
+
+    .mission_name {
+        padding: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    .card_name {
+        padding: 0px !important;
+        padding-right: 0px !important;
+    }
+
+}
+
+@media (max-width: 767.98px) {
+    .row-equal-height {
+        flex-direction: column;
+    }
+
+    .row-equal-height>.col {
+        display: block;
+    }
+
+    .card_vission,
+    .card_mission {
+        height: auto;
+
+    }
+
+
+
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .namecard {
+        text-align: right;
+        margin-left: 0;
+    }
+
+    .mission_name {
+        text-align: right !important;
+    }
+}
+
+.vission_card_start {
+    flex: 1 1 45%;
+    /* take up roughly half container, shrink if needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #E5E5E5;
+    /* or your background */
+    border-top-right-radius: 150px;
+    border-bottom-right-radius: 150px;
+    padding: 30px 10px;
+    box-sizing: border-box;
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+    }
+
+    .vission_card_start,
+    .mission_card_start {
+        flex: 1 1 100%;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
+
+/* MOBILE FIX — Equal width + No weird side gap */
+@media (max-width: 768px) {
+
+    .cards-container {
+        width: 100%;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .row-equal-height > .col {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .vission_card_start,
+    .mission_card_start {
+        width: 100% !important;
+        border-radius: 0 !important; 
+        margin: 0 !important;
+    }
+
+    .card_name {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        text-align: left !important;
+    }
+}

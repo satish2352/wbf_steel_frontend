@@ -1,0 +1,398 @@
+.contact-section {
+  background: #fff;
+  padding: 60px 0;
+}
+
+.contact-form-box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px 40px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.contact-form-subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #007bff;
+}
+
+.half-inputs {
+  display: flex;
+  gap: 12px;
+}
+
+.sbmit {
+  background: #004aad;
+  color: #fff;
+  border: none;
+  padding: 10px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-align: right;
+  justify-content:flex-end;
+  margin-left:350px;
+  display: block;
+  /* margin-top: -10px; */
+   margin: 10px 0 5px auto; 
+
+}
+
+.sbmit:hover {
+  background: #002f73;
+}
+
+/* RIGHT INFO SECTION */
+.contact-info {
+  padding-left: 40px;
+}
+
+.contact-info h3 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  color: #444;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.info-block {
+  width: 48%;
+}
+
+.info-block h5 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000 !important;
+  margin-bottom: 8px;
+}
+
+.info-block p {
+  font-size: 17px;
+  color: #555;
+  margin: 2px 0;
+}
+ 
+.info-block a {
+  color: #555;          /* change to desired color */
+  text-decoration: none; /* remove underline */
+  font-weight: 500;      /* optional */
+}
+
+.info-block a:hover {
+  color: #004aad;       /* optional hover color */
+  text-decoration: underline; /* optional hover effect */
+}
+
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 28px 10px;
+}
+
+.social-icons a {
+  width: 36px;
+  height: 36px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #000;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+.social-icons a:hover {
+  background-color: #fff;
+  color: #fff;
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .info-block .social-icons {
+    gap: 2px;
+    text-align: center;
+    justify-content: center !important;
+  }
+
+
+  .contact-section {
+    padding: 60px 20px;
+  }
+  .contact-info {
+    padding-left: 0;
+    text-align: center;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px){
+
+   .sbmit {
+    margin: 15px auto 5px; /* center the button on mobile */
+    width: 40%;          /* full width mobile button */
+    text-align: center;
+  }
+
+
+    .social-icons a {
+  margin-top: 9px;
+  margin-left: 8px;
+  gap: 2px;
+}
+  .contact-form-box {
+    padding: 30px 20px;
+
+  }
+  .half-inputs {
+    flex-direction: column;
+  }
+  .contact-form-title {
+    font-size: 26px;
+  }
+  .contact-info h3 {
+    font-size: 24px;
+  }
+}
+
+.success-message {
+  color: #0a8800;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 15px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.info-row {
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.info-block h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-icon-img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon-img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  
+
+  .info-block {
+    width: 100%;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+  }
+}
+
+.Contact {
+  width: 100%;
+  background: url("../../../src/assets/images/Group 1000005624.png") center / cover no-repeat;
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .Contact {
+    height: 380px;
+  }
+  
+  
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .Contact {
+    height: 300px;
+  }
+ 
+
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+
+    .contact-info {
+  padding-top: 20px;
+
+}
+
+  
+.contact-info p {
+  color: #444;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+    
+  .Contact {
+    height: 120px; 
+    background-position: center top;
+    background-size: cover;
+  }
+}
+
+.error-message {
+  color: #ff3b3b;
+  font-size: 12px;
+  margin-top: -9px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  text-align:left;
+  align-items: center;
+}
+
+.char-count {
+  font-size: 12px;
+  color: #666;
+  margin-top: 0px;
+  text-align: left;
+}
+
+.char-count {
+  font-size: 12px;
+  margin-top:-10px;
+  text-align: left;
+  color: #666;
+}
+
+.char-count.exceeded {
+  color: red;
+}
+
+/* Default (Desktop) – full size */
+.recaptcha-container {
+  transform: scale(1);
+  transform-origin: 0 0;
+}
+
+/* Mobile – shrink the recaptcha */
+@media (max-width: 576px) {
+  .recaptcha-container {
+    transform: scale(0.90);   /* 80% size */
+    transform-origin: left top;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 400px) {
+  .recaptcha-container {
+    transform: scale(0.90);   /* 70% size */
+  }
+}
+
+
+/* iPhone 12/13/14/15 (width 390px) */
+@media (max-width: 400px) {
+  .recaptcha-container {
+    transform: scale(0.70) !important;
+    transform-origin: 0 0;
+  }
+}
+
+/* iPhone SE, iPhone 8 small screens (375px) */
+@media (max-width: 380px) {
+  .recaptcha-container {
+    transform: scale(0.70) !important;
+    transform-origin: 0 0;
+  }
+  
+  .sbmit{
+    padding: 10px;
+    width: 70%;
+    
+  }
+
+}
+
+/* Very small phones (360px and below) */
+@media (max-width: 360px) {
+  .recaptcha-container {
+    transform: scale(0.70) !important;
+    transform-origin: 0 0;
+  }
+}
+
+/* Extra small (320px — old iPhone 5/SE) */
+@media (max-width: 330px) {
+  .recaptcha-container {
+    transform: scale(0.70) !important;
+    transform-origin: 0 0;
+  }
+}

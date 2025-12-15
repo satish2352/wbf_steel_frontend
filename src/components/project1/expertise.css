@@ -1,0 +1,76 @@
+.expertise-section {
+  max-width: 100vw;
+  margin: 0;
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.expertise-title {
+  text-align: center;
+  /* font-size: 36px; */
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 40px;
+}
+
+.scroll-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.scroll-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 18s linear infinite;
+}
+
+.scroll-item {
+  flex: 0 0 auto; /* width based on image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.brand-img {
+  width: 350px; /* fixed width on desktop */
+  height: auto;
+  filter: grayscale(100%) brightness(1); /* black & white default */ 
+  transition: filter 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.scroll-item:hover .brand-img {
+  filter: grayscale(0%) brightness(1); /* full color on hover */
+  transform: scale(1.05); /* optional zoom effect */
+}
+
+/* Smooth infinite scroll animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* 5 logos × 350px = 1750px for seamless scroll */
+  }
+}
+
+/* Responsive sizes */
+@media (max-width: 1200px) {
+  .brand-img {
+    width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-img {
+    width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-img {
+    width: 140px;
+  }
+}

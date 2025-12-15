@@ -1,0 +1,190 @@
+/* WHY CHOOSE US SECTION  */
+.why-section {
+  background: #fff;
+  padding: 60px 60px; 
+  margin-top: -60px; 
+
+}
+
+
+
+.why-section .why-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  background-color: #cfcfcf;
+  height: 100%;
+  transform: translateX(50%);
+}
+
+
+/* each column box */
+.why-item {
+  position: relative;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+
+
+
+.why-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 0;
+  height: 90%; 
+  width: 1px;
+  background-color: #cfcfcf;
+}
+
+/* icons */
+.why-item .icon i {
+  font-size: 50px;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+/* headings */
+.why-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* paragraph text */
+.why-text {
+  font-size: 1.1rem;
+  color: #111;
+  line-height: 1.75;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* RESPONSIVE  */
+@media (max-width: 992px) {
+  .why-section {
+    padding: 40px 20px;
+  }
+
+  .why-item {
+    margin-bottom: 35px;
+    padding: 0 20px;
+  }
+
+  .why-item:not(:last-child)::after {
+    display: none; 
+    content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%; 
+  width: 1px;
+  background-color: #cfcfcf;
+
+  }
+
+  .why-title {
+    font-size: 20px;
+  }
+
+  .why-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .why-item .icon i {
+    font-size: 38px;
+  
+  }
+
+   .why-icon {
+    width: 35px;
+    height: 45px;
+  }
+
+  .why-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+    margin-top: -15px;
+  }
+
+  .why-text {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .why-section {
+    padding: 0 15px;
+    padding-top: 40px !important;
+    padding-bottom: 30px !important;
+  }
+}
+
+
+.why-section .row {
+  position: relative;          
+  align-items: stretch !important; 
+}
+
+
+.why-section .why-item:not(:last-child)::after {
+  display: none !important;
+}
+
+
+.why-section .row::before,
+.why-section .row::after {
+  content: "";
+  position: absolute;
+  top: 0%;             
+  bottom: 0%;          
+  width: 1px;
+  background-color: #cfcfcf;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+.why-section .row::before {
+  left: 33.3333%;
+  transform: translateX(-50%);
+}
+.why-section .row::after {
+  left: 66.6666%;
+  transform: translateX(-50%);
+}
+
+
+@media (max-width: 992px) {
+  .why-section .row::before,
+  .why-section .row::after {
+    display: none;
+  }
+
+  
+  .why-item:not(:last-child)::after { display: none; }
+}
+
+.why-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

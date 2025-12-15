@@ -1,0 +1,44 @@
+.home-banner {
+  width: 100%;
+  height: 60vh; /* Adjust the height as needed */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex; /* If you add content inside */
+  align-items: center; /* Vertical centering for content */
+  justify-content: center; /* Horizontal centering for content */
+  transition: background-image 0.3s ease-in-out; /* Smooth image change on resize */
+}
+
+/* Optional: different height for mobile */
+@media (max-width: 576px) {
+  .home-banner {
+    height: 40vh; /* slightly smaller for mobile */
+  }
+}
+
+.home-banner {
+  width: 100%;
+  height: 60vh; /* desktop height */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex; /* If you add content inside */
+  align-items: center; /* Vertical centering for content */
+  justify-content: center; /* Horizontal centering for content */
+  transition: background-image 0.3s ease-in-out; /* Smooth image change on resize */
+}
+
+/* Mobile styles */
+@media (max-width: 576px) {
+  .home-banner {
+    height: 40vh; /* mobile height */
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 577px) and (max-width: 1024px) {
+  .home-banner {
+    height: 30vh; /* slightly smaller than desktop for tablets */
+  }
+}

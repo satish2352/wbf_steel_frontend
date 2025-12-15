@@ -1,0 +1,35 @@
+/* Banner (full width hero image) */
+.wbf-banner {
+  width: 100%;
+  min-height: 320px;                /* desktop baseline */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+  /* make sure it doesn't overlap the next section */
+  box-shadow: none;
+}
+
+/* larger desktop */
+@media (min-width: 1200px) {
+  .wbf-banner {
+    min-height: 420px;
+  }
+}
+
+/* tablets */
+@media (max-width: 992px) {
+  .wbf-banner {
+    min-height: 300px;
+    background-position: center top;
+  }
+}
+
+/* small phones */
+@media (max-width: 576px) {
+  .wbf-banner {
+    min-height: 240px;
+    background-size: cover;
+    background-position: top center;
+  }
+}

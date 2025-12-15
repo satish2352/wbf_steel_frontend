@@ -1,0 +1,98 @@
+.service-img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+
+.service_heading_name {
+    font-family: "Outfit", sans-serif;
+    color: #055597;
+    font-size: 45px;
+    /* Desktop font size */
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    margin: 40px 0;
+    white-space: nowrap;
+    /* Prevent text wrap */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    /* spacing between line and text */
+}
+
+.service_heading_name::before,
+.service_heading_name::after {
+    content: "";
+    flex-grow: 1;
+    /* lines grow to fill space */
+    height: 1px;
+    /* line thickness */
+    background-color: #055597;
+    align-self: center;
+}
+
+/* Responsive font size for tablets and mobiles */
+@media (max-width: 1024px) {
+    .service_heading_name {
+        font-size: 32px;
+    }
+   
+}
+
+@media (max-width: 768px) {
+    .service_heading_name {
+        font-size: 30px;
+    }
+   
+}
+
+.img2_from_service{
+  padding: 5px;
+  text-align: center !important;
+  justify-content: center!;
+}
+.circle_card_styling {
+    height: 160px !important;
+    width: 160px !important;
+    padding: 10px;
+    overflow: hidden !important;
+    border-top: 2px solid black !important;
+
+    border-bottom: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    box-sizing: border-box !important;
+
+
+}
+
+.rounded_card1_data {
+    font-family: "Outfit", sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 4% !important;
+    text-align: center;
+    margin: 40px 0;
+    padding: 10px;
+    
+}
+@media (max-width: 1024px) { /* Tablet */
+  .rounded_card1_data {
+    font-size: 24px !important;  /* smaller font for tablets */
+  }
+
+}
+
+@media (max-width: 768px) { /* Mobile */
+  .rounded_card1_data {
+    font-size: 22px !important;  /* even smaller font for mobiles */
+  }
+  .img2_from_service{
+    padding: 0px !important;
+  }
+}

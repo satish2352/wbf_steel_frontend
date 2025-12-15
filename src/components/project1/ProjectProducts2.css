@@ -1,0 +1,369 @@
+/* ============================
+   SECTION WRAPPER
+============================ */
+.project-details {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+  background: #ffffff;
+  padding: 20px;
+}
+
+/* ============================
+   MAIN WHITE BOX
+============================ */
+.white-box {
+  width: 1350px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 50px 70px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* ============================
+   3-COLUMN WRAPPER (20/40/40)
+============================ */
+.project-container {
+  display: grid;
+  grid-template-columns: 20% 40% 40%;
+  align-items: start; 
+  column-gap: 35px;
+    justify-items: stretch;
+  width: 100%;
+}
+
+/* ============================
+   LEFT COLUMN - THUMBNAILS
+============================ */
+.image-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Adjust spacing for arrows individually */
+.arrow-btn:first-child {
+  margin-bottom: 1px;  /* space between top arrow and first image */
+}
+
+.arrow-btn:last-child {
+  margin-top: 4px;     /* space between last image and bottom arrow */
+}
+
+.arrow-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.image-thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 490px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.image-thumbnails::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Bigger thumbnails */
+.image-thumbnails img {
+  width: 200px;
+  height: 160px;                  /* increased height */
+
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.image-thumbnails img.active {
+  border-color: black;
+}
+
+/* ============================
+   CENTER COLUMN - MAIN IMAGE
+============================ */
+.center-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  /* font-size: 36px; */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.main-image-holder {
+  margin-top: auto;
+}
+
+.main-image {
+  width: 100%;
+  border-radius: 0px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+
+}
+
+/* ============================
+   RIGHT COLUMN - INFO BOX
+============================ */
+.info-box {
+  width: 100%;
+  background: #f7c948;
+  padding: 40px 38px;
+  line-height: 1.5;
+  font-size: 24px;
+  font-weight: 500;
+  min-height: 530px;
+   /* your yellow color */
+  padding: 30px ;
+  margin-top: 40px;
+  width: 100%;
+  
+  /* Add scroll behavior */
+  max-height: 520px;           /* adjust to your preferred height */
+  overflow-y: auto;            /* enables scrollbar */
+  /* Optional smoother scrolling */
+  scroll-behavior: smooth;
+}
+
+.info-box-content {
+  max-height: 440px;
+  overflow-y: auto;
+}
+
+.info-box-content::-webkit-scrollbar {
+  width: 4px;
+
+}
+
+/* ============================
+   MEDIA QUERIES - RESPONSIVE
+============================ */
+
+/* ---------- Desktop (Large) ---------- */
+@media (min-width: 1200px) {
+  .white-box {
+    width: 1350px;
+    padding: 50px 70px;
+  }
+
+  .project-container {
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
+    column-gap: 35px;
+    align-items: start;
+    font-size: 16px !important;
+  }
+
+  .image-thumbnails {
+    height: calc(3 * 160px + 2 * 14px);
+    gap: 14px;
+  }
+
+  .image-thumbnails img {
+    width: 200px;
+    height: 160px;
+  }
+
+  .info-box {
+    max-height: 520px;
+    font-size: 24px;
+    padding: 40px;
+  }
+}
+
+/* ---------- Small Desktop / Laptop ---------- */
+@media (max-width: 1199px) {
+  .white-box {
+    width: 1000px;
+    padding: 40px 50px;
+  }
+
+  .project-container {
+    grid-template-columns: 20% 40% 40%;
+    column-gap: 25px;
+  }
+
+  .image-thumbnails {
+    height: calc(3 * 140px + 2 * 12px);
+    gap: 12px;
+  }
+
+  .image-thumbnails img {
+    width: 180px;
+    height: 140px;
+  }
+
+  .info-box {
+    max-height: 450px;
+    font-size: 22px;
+    padding: 40px;
+  }
+}
+
+/* ---------- Tablet (Stack vertically) ---------- */
+@media (max-width: 991px) {
+  .white-box {
+    width: 90%;
+    padding: 30px 40px;
+  }
+
+  .project-container {
+    display: grid;
+    grid-template-columns: 1fr; /* stack vertically */
+    row-gap: 25px;
+  }
+
+  .image-thumbnails {
+    height: calc(3 * 140px + 2 * 12px);
+    gap: 12px;
+  }
+
+  .image-thumbnails img {
+    width: 160px;
+    height: 120px;
+  }
+
+  .info-box {
+    max-height: 400px;
+    font-size: 20px;
+    padding: 30px;
+  }
+
+  .main-image {
+    width: 100%; /* keep main image full width */
+  }
+}
+
+/* ---------- Mobile (Stack vertically) ---------- */
+
+
+/* ---------- Extra Small Mobile ---------- */
+@media (max-width: 480px) {
+  .image-thumbnails {
+    height: calc(2 * 80px + 1 * 6px);
+    gap: 6px;
+  }
+
+  .image-thumbnails img {
+    width: 100px;
+    height: 80px;
+  }
+
+  .info-box {
+    max-height: 250px;
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .project-title {
+    font-size: 22px;
+  }
+}
+
+
+
+.main-image-holder {
+  width: 100%;
+  /* height: 500px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important; /* fill space without white gaps */
+  border-radius: 6px;
+}
+/* ================= */
+/* Show arrows again on mobile */
+/* ---------- MOBILE VIEW (FULL FIXED VERSION) ---------- */
+/* ---------- MOBILE VIEW FIX: Perfect Scrollable Images ---------- */
+@media (max-width: 767px) {
+
+  .mob-font-size{
+    font-size: 17px;
+  }
+  /* White box full width */
+  .white-box {
+    width: 95%;
+    padding: 20px;
+  }
+
+  /* Layout vertical */
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Horizontal thumbnail layout */
+  .image-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* Arrow buttons */
+  .arrow-btn {
+    display: block !important;
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* SCROLL FIX: Now the image is shown fully without cut */
+  .image-thumbnails {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    width: 85%;
+    gap: 12px;
+    padding-bottom: 6px;
+  }
+
+  /* FINAL FIX: Proper Visible Image (no cropping, correct proportion) */
+  .image-thumbnails img {
+    width: auto;
+    height: 178px;          /* fixed height */
+    object-fit: contain !important;  /* show full image */
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 6px;
+    /* padding: 4px;           */
+  }
+
+  /* Main image full */
+  .main-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Info box */
+  .info-box {
+    max-height: 250px;
+    overflow-y: auto;
+    padding: 16px;
+    font-size: 15px;
+    line-height: 1.3;
+  }
+}
+
