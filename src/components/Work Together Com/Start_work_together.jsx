@@ -27,7 +27,7 @@ function Start_work_together() {
                 Let’s Start Work Together
               </p>
               <div className="startwork-custom-line"></div>
-              <p className="startwork-para-work">
+              <p className="startwork-para-work text-justify">
                 Please feel free to contact us.<br></br> We will get back to you
                 with 1-2 business days.
                 <br />

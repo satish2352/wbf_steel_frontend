@@ -50,7 +50,7 @@ const BlogDetails = () => {
         )}
 
         <div
-          className="blog-details-content"
+          className="blog-details-content text-justify"
           dangerouslySetInnerHTML={{ __html: blog.longDesc }}
         />
       </div>

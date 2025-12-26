@@ -9,7 +9,7 @@ const HomeAbout = () => {
       <div className="home-about-container">
         <div className="home-about-text">
           <h2>Welcome To WBF Steel</h2>
-          <p>
+          <p className="text-justify">
             We deliver reliable, cost-effective, and high-quality building
             solutions that add value and reduce risk. With expert teams and
             modern methods, we ensure timely, transparent project delivery. Our

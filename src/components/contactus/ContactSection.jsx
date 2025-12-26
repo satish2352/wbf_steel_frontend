@@ -298,7 +298,7 @@ const ContactSection = () => {
                   <br /> Manufacturing Starts
                   <br /> Here.
                 </h3>
-                <p>
+                <p className="text-justify">
                   With decades of experience in manufacturing switchgear,
                   busbars, laminations, and transformers, we are trusted by
                   clients across industries and continents.

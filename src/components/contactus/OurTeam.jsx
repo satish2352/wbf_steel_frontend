@@ -46,7 +46,7 @@ const OurTeam = () => {
           />
         </div>
         <div className="team-card-right">
-          <p className="team-card-description">{member.description}</p>
+          <p className="team-card-description text-justify">{member.description}</p>
           <p>
             <strong>Experience:</strong> {member.experience || "N/A"} years
           </p>

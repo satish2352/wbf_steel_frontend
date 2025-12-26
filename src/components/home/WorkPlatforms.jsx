@@ -32,7 +32,7 @@ const WorkPlatforms = () => {
 
           {/* RIGHT: TEXT CONTENT */}
           <div className="right-text">
-            <p>
+            <p className="text-justify">
               Steel access/mezzanine <br></br> structures; designed per <br></br>AISC/IS codes;
               includes <br></br> stairs, rails, grating, <br></br>connections.
             </p>

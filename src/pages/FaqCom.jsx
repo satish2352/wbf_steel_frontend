@@ -101,7 +101,7 @@ function FaqCom() {
             <Col lg={7} md={12} sm={12} className="mt-5 left_faq_col">
               <h3 className="title">FAQ of customer</h3>
 
-              <p className="parafaq mb-5">
+              <p className="parafaq mb-5 text-justify">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
                 quaed.
@@ -132,7 +132,7 @@ function FaqCom() {
                 </button>
 
                 <div className="collapse show" id="collapseOne">
-                  <div className="card card-body card_data">
+                  <div className="card card-body card_data text-justify">
                     No, cell phones aren’t permitted on the ropes and trampoline
                     areas due to safety reasons.
                   </div>
@@ -147,7 +147,7 @@ function FaqCom() {
                 </button>
 
                 <div className="collapse" id="collapseTwo">
-                  <div className="card card-body card_data">
+                  <div className="card card-body card_data text-justify">
                     No, cell phones aren’t permitted on the ropes and trampoline
                     areas due to safety reasons.
                   </div>
@@ -162,7 +162,7 @@ function FaqCom() {
                 </button>
 
                 <div className="collapse" id="collapsethree">
-                  <div className="card card-body card_data">
+                  <div className="card card-body card_data text-justify">
                     No, cell phones aren’t permitted...
                   </div>
                 </div>
@@ -177,7 +177,7 @@ function FaqCom() {
                 </button>
 
                 <div className="collapse" id="collapsefour">
-                  <div className="card card-body card_data">
+                  <div className="card card-body card_data text-justify">
                     Comfortable athletic clothing...
                   </div>
                 </div>

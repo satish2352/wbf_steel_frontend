@@ -65,7 +65,7 @@ const Testimonials = () => {
           {/* LEFT STATIC PART */}
           <div className="testimonials-left">
             <h2 className="testimonials-title">TESTIMONIALS</h2>
-            <p className="testimonials-quote">
+            <p className="testimonials-quote text-justify">
               “I would like to say big ‘Thank you’ to WBF TEAM for immense
               effort and support. In addition, I have feeling that our future
               projects are going to be great as well, good luck to the Team.”
@@ -94,7 +94,7 @@ const Testimonials = () => {
                 <SwiperSlide key={index}>
                   <div className="testimonial-card">
                     <h3>{safeText(item.name, "No Name")}</h3>
-                    <p>
+                    <p className="text-justify">
                       {item.review.length > 160
                         ? item.review.slice(0, 160) + "..."
                         : item.review}
@@ -137,7 +137,7 @@ const Testimonials = () => {
               )}
 
               <h5 className="fw-bold mb-3">{selectedTestimonial.name}</h5>
-              <p className="mb-4">{selectedTestimonial.review}</p>
+              <p className="mb-4 text-justify">{selectedTestimonial.review}</p>
 
               <button
                 className="btn btn-warning"

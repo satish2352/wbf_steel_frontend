@@ -18,7 +18,7 @@ function VissionMission() {
                             <p className='card_name pl-4'>VISION</p>
                             <div className="card-body vission_card_start mb-5 p-4">
                                 <div className='vissionpara d-flex align-items-center'>
-                                    <p>We deliver ethical, innovative solutions that meet client needs and respect the environment.</p>
+                                    <p className='text-justify'>We deliver ethical, innovative solutions that meet client needs and respect the environment.</p>
                                     <img src={vission_img} className="vision-image" alt="Vision" />
                                 </div>
                             </div>
@@ -28,7 +28,7 @@ function VissionMission() {
                             <div className="card-body mission_card_start mb-5 p-4">
                                 <div className='missionpara d-flex align-items-center'>
                                     <img src={mission_img} className="vision-image" alt="Vision" />
-                                    <p>We strive to build an ecosystem that fuels our clients’ growth through continuous improvement, integrity, reliability, responsibility, and passion in everything we do.</p>
+                                    <p className='text-justify'>We strive to build an ecosystem that fuels our clients’ growth through continuous improvement, integrity, reliability, responsibility, and passion in everything we do.</p>
                                 </div>
                             </div>
                         </Col>

@@ -102,13 +102,13 @@
 
 .main-navbar .nav-link {
   color: #fff !important;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400px;
   line-height: 1.5rem;
   letter-spacing: 0.5px;
   position: relative;
   transition: all 0.3s ease;
-  padding: 0.8rem 0;
+  /* padding: 0.8rem 0; */
 }
 
 .main-navbar .nav-link.active,

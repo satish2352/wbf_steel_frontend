@@ -1,5 +1,5 @@
 .service-img{
-  height: 60vh;
+  /* height: 60vh; */
 }
 /* Headings */
 .service_card1_headingstrature {
@@ -70,7 +70,7 @@
 @media (min-width: 768px) and (max-width: 1024px) {
 
   .service-img{
-  height: 30vh;
+  /* height: 30vh; */
 }
 
   .responsive-image {
@@ -110,7 +110,7 @@
 @media (max-width: 768px) {
   
   .service-img{
-  height: 30vh;
+  /* height: 30vh; */
 }
   .service-card-row .img-col {
     order: 1 !important;

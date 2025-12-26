@@ -79,7 +79,7 @@ function Services_cards() {
                       className="d-flex flex-column justify-content-center align-items-start p-3 colum_backcolor text-col"
                     >
                       <p className="service_card1_headingstrature">{title}</p>
-                      <p className="service_card_para">{desc}</p>
+                      <p className="service_card_para text-justify">{desc}</p>
                     </Col>
                   </>
                 ) : (
@@ -90,7 +90,7 @@ function Services_cards() {
                       className="d-flex flex-column justify-content-center align-items-start p-3 colum_backcolor text-col"
                     >
                       <p className="service_card1_headingstrature">{title}</p>
-                      <p className="service_card_para">{desc}</p>
+                      <p className="service_card_para text-justify">{desc}</p>
                     </Col>
 
                     {/* Image Right */}

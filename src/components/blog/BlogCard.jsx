@@ -45,8 +45,8 @@ const BlogCard = () => {
         ))
       ) : (
        <div className="d-flex justify-content-center w-100">
-  <p>No blogs available at the moment.</p>
-</div>
+        <p>No blogs available at the moment.</p>
+      </div>
 
       )}
     </section>

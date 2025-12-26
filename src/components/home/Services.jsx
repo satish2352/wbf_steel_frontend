@@ -22,7 +22,7 @@ function Services() {
               <h4 className="service-title">
                 Structural & Miscellaneous Steel
               </h4>
-              <p className="service-text">
+              <p className="service-text text-justify">
                 Structural steel is utilized in construction or building
                 projects. Structural steel is considered as steel shaped for use
                 in development of projects.
@@ -41,7 +41,7 @@ function Services() {
 
               </div>
               <h4 className="service-title">Pre-Engineered Metal Building</h4>
-              <p className="service-text">
+              <p className="service-text text-justify">
                 With regards to Pre-Engineered Metal Buildings and detailing, we
                 work on projects that consist of both simple and highly compound
                 ones.

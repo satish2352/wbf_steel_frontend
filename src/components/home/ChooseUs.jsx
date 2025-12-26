@@ -17,7 +17,7 @@ function WhyChooseUs() {
                <img src={icon1} alt="Professional Team" className="why-icon" />
             </div>
             <h4 className="why-title">PROFESSIONAL TEAM</h4>
-            <p className="why-text">
+            <p className="why-text text-justify">
               Our Structural, PEMB/PEB, REBAR and detailing teams make for an
               endearing combination. We have team of 13+ experienced detailer
               who are knowledgeable in AISC, BS, MBMA, ASD, AISI, AWS, MBCI,
@@ -31,7 +31,7 @@ function WhyChooseUs() {
                <img src={icon3} alt="Smart Work" className="why-icon" />
             </div>
             <h4 className="why-title">GREAT SUPPORT</h4>
-            <p className="why-text">
+            <p className="why-text text-justify">
               Our support and advice team always helps customers wholeheartedly
               and answers all customers' questions.
             </p>
@@ -43,7 +43,7 @@ function WhyChooseUs() {
               <i className="bi bi-house-fill"></i>
             </div>
             <h4 className="why-title">SMART WORK</h4>
-            <p className="why-text">
+            <p className="why-text text-justify">
               We never negotiate on our quality of design and detailing
               regardless of how huge or small the size of the Project. We use
               leading-edge 3D-Tool software for Structural and Miscellaneous

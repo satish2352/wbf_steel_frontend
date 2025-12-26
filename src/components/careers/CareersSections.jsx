@@ -222,7 +222,7 @@ const CareersSections = () => {
         <div className="why-grid">
           <div className="why-item">
             <h3>Strong Industry Presence</h3>
-            <p>
+            <p className="text-justify">
               With Decades Of Experience In Manufacturing Switchgear, Busbars,
               Laminations, And Transformers, We Are Trusted By Clients Across
               Industries And Continents.
@@ -231,7 +231,7 @@ const CareersSections = () => {
 
           <div className="why-item">
             <h3>Growth Opportunities</h3>
-            <p>
+            <p className="text-justify">
               We Offer A Clear Path For Professional Growth — Whether You're A
               Skilled Technician Or A Young Engineer, Your Journey Here Is Full
               Of Learning And Leadership.
@@ -240,7 +240,7 @@ const CareersSections = () => {
 
           <div className="why-item">
             <h3>Global Exposure</h3>
-            <p>
+            <p className="text-justify">
               Be A Part Of An Export-Driven Organization With Clients Across
               Asia, Europe, And Beyond — Experience International Standards,
               Audits, And Projects.

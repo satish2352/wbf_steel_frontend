@@ -61,8 +61,8 @@ function About() {
           </h3>
 
           <div className="paraAbout">
-            <p>{paragraphs[0].trim()}</p>
-            <p>{splitSentence + paragraphs[1]}</p>
+            <p className="text-justify">{paragraphs[0].trim()}</p>
+            <p className="text-justify">{splitSentence + paragraphs[1]}</p>
           </div>
         </Container>
 
@@ -76,7 +76,7 @@ function About() {
                 <p className="number_about_page">1.</p>
                 <p className="title_card">Environment</p>
               </div>
-              <p className="about_card_para">
+              <p className="about_card_para text-justify">
                 Safety is one of the highest priorities within <br></br>{" "}
                 Facmaster. <br></br> It is imperative that everyone follows{" "}
                 <br></br> the policies and guidelines to ensure their own safety
@@ -91,7 +91,7 @@ function About() {
                 <p className="backcol2_color">2.</p>
                 <p className="title_card1">Health & Safety</p>
               </div>
-              <p className="about_card_para1">
+              <p className="about_card_para1 text-justify">
                 Safety is one of the highest priorities within <br></br>{" "}
                 Facmaster. <br></br> It is imperative that everyone follows{" "}
                 <br></br> the policies and guidelines to ensure their own safety
@@ -112,7 +112,7 @@ function About() {
                 <p className="backcol3_color">3.</p>
                 <p className="title_card3">Integrity</p>
               </div>
-              <p className="about_card_para3">
+              <p className="about_card_para3 text-justify">
                 Safety is one of the highest priorities within <br></br>{" "}
                 Facmaster. <br></br> It is imperative that everyone follows{" "}
                 <br></br> the policies and guidelines to ensure their own safety
@@ -133,7 +133,7 @@ function About() {
             <Row>
               <Col lg={8} md={8} sm={12} className="mt-4">
                 <div className="paraAbout1">
-                  <p>
+                  <p className="text-justify">
                     We are a trusted name in structural engineering, committed
                     to delivering precise, reliable,and cost-effective
                     solutions.With a skilled team and advanced tools,we ensure

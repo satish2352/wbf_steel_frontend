@@ -160,7 +160,7 @@ function ProjectProducts2() {
             {/* RIGHT INFO BOX */}
             <div className="info-box">
               <div className="info-box-content" ref={infoRef}>
-                <p className="mob-font-size">{projectDetails.project_info}</p>
+                <p className="mob-font-size text-justify">{projectDetails.project_info}</p>
 
                 <h5><strong>Location:</strong> {projectDetails.project_location}</h5>
                 <h5><strong>Total Tonnage:</strong> {projectDetails.project_total_tonnage}</h5>

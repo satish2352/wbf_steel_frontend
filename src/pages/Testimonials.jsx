@@ -62,7 +62,7 @@ const Testimonials = () => {
         {/* LEFT STATIC PART */}
         <div className="testimonials-left">
           <h2 className="testimonials-title">TESTIMONIALS</h2>
-          <p className="testimonials-quote">
+          <p className="testimonials-quote text-justify">
             “I would like to say big ‘Thank you’ to WBF TEAM for immense effort
             and support. In addition, I have feeling that our future projects
             are going to be great as well, good luck to the Team.”
@@ -92,7 +92,7 @@ const Testimonials = () => {
                 <div className="testimonial-card">
                   <h3>{item.name}</h3>
 
-                  <p>
+                  <p className="text-justify">
                     {item.text.length > 82
                       ? item.text.slice(0, 82) + "..."
                       : item.text}
