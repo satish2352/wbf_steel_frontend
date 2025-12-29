@@ -286,3 +286,55 @@
         text-align: left !important;
     }
 }
+/* ===== FORCE SAME BOX SIZE ON MOBILE ONLY ===== */
+@media (max-width: 767.98px) {
+
+  /* Headings */
+  .card_name {
+    text-align: left !important;
+    padding: 0 16px !important;
+    padding-top: 15px;
+  }
+
+  /* Remove Bootstrap side padding */
+  .row-equal-height > .col {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* SAME SIZE CARDS */
+  .vission_card_start,
+  .mission_card_start {
+    width: 90% !important;
+    min-height: 230px;   /* 🔑 KEY LINE */
+    margin: 0 0 24px 0 !important;
+    border-radius: 0 !important;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Text consistency */
+  .vissionpara,
+  .missionpara {
+    display: block !important;
+    font-size: 20px !important;
+    text-align: left !important;
+  }
+
+   .vissionpara {
+    color:black;
+   }
+
+  /* Hide images on mobile */
+  .vision-image {
+    display: none !important;
+  }
+
+  /* Fix mission heading pushing */
+  .mission {
+    padding-right: 260px !important;
+   margin-top: -20px !important;
+  }
+}
+
+

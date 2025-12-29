@@ -277,9 +277,9 @@
 
   /* Section spacing */
   .testimonials-section {
-    padding: 80px 0 !important;
+    padding: 50px 0 !important;
     padding-right: 20px !important;
-    padding-left: -20px !important;
+    padding-left: 10px !important;
   }
 
   /* Stack left + right properly */
@@ -312,7 +312,7 @@
   }
 
   .testimonial-swiper {
-    padding-bottom: 50px; /* space for dots */
+    padding-bottom: 60px; /* space for dots */
   }
 
   /* Force 1 card per view visually */

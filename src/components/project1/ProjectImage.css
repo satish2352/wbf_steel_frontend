@@ -1,19 +1,26 @@
-.Project{
+.Project {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9; 
-  background: url("../../../src/assets/images/Group\ 1000005619.png") center center / cover no-repeat;
+  aspect-ratio: 16 / 9;
+  background: url("../../../src/assets/images/Group 1000005619.png")
+    center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin: 0 0;
 }
 
-/* Larger screens */
+/* Hide mobile image by default */
+.project-mobile-img {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+
+/* Large screens */
 @media (min-width: 1200px) {
   .Project {
-    aspect-ratio: 21 / 9; /* wider look for desktop */
+    aspect-ratio: 21 / 9;
   }
 }
 
@@ -25,13 +32,15 @@
   }
 }
 
-/* Mobile */
+/* Mobile view */
 @media (max-width: 576px) {
   .Project {
-   
-    aspect-ratio: 3 / 4; /* taller for mobile */
-    background-position: top center;
-    background-size: contain; /* show entire image */
-    background-repeat: no-repeat;
+    background: none; /* remove background image */
+    aspect-ratio: auto;
+    padding: 0;
+  }
+
+  .project-mobile-img {
+    display: block;
   }
 }

@@ -1,14 +1,12 @@
 import React from "react";
 import "./BlogBanner.css";
-import bannerImg from "../../assets/images/Banner.jpg"; // adjust path if needed
+import bannerImg from "../../assets/about_img/Group 1000005669.png";
 
 const BlogBanner = () => {
   return (
-    <section
-      className="wbf-banner"
-      style={{ backgroundImage: `url(${bannerImg})` }}
-      aria-hidden="true"
-    />
+    <section className="wbf-banner">
+      <img src={bannerImg} alt="Blog Banner" />
+    </section>
   );
 };
 

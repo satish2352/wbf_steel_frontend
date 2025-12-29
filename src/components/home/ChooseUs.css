@@ -78,8 +78,8 @@
   }
 
   .why-item {
-    margin-bottom: 35px;
-    padding: 0 20px;
+ 
+    padding: 0 10px;
   }
 
   .why-item:not(:last-child)::after {

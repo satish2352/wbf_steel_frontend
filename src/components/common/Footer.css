@@ -136,7 +136,7 @@
     padding: 30px 40px;
   }
   .footer-menu {
-    list-style: none;
+    
     padding-left: 0;
   }
   .footer-desc {
@@ -161,7 +161,7 @@
     justify-content: center;
   }
   .footer-menu {
-    list-style: none;
+    
     padding-left: 0;
   }
   .footer-map-section {
@@ -530,7 +530,7 @@
   .footer-menu {
     margin-left: 0 !important;
     padding-left: 0 !important;
-    list-style: none !important;
+    
   }
 
   .footer-menu li {
@@ -665,5 +665,109 @@
   .footer-contact li {
     width: auto !important;
     max-width: 100%;
+  }
+}
+/* ===============================
+   MOBILE MENU – ENABLE BULLETS
+   =============================== */
+@media (max-width: 576px) {
+
+  .footer-menu {
+    list-style: disc !important;          /* show bullets */
+    list-style-position: inside;          /* bullets aligned nicely */
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    text-align: left;                     /* proper bullet alignment */
+    max-width: 200px;
+    margin: 0 auto;                       /* center block */
+  }
+
+  .footer-menu li {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .footer-menu li::marker {
+    color: #ffb800;                       /* your brand yellow */
+    font-size: 1rem;
+  }
+
+  .footer-menu li a {
+    display: inline-block;
+    padding-left: 6px;                    /* space between bullet & text */
+  }
+}
+
+/* ===============================
+   MOBILE MENU – CENTERED + BULLETS
+   =============================== */
+@media (max-width: 576px) {
+
+  .footer-menu {
+    list-style: disc;
+    list-style-position: outside;   /* key for proper centering */
+    padding-left: 18px;              /* space for bullets */
+    margin: 0 auto;                  /* center block */
+    width: fit-content;              /* keeps list compact */
+    text-align: left;                /* text readable */
+  }
+
+  .footer-menu li {
+    margin-bottom: 6px;
+  }
+
+  .footer-menu li::marker {
+    color: #ffb800;                  /* brand yellow */
+    font-size: 0.9rem;
+  }
+
+  .footer-menu li a {
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+  }
+}
+/* =========================================
+   FINAL MOBILE MENU FIX — CENTERED + BULLETS
+   ========================================= */
+@media (max-width: 576px) {
+
+  /* Kill ALL previous hacks */
+  .footer-menu,
+  .footer-menu li {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  /* Center the MENU block */
+  .footer-menu {
+    list-style: disc !important;
+    list-style-position: outside;
+    width: fit-content;
+    margin: 0 auto !important;   /* 👈 ACTUAL CENTER */
+    padding-left: 16px !important;
+    text-align: left;
+  }
+
+  /* Bullet styling */
+  .footer-menu li::marker {
+    color: #ffb800;
+    font-size: 0.9rem;
+  }
+
+  .footer-menu li {
+    margin-bottom: 6px !important;
+  }
+
+  .footer-menu li a {
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /* MENU heading centered */
+  .men {
+    margin-left: 0 !important;
+    text-align: center !important;
   }
 }

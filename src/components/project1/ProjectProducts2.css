@@ -373,3 +373,20 @@
   margin-bottom: 20px;
   line-height: 1.2;
 }
+/* =========================
+   MOBILE FIX (ONLY MOBILE)
+========================= */
+@media (max-width: 767px) {
+  .info-box {
+    min-height: auto;     /* 🔥 remove forced height */
+    max-height: 260px;    /* ✔ allow scroll if text is large */
+    height: auto;
+
+    overflow-y: auto;     /* ✔ scroll when needed */
+    padding: 16px;
+    font-size: 15px;
+    line-height: 1.4;
+
+    margin-top: 0;
+  }
+}

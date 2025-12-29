@@ -113,7 +113,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 100px;     /* ⬅ gives vertical centering feel */
+  min-height: 50px;     /* ⬅ gives vertical centering feel */
 }
 
 .blg p {
@@ -121,8 +121,4 @@
   font-weight: 500;
   color: #6a6a6a;
 }
-@media (max-width: 600px) {
-  .blg {
-    min-height: 200px;
-  }
-}
+

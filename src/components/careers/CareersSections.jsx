@@ -4,6 +4,10 @@ import "./CareersSections.css";
 import Swal from "sweetalert2";
 import axios from "axios";
 
+import industryIcon from "../../assets/icons/factory 1.png";
+import growthIcon from "../../assets/icons/Project Manager.png";
+import globalIcon from "../../assets/icons/Vector (6).png";
+
 const CareersSections = () => {
   const captchaRef = useRef();
   const [recaptchaValue, setRecaptchaValue] = useState(null);
@@ -221,7 +225,10 @@ const CareersSections = () => {
 
         <div className="why-grid">
           <div className="why-item">
-            <h3>Strong Industry Presence</h3>
+            <h3 className="why-title">
+              <img src={industryIcon} alt="Industry" className="why-icon-img" />
+              Strong Industry Presence
+            </h3>
             <p className="text-justify">
               With Decades Of Experience In Manufacturing Switchgear, Busbars,
               Laminations, And Transformers, We Are Trusted By Clients Across
@@ -230,7 +237,10 @@ const CareersSections = () => {
           </div>
 
           <div className="why-item">
-            <h3>Growth Opportunities</h3>
+            <h3 className="why-title">
+              <img src={growthIcon} alt="Growth" className="why-icon-img" />
+              Growth Opportunities
+            </h3>
             <p className="text-justify">
               We Offer A Clear Path For Professional Growth — Whether You're A
               Skilled Technician Or A Young Engineer, Your Journey Here Is Full
@@ -239,7 +249,10 @@ const CareersSections = () => {
           </div>
 
           <div className="why-item">
-            <h3>Global Exposure</h3>
+            <h3 className="why-title">
+              <img src={globalIcon} alt="Global" className="why-icon-img" />
+              Global Exposure
+            </h3>
             <p className="text-justify">
               Be A Part Of An Export-Driven Organization With Clients Across
               Asia, Europe, And Beyond — Experience International Standards,
@@ -257,8 +270,6 @@ const CareersSections = () => {
           <h5 className="text-center join-title">Join Our Team</h5>
 
           <form className="career-form" onSubmit={validateForm} noValidate>
-        
-
             <div className="row mb-3">
               <div className="col-md-6">
                 <label>Name :</label>
@@ -523,15 +534,15 @@ const CareersSections = () => {
             {/* ReCAPTCHA */}
             <div className="mb-3">
               <div className="recaptcha-container">
-              <ReCAPTCHA
-                ref={captchaRef}
-                // sitekey="6Lee9gkrAAAAACIG8szun_Hc6Jbn--2D_Cm79cqj"
-                sitekey="6LcxHCksAAAAADSj9E-lBu29tiaRTaFkhgIzQf9V"
-                onChange={(value) => {
-                  setRecaptchaValue(value);
-                  setErrors((prev) => ({ ...prev, recaptcha: "" }));
-                }}
-              /> 
+                <ReCAPTCHA
+                  ref={captchaRef}
+                  // sitekey="6Lee9gkrAAAAACIG8szun_Hc6Jbn--2D_Cm79cqj"
+                  sitekey="6LcxHCksAAAAADSj9E-lBu29tiaRTaFkhgIzQf9V"
+                  onChange={(value) => {
+                    setRecaptchaValue(value);
+                    setErrors((prev) => ({ ...prev, recaptcha: "" }));
+                  }}
+                />
               </div>
               {errors.recaptcha && (
                 <p style={{ color: "red", fontSize: "13px" }}>

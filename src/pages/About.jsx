@@ -5,15 +5,15 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import about_banner from "../../src/assets/about_img/Group 1000005626.webp";
-import about_img1 from "../../src/assets/images/Rectangle 680.webp";
+import about_banner from "../../src/assets/about_img/Group 1000005625.png";
+import about_img1 from "../../src/assets/images/Rectangle 680.jpg";
 import about_img2 from "../../src/assets/images/Rectangle 684.webp";
 import about_img3 from "../../src/assets/images/Rectangle 683.webp";
 import about_banner_mob from "../../src/assets/images/Mobile Banner/Group 1000005626.webp";
 
-import constrction_icons from "../../src/assets/about_img/constractionperson_img.png";
-import file_img from "../../src/assets/about_img/exportFile_img.png";
-import export_global from "../../src/assets/about_img/globalIMg.png";
+import constrction_icons from "../../src/assets/about_img/counter-icon-01 3.png";
+import file_img from "../../src/assets/about_img/Group (1).png";
+import export_global from "../../src/assets/about_img/Group (2).png";
 
 import CountUp from "react-countup";
 import VissionMission from "./VissionMission";

@@ -226,3 +226,51 @@
   padding-top: 10px !important;
 }
 }
+
+@media (max-width: 575px) {
+
+  /* 🔴 Remove Bootstrap extra spacing */
+  .start .mb-5 {
+    margin-bottom: 10px !important;
+  }
+
+  /* 🔴 Reduce section padding */
+  .start {
+    padding: 0px 16px !important;
+    margin-bottom: 15px;
+
+  }
+
+  /* 🔴 Tighten paragraph spacing */
+  .startwork-para-work {
+    margin-top: 10px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  /* 🔴 Reduce JOIN US gap */
+  .join {
+    margin-top: -4px;
+    margin-bottom: 12px;
+    align-items: center !important;
+    text-align: center;
+    margin-right: 22px;
+  }
+
+  /* 🔴 FIX the biggest issue */
+  .startwork-social-icons a {
+    margin-bottom: 0 !important;
+    align-items: center !important;
+  }
+
+  /* 🔴 Reduce space below social icons container */
+  .startwork-social-icons {
+    margin-bottom: 8px !important;
+  }
+
+  /* 🔴 Reduce GET QUOTE spacing */
+  .startwork-get-quote {
+    margin-top: 16px;
+    margin-left: 70px !important;
+  }
+}

@@ -435,4 +435,37 @@
     width: 60%;
     text-align: center;
   }
+  .half-inputs {
+  display: flex;
+  gap: 0px !important;
+}
+}
+@media (max-width: 576px) {
+
+  /* Reduce paragraph spacing */
+  .contact-info p {
+    margin-bottom: 8px !important;
+    line-height: 1.4;
+  }
+
+  /* Reduce spacing between info rows */
+  .info-row {
+    margin-bottom: 10px !important;
+    gap: 10px;
+  }
+
+  /* Reduce heading spacing */
+  .info-block h5 {
+    margin-bottom: 4px;
+  }
+
+  /* Tighten contact numbers spacing */
+  .info-block p {
+    margin: 2px 0 !important;
+  }
+
+  /* Reduce space above social icons */
+  .social-icons {
+    margin-top: 8px !important;
+  }
 }

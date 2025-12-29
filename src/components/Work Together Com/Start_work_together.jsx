@@ -16,58 +16,81 @@ import { Link } from "react-router-dom";
 function Start_work_together() {
   return (
     <>
-    
       <div className="container">
         <section className="start">
-        <div className="startwork-card-outer-border pt-5 ">
-          <div className="row align-items-center  flex-column flex-md-row">
-            {/* LEFT COLUMN */}
-            <div className="col-lg-6 col-md-6 col-12 mb-5 let">
-              <p className="startwork-letstart_work_heading">
-                Let’s Start Work Together
-              </p>
-              <div className="startwork-custom-line"></div>
-              <p className="startwork-para-work text-justify">
-                Please feel free to contact us.<br></br> We will get back to you
-                with 1-2 business days.
-                <br />
-                Or just call us now.
-              </p>
-            </div>
-
-            {/* RIGHT COLUMN */}
-            <div className="col-lg-6 col-md-6 col-12 mb-5">
-              <p className="startwork-letstart_work_heading join">Join Us</p>
-              <div className="startwork-social-icons d-flex justify-content-md-start justify-content-center gap-2 ">
-                <a href="#">
-                  <img src={facebookIcon} alt="Facebook" />
-                </a>
-                <a href="#">
-                  <img src={instaIcon} alt="Instagram" />
-                </a>
-                <a href="#">
-                  <img src={whatsappIcon} alt="WhatsApp" />
-                </a>
-                <a href="#">
-                  <img src={linkedinIcon} alt="LinkedIn" />
-                </a>
-                <a href="#">
-                  <img src={mailIcon} alt="Mail" />
-                </a>
+          <div className="startwork-card-outer-border">
+            <div className="row align-items-center  flex-column flex-md-row">
+              {/* LEFT COLUMN */}
+              <div className="col-lg-6 col-md-6 col-12 mb-5 let">
+                <p className="startwork-letstart_work_heading">
+                  Let’s Start Work Together
+                </p>
+                <div className="startwork-custom-line"></div>
+                <p className="startwork-para-work text-justify">
+                  Please feel free to contact us.<br></br> We will get back to
+                  you with 1-2 business days.
+                  <br />
+                  Or just call us now.
+                </p>
               </div>
 
-              <p className="startwork-get-quote pl-2">
-                <Link to="/contactus">
-                  GET A QUOTE{" "}
-                  <HiOutlineArrowNarrowRight className="startwork-get_quote_icon" />
-                </Link>
-              </p>
+              {/* RIGHT COLUMN */}
+              <div className="col-lg-6 col-md-6 col-12 mb-5">
+                <p className="startwork-letstart_work_heading join">Join Us</p>
+                <div className="startwork-social-icons d-flex justify-content-md-start justify-content-center gap-2">
+                  {/* Facebook */}
+                  <a
+                    href="https://www.facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src={facebookIcon} alt="Facebook" />
+                  </a>
+
+                  {/* Instagram */}
+                  <a
+                    href="https://www.instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src={instaIcon} alt="Instagram" />
+                  </a>
+
+                  {/* WhatsApp */}
+                  <a
+                    href="https://wa.me/919876543210"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src={whatsappIcon} alt="WhatsApp" />
+                  </a>
+
+                  {/* LinkedIn */}
+                  <a
+                    href="https://www.linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src={linkedinIcon} alt="LinkedIn" />
+                  </a>
+
+                  {/* Email */}
+                  <a href="mailto:info@yourcompany.com">
+                    <img src={mailIcon} alt="Email" />
+                  </a>
+                </div>
+
+                <p className="startwork-get-quote pl-2">
+                  <Link to="/contactus">
+                    GET A QUOTE{" "}
+                    <HiOutlineArrowNarrowRight className="startwork-get_quote_icon" />
+                  </Link>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
         </section>
       </div>
-      
     </>
   );
 }

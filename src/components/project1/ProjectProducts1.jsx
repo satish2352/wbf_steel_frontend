@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import StatsSection from "../../components/home/StatsSection";
 
-
 function ProjectProducts1() {
   const navigate = useNavigate();
 
@@ -53,6 +52,13 @@ function ProjectProducts1() {
 
     loadProjects();
   }, [activeCategory]);
+  useEffect(() => {
+  const seen = sessionStorage.getItem("tabsSwipeHint");
+  if (seen) return;
+
+  sessionStorage.setItem("tabsSwipeHint", "true");
+}, []);
+
 
   return (
     <>
@@ -64,7 +70,11 @@ function ProjectProducts1() {
           </h2>
 
           {/* CATEGORY TABS FROM API */}
-          <div class="tabs-scroll-wrapper">
+          <div className="tabs-scroll-wrapper">
+            <div className="swipe-hint">
+              <span className="arrow">⇆</span>
+              <span className="text">Swipe</span>
+            </div>
             <div className="product-tabs">
               {categories.map((cat) => (
                 <button
@@ -124,9 +134,7 @@ function ProjectProducts1() {
       </section>
 
       <StatsSection />
-
     </>
-    
   );
 }
 
