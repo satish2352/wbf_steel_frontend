@@ -209,6 +209,11 @@
     font-size: 14px;
     padding: 10px 20px;
   }
+
+  .project-main {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
 }
 
 .projects-section,

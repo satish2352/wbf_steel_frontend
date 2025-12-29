@@ -333,3 +333,34 @@
     justify-content: center;
   }
 }
+.get-in-touch i {
+  font-size: 0.9rem;   /* reduce arrow size */
+  padding-top: 1px;
+}
+/* ==========================================
+   MOBILE ONLY: Move "Get in Touch" downward
+   without touching other text
+========================================== */
+@media (max-width: 576px) {
+
+  /* Make left column relative */
+  .stats-box .col-lg-4 {
+    position: relative;
+  }
+
+  /* Visually move only the Get in Touch link */
+  .get-in-touch {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -240px;   /* adjust if needed */
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* Add space so link doesn't overlap next section */
+  .stats-box {
+    padding-bottom: 60px;
+  }
+}

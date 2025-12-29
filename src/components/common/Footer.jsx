@@ -72,7 +72,7 @@ function Footer() {
                 <li>
                   <a
                     href={`mailto:${socialLinks.email}`}
-                    className="text-white text-decoration-none d-flex align-items-center"
+                    className="text-white txt text-decoration-none d-flex align-items-center"
                   >
                     <i className="bi bi-envelope-fill me-2 text-warning fs-5"></i>
                     {socialLinks.email}
@@ -184,13 +184,16 @@ function Footer() {
 
         {/* ===== COPYRIGHT ===== */}
         <div className="footer-bottom text-center py-3">
-          © 2025 Copyright:{" "}
+          <p>
+         © {new Date().getFullYear()} All Rights Reserved.
+
           <a
             href="https://www.sumagoinfotech.com/"
             className="fw-semibold text-white text-decoration-none"
           >
             Made With Passion by Sumago Infotech
           </a>
+          </p>
         </div>
       </footer>
     </>

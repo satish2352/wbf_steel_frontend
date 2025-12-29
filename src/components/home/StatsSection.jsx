@@ -3,7 +3,7 @@ import "./StatsSection.css";
 import peopleIcon from "../../assets/icons/streamline-ultimate_human-resources-search-employees-bold (1).png";
 import clipboardIcon from "../../assets/icons/Vector (5).png";
 import globeIcon from "../../assets/icons/mingcute_earth-2-line.png";
-
+import { Link } from "react-router-dom";
 
 function StatsSection() {
   const [stats, setStats] = useState({
@@ -72,9 +72,9 @@ function StatsSection() {
             <div className="col-lg-4 col-md-12 text-lg-start text-center mb-4 mb-lg-0">
               <h2 className="stats-title">WBF Steel</h2>
               <p className="stats-subtitle">Detailing in Numbers</p>
-              <a href="#" className="get-in-touch">
+              <Link to="/ContactUs" className="get-in-touch">
                 Get in Touch <i className="bi bi-box-arrow-up-right"></i>
-              </a>
+              </Link>
             </div>
 
             {/* RIGHT STATS */}
@@ -84,8 +84,14 @@ function StatsSection() {
                 <div className="stats-row">
                   <div className="stat-item">
                     <div className="stat-header">
-                     <img src={peopleIcon} alt="Experts" className="stats-icon" />
-                      <h3>{stats.experts} <span>+</span></h3>
+                      <img
+                        src={peopleIcon}
+                        alt="Experts"
+                        className="stats-icon"
+                      />
+                      <h3>
+                        {stats.experts} <span>+</span>
+                      </h3>
                     </div>
                     <p>EXPERT EMPLOYED</p>
                   </div>
@@ -94,8 +100,14 @@ function StatsSection() {
 
                   <div className="stat-item">
                     <div className="stat-header">
-                        <img src={clipboardIcon} alt="Platforms" className="stats-icon" />
-                      <h3>{stats.platforms} <span>+</span></h3>
+                      <img
+                        src={clipboardIcon}
+                        alt="Platforms"
+                        className="stats-icon"
+                      />
+                      <h3>
+                        {stats.platforms} <span>+</span>
+                      </h3>
                     </div>
                     <p>WORK PLATFORMS</p>
                   </div>
@@ -105,8 +117,14 @@ function StatsSection() {
                 <div className="stats-row single">
                   <div className="stat-item">
                     <div className="stat-header">
-                        <img src={globeIcon} alt="Clients" className="stats-icon" />
-                      <h3>{stats.clients} <span>+</span></h3>
+                      <img
+                        src={globeIcon}
+                        alt="Clients"
+                        className="stats-icon"
+                      />
+                      <h3>
+                        {stats.clients} <span>+</span>
+                      </h3>
                     </div>
                     <p>CLIENTS</p>
                   </div>

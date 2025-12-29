@@ -22,7 +22,7 @@ function Start_work_together() {
         <div className="startwork-card-outer-border pt-5 ">
           <div className="row align-items-center  flex-column flex-md-row">
             {/* LEFT COLUMN */}
-            <div className="col-lg-6 col-md-6 col-12 mb-5">
+            <div className="col-lg-6 col-md-6 col-12 mb-5 let">
               <p className="startwork-letstart_work_heading">
                 Let’s Start Work Together
               </p>

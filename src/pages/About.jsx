@@ -149,7 +149,7 @@ function About() {
               </Col>
 
               <Col lg={4} md={4} sm={12}>
-                <div className="engineer-box mb-5 mt-2">
+                <div className="engineer-box mb-5 mt-0">
                   <div className="icon">
                     <img
                       src={constrction_icons}

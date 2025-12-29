@@ -212,6 +212,16 @@
   .main-navbar .nav-link {
     font-size: 16px;
   }
+  .navbar-toggler
+      {
+        border: none !important;
+    outline: none !important;
+  }
+
+  .navbar-toggler-icon {
+       border: none !important;
+    outline: none !important;
+  }
 }
 
 
@@ -246,7 +256,7 @@
  
   .navbar-mobile-logo {
     display: block !important;
-    height: 55px !important;
+    height: 40px !important;
     object-fit: contain;
   }
 
@@ -269,14 +279,16 @@
   
   .navbar-toggler {
     display: block !important;
-    border: none;
+    border: none !important;
     background: transparent;
-    outline: none;
+    outline: none !important;
     margin-left: auto;
   }
 
   .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    border: none !important;
+    outline: none !important;
   }
 
   .navbar-collapse {
@@ -438,5 +450,39 @@
   /* Reduce icon size so it fits nicely */
   .top-infobar i {
     font-size: 18px !important;
+  }
+
+     .navbar-toggler
+      {
+        border: none !important;
+    outline: none !important;
+  }
+
+  .navbar-toggler-icon {
+       border: none !important;
+    outline: none !important;
+  }
+
+  
+}
+/* =========================
+   REMOVE TOGGLER BORDER (MOBILE)
+   ========================= */
+@media (max-width: 768px) {
+  .navbar-toggler,
+  .navbar-toggler:focus,
+  .navbar-toggler:active,
+  .navbar-toggler:focus-visible {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  .navbar-toggler-icon {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
   }
 }

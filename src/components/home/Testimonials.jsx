@@ -93,16 +93,27 @@ const Testimonials = () => {
               {testimonials.map((item, index) => (
                 <SwiperSlide key={index}>
                   <div className="testimonial-card">
-                    <h3>{safeText(item.name, "No Name")}</h3>
+                    <div className="testimonial-header">
+                      {item.img && (
+                        <img
+                          src={item.img}
+                          alt={item.name}
+                          className="testimonial-img"
+                        />
+                      )}
+                      <h3>{safeText(item.name, "No Name")}</h3>
+                    </div>
+
                     <p className="text-justify">
                       {item.review.length > 160
                         ? item.review.slice(0, 160) + "..."
                         : item.review}
                       {item.review.length > 160 && (
                         <span
-                          className="text-warning fw-semibold read-more"
+                          className="text-warning read-more"
                           onClick={() => handleReadMore(item)}
                         >
+                          {" "}
                           Read more
                         </span>
                       )}

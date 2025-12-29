@@ -257,7 +257,7 @@ const CareersSections = () => {
           <h5 className="text-center join-title">Join Our Team</h5>
 
           <form className="career-form" onSubmit={validateForm} noValidate>
-            <h6 className="form-heading">UPLOAD YOUR CV</h6>
+        
 
             <div className="row mb-3">
               <div className="col-md-6">

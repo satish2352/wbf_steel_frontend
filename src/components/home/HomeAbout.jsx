@@ -17,7 +17,7 @@ const HomeAbout = () => {
             answers all customers' questions.
           </p>
           <Link
-            to="/AboutUs"
+            to="/ContactUs"
             className="learn-more"
             onClick={(e) => {
               e.currentTarget.classList.add("clicked");

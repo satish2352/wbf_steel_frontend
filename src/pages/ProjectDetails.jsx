@@ -65,7 +65,7 @@ function ProjectDetails() {
             // If only ONE product, center it
             <div className="col-lg-4 col-md-6 col-sm-12 text-center">
               <img src={productdata[0].product_img} className="img-fluid img_product" />
-              <p className="product_name mt-3">{productdata[0].text}</p>
+              <p className="product_name semibold mt-3">{productdata[0].text}</p>
             </div>
           ) : (
             // Otherwise, show all normally

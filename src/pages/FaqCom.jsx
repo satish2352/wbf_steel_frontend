@@ -5,25 +5,32 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 function FaqCom() {
-  const [name, setname] = useState("");
-  const [email, setemail] = useState("");
-  const [subject, setsubject] = useState("");
-  const [message, setmessage] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
 
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false); // Loading state
+  const [success, setSuccess] = useState(false); // Success state
 
   const handleNameChange = (e) => {
     const value = e.target.value;
-    setname(value);
-    setErrors((prev) => ({
-      ...prev,
-      name: value.trim() ? "" : "Please enter Name",
-    }));
+    setName(value);
+
+    if (!value.trim()) {
+      setErrors((prev) => ({ ...prev, name: "Please enter Name" }));
+    } else if (/\d/.test(value)) {
+      // checks if any number exists
+      setErrors((prev) => ({ ...prev, name: "Name cannot contain numbers" }));
+    } else {
+      setErrors((prev) => ({ ...prev, name: "" }));
+    }
   };
 
   const handleEmailChange = (e) => {
     const value = e.target.value;
-    setemail(value);
+    setEmail(value);
 
     if (!value.trim()) {
       setErrors((prev) => ({ ...prev, email: "Please enter email" }));
@@ -39,7 +46,7 @@ function FaqCom() {
 
   const handleSubjectChange = (e) => {
     const value = e.target.value;
-    setsubject(value);
+    setSubject(value);
     setErrors((prev) => ({
       ...prev,
       subject: value.trim() ? "" : "Please enter subject",
@@ -49,7 +56,7 @@ function FaqCom() {
   const handleMessageLive = (e) => {
     const value = e.target.value;
     if (value.length <= 200) {
-      setmessage(value);
+      setMessage(value);
       setErrors((prev) => ({
         ...prev,
         message: value.trim() ? "" : "Please enter message",
@@ -64,7 +71,11 @@ function FaqCom() {
     if (!name.trim()) {
       err.name = "Please enter Name";
       valid = false;
+    } else if (/\d/.test(name)) {
+      err.name = "Name cannot contain numbers";
+      valid = false;
     }
+
     if (!email.trim()) {
       err.email = "Please enter email";
       valid = false;
@@ -87,8 +98,34 @@ function FaqCom() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      console.log({ name, email, subject, message });
+
+    if (!validateForm()) {
+      console.log("❌ Validation failed");
+      return;
+    }
+
+    setLoading(true);
+    setSuccess(false);
+
+    try {
+      // Simulate API call
+      console.log("✅ Form submitted:", { name, email, subject, message });
+      setSuccess(true);
+
+      // Clear form
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
+      setErrors({});
+
+      setTimeout(() => {
+        setSuccess(false);
+      }, 3000);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -98,9 +135,13 @@ function FaqCom() {
         <Container>
           <Row>
             {/* LEFT SIDE (FAQ) */}
-            <Col lg={7} md={12} sm={12} className="mt-5 left_faq_col">
+            <Col
+              lg={7}
+              md={12}
+              sm={12}
+              className="md-mt-0 lg-mt-5 left_faq_col"
+            >
               <h3 className="title">FAQ of customer</h3>
-
               <p className="parafaq mb-5 text-justify">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
@@ -124,13 +165,12 @@ function FaqCom() {
               {/* FAQ ACCORDION */}
               <div id="accordionExample">
                 <button
-                  className="btn btn_custom  "
+                  className="btn btn_custom"
                   data-toggle="collapse"
                   data-target="#collapseOne"
                 >
                   Is there free parking?
                 </button>
-
                 <div className="collapse show" id="collapseOne">
                   <div className="card card-body card_data text-justify">
                     No, cell phones aren’t permitted on the ropes and trampoline
@@ -145,7 +185,6 @@ function FaqCom() {
                 >
                   Can I bring my cell phone on the trampoline or ropes course?
                 </button>
-
                 <div className="collapse" id="collapseTwo">
                   <div className="card card-body card_data text-justify">
                     No, cell phones aren’t permitted on the ropes and trampoline
@@ -154,28 +193,25 @@ function FaqCom() {
                 </div>
 
                 <button
-                  className="btn btn_custom collapsed "
+                  className="btn btn_custom collapsed"
                   data-toggle="collapse"
                   data-target="#collapsethree"
                 >
                   Do you have a nursing station?
                 </button>
-
                 <div className="collapse" id="collapsethree">
                   <div className="card card-body card_data text-justify">
                     No, cell phones aren’t permitted...
                   </div>
                 </div>
 
-              
                 <button
-                  className="btn btn_custom collapsed "
+                  className="btn btn_custom collapsed"
                   data-toggle="collapse"
                   data-target="#collapsefour"
                 >
                   When should I arrive before my scheduled attraction?
                 </button>
-
                 <div className="collapse" id="collapsefour">
                   <div className="card card-body card_data text-justify">
                     Comfortable athletic clothing...
@@ -189,9 +225,9 @@ function FaqCom() {
               <div className="card card_faq custom-triangle">
                 <div className="card-body mt-2 mb-2">
                   <h3 className="title_req">Request A Quote</h3>
-                  <p className="parafaq mb-5">
-                    Fill all information details to consult with us to <br></br>get
-                    services from us
+                  <p className="parafaq mb-4">
+                    Fill all information details to consult with us to <br />
+                    get services from us
                   </p>
 
                   <Container className="Formstart">
@@ -205,7 +241,7 @@ function FaqCom() {
                           onChange={handleNameChange}
                         />
                         {errors.name && (
-                          <span className="text-danger ">{errors.name}</span>
+                          <span className="text-danger">{errors.name}</span>
                         )}
                       </div>
 
@@ -249,10 +285,20 @@ function FaqCom() {
                       </div>
 
                       <div className="text-center">
-                        <button type="submit" className="send_btn">
-                          SEND
+                        <button
+                          type="submit"
+                          className="send_btn"
+                          disabled={loading}
+                        >
+                          {loading ? "Submitting..." : "SEND"}
                         </button>
                       </div>
+
+                      {success && (
+                        <p className="text-success mt-4 ">
+                          ✅ Form submitted successfully!
+                        </p>
+                      )}
                     </form>
                   </Container>
                 </div>

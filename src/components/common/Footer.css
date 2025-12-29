@@ -483,4 +483,187 @@
     font-size: 0.95rem;
   }
 }
+@media (max-width: 576px) {
 
+  /* CONTACT COMPANY – clean left start */
+  .footer-contact {
+    padding-left: 0 !important;
+    margin: 0 auto !important;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    max-width: 350px; /* keeps content aligned neatly */
+    font-weight: 400;
+  }
+
+  .footer-contact li {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    gap: 10px !important;
+    flex-wrap: nowrap;
+     font-weight: 400 !important;
+  }
+
+  /* Icon stays fixed */
+  .footer-contact li i {
+    flex-shrink: 0;
+    margin-top: 2px;
+    font-size: 1rem;
+    font-weight: 400 !important;
+  }
+
+  /* Text block aligns perfectly */
+  .footer-contact li a,
+  .phone-numbers {
+    display: block;
+    text-align: left !important;
+    line-height: 1.4;
+  }
+
+  /* Remove menu & title offset */
+  .men {
+    margin-left: 0 !important;
+  }
+
+  .footer-menu {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    list-style: none !important;
+  }
+
+  .footer-menu li {
+    margin-left: 0 !important;
+  }
+   .footer-title {
+    font-weight: 700;
+   }
+}
+
+/* === KEEP PHONE NUMBERS IN ONE LINE (MOBILE) === */
+@media (max-width: 576px) {
+  .footer-phone-stack {
+    align-items: flex-start;
+    text-align: left !important;
+    margin-left: 35px;
+  }
+
+  .phone-numbers {
+    display: flex !important;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap; /* 🚀 KEY FIX */
+    flex-wrap: nowrap;   /* 🚀 PREVENT 2ND ROW */
+  }
+
+  .phone-numbers a {
+    white-space: nowrap;
+    font-size: 1rem;
+  }
+   
+  .men {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 26px;
+  }
+
+  .footer-title {
+     font-size: 22px;
+  }
+}
+
+/* =====================================
+   MOBILE: CENTER CONTACT COMPANY LIKE MENU
+   ===================================== */
+@media (max-width: 576px) {
+
+  /* Center the CONTACT COMPANY block itself */
+  .footer-contact {
+    align-items: flex-start !important; /* keep icon-text alignment */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 30px !important;      /* 👈 visual centering like MENU */
+  }
+
+  /* Ensure rows don’t stretch oddly */
+  .footer-contact li {
+    width: auto !important;
+    max-width: 100%;
+  }
+}
+/* =====================================
+   MOBILE FIX: CONTACT COMPANY ALIGNMENT
+   ===================================== */
+@media (max-width: 576px) {
+
+  /* Contact list wrapper */
+  .footer-contact {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  /* Every contact row (call, email, address, website) */
+  .footer-contact li {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    width: 100%;
+    gap: 10px !important;
+    text-align: left !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Icons */
+  .footer-contact li i {
+    flex-shrink: 0;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    margin-top: 2px;
+  }
+
+  /* Text block (email / address / website / phone) */
+  .footer-contact li a,
+  .footer-contact li span,
+  .phone-numbers {
+    display: block !important;
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: left !important;
+    word-break: break-word;
+  }
+
+  /* Phone numbers stay single line */
+  .phone-numbers {
+    display: flex !important;
+    gap: 6px;
+    white-space: nowrap;
+  }
+
+  /* REMOVE old left hacks */
+  .footer-phone-stack {
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 576px) {
+
+  /* Center the CONTACT COMPANY block itself */
+  .footer-contact {
+    align-items: flex-start !important; /* keep icon-text alignment */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 30px !important;      /* 👈 visual centering like MENU */
+  }
+
+  /* Ensure rows don’t stretch oddly */
+  .footer-contact li {
+    width: auto !important;
+    max-width: 100%;
+  }
+}

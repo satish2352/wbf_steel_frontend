@@ -52,6 +52,8 @@
   line-height: 1.3;
 }
 
+
+
 .read {
   font-size: 17px;
   font-weight: 600;
@@ -104,4 +106,23 @@
 
 .read:hover .arrow {
   color: #0f4c8a !important; /* blue arrow */
+}
+.blg {
+  grid-column: 1 / -1;   /* ⬅ span full grid width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100px;     /* ⬅ gives vertical centering feel */
+}
+
+.blg p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #6a6a6a;
+}
+@media (max-width: 600px) {
+  .blg {
+    min-height: 200px;
+  }
 }

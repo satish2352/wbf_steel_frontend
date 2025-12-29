@@ -127,7 +127,9 @@ function Navbar() {
 
               <div className="info-item d-flex align-items-center me-4">
                 <a
-                  href="#"
+                  href="https://www.google.com/maps?q=1309+Coffeen+Ave+%231200+Sheridan+WY+82801+USA"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="d-flex align-items-center text-decoration-none text-dark"
                 >
                   <i className="bi bi-geo-alt-fill text-warning fs-4 me-2"></i>
@@ -147,7 +149,10 @@ function Navbar() {
                 <a href={socialLinks.instagram} className="me-2">
                   <img src={instaIcon} alt="Instagram" />
                 </a>
-                <a href={`https://wa.me/${socialLinks.whatsapp}`} className="me-2">
+                <a
+                  href={`https://wa.me/${socialLinks.whatsapp}`}
+                  className="me-2"
+                >
                   <img src={whatsappIcon} alt="WhatsApp" />
                 </a>
                 <a href={socialLinks.linkedin} className="me-2">

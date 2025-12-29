@@ -59,57 +59,34 @@ const ContactSection = () => {
     return false;
   };
 
-  // Handle Change with your live validations EXACT
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    let val = value;
+ const handleChange = (e) => {
+  const { name, value } = e.target;
+  let val = value;
 
-    if (name === "name" && !/^[a-zA-Z\s]*$/.test(val)) return;
+  if (name === "name" && !/^[a-zA-Z\s]*$/.test(val)) return;
 
-    if (name === "mobile") {
-      val = val.replace(/[^0-9+]/g, "");
-      if (val.includes("+") && val.indexOf("+") !== 0) return;
+  if (name === "mobile") {
+    val = val.replace(/[^0-9+]/g, "");
+    if (val.includes("+") && val.indexOf("+") !== 0) return;
+  }
+
+  // ⭐ STOP message typing after 250 chars
+  if (name === "message" && val.length > 250) return;
+
+  setFormData({ ...formData, [name]: val });
+
+  setErrors((prev) => {
+    const updated = { ...prev };
+
+    if (name === "message") {
+      if (!val.trim()) updated.message = "Message is required.";
+      else updated.message = "";
     }
 
-    setFormData({ ...formData, [name]: val });
+    return updated;
+  });
+};
 
-    // YOUR EXACT VALIDATIONS (AS-IT-IS)
-    setErrors((prev) => {
-      const updated = { ...prev };
-
-      if (name === "name") {
-        updated.name = val.trim() ? "" : "Name is required.";
-      }
-
-      if (name === "email") {
-        if (!val.trim()) updated.email = "Email is required.";
-        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val))
-          updated.email = "Enter a valid email address.";
-        else updated.email = "";
-      }
-
-      if (name === "mobile") {
-        const raw = val.replace(/^\+91|\+1/, "");
-        if (!val.trim()) updated.mobile = "Mobile number is required.";
-        else if (!/^[0-9]{10}$/.test(raw))
-          updated.mobile = "Mobile number must be 10 digits.";
-        else updated.mobile = "";
-      }
-
-      if (name === "subject") {
-        updated.subject = val.trim() ? "" : "Subject is required.";
-      }
-
-      if (name === "message") {
-        if (!val.trim()) updated.message = "Message is required.";
-        else if (val.length > 250)
-          updated.message = "Message cannot exceed 250 characters.";
-        else updated.message = "";
-      }
-
-      return updated;
-    });
-  };
 
   // SUBMIT FORM
   const handleSubmit = async (e) => {
@@ -300,11 +277,11 @@ const ContactSection = () => {
                 </h3>
                 <p className="text-justify">
                   With decades of experience in manufacturing switchgear,
-                  busbars, laminations, and transformers, we are trusted by
-                  clients across industries and continents.
+                  busbars, <br></br> laminations, and transformers, we are trusted by
+                  clients across<br></br> industries and continents.
                   <br />
                   Have questions about our products or services? Reach out to us
-                  and we’ll get back to you with the right solution.
+                  and <br></br>we’ll get back to you with the right solution.
                 </p>
 
                 <div className="info-row d-flex flex-wrap justify-content-between">
@@ -315,7 +292,7 @@ const ContactSection = () => {
                     </p>
                   </div>
 
-                  <div className="info-block mb-3">
+                  <div className="info-block mb-3 inf">
                     <h5>Email</h5>
                     {socialLinks.email && (
                       <p>

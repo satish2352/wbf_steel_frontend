@@ -44,7 +44,7 @@ const BlogCard = () => {
           </div>
         ))
       ) : (
-       <div className="d-flex justify-content-center w-100">
+       <div className="blg">
         <p>No blogs available at the moment.</p>
       </div>
 

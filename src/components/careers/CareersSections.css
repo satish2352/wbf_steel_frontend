@@ -2,7 +2,7 @@
 
 /* Globals for this file */
 .cnt {
-  margin-left: 1190px !important;
+  
   color: #777;
   font-size: 14px !important;
 }
@@ -155,7 +155,7 @@
 
 /* Submit button */
 .sub {
-  background-color: #d32f2f;
+  background-color: #2e7d32;
   color: #fff;
   padding: 10px 26px;
   font-size: 15px;
@@ -164,7 +164,7 @@
   cursor: pointer;
   transition: 0.25s ease;
 }
-.sub:hover { background-color: #b71c1c; }
+.sub:hover { background-color:#2e7d32; }
 
 /* Recaptcha + submit row */
 .recaptcha-submit-row {
@@ -211,7 +211,7 @@
 @media (max-width: 992px) {
   .career-section {
     padding: 25px 20px;
-    margin-right: 80px;
+    
   }
 
   .career-box {
@@ -298,11 +298,10 @@
   .career-section {
     padding: 16px;
     margin: 0;
-    margin-top: -50px !important;
     margin-bottom: 20px;
   }
 
-  .career-box { padding: 16px; margin: -2px !important; }
+  .career-box { padding: 16px; }
 
   .job-title { font-size: 22px; }
   .join-title { font-size: 16px; }
@@ -378,5 +377,226 @@
   .recaptcha-container {
     transform: scale(0.90);   /* 70% size */
     
+  }
+}
+/* Fix message counter */
+.cnt {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+  color: #777;
+  margin: 4px 0 0 0;
+}
+
+/* Center form correctly */
+.career-box {
+  max-width: 950px;
+  margin: 20px auto !important;
+  padding: 24px;
+}
+
+/* Mobile spacing */
+@media (max-width: 576px) {
+  .career-box {
+    padding: 16px;
+  }
+
+  .d-flex.gap-2 {
+    flex-direction: column;
+  }
+
+  .choose-btn,
+  .sub {
+    width: 100%;
+  }
+
+  .recaptcha-container {
+    transform: scale(0.85);
+    transform-origin: center;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 576px) {
+  .d-flex.gap-2 {
+    flex-direction: column;
+  }
+
+  .choose-btn {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .career-form .row {
+    flex-direction: row !important;
+  }
+}
+/* =========================
+   INPUT SIZE REDUCTION (SAFE)
+   ========================= */
+
+/* Reduce input + textarea height */
+.career-form input,
+.career-form textarea,
+.career-form .form-control {
+  padding: 7px 10px;        /* was 10px */
+  font-size: 13px;          /* was 14px */
+  min-height: 36px;         /* keeps bootstrap happy */
+}
+
+/* Textarea slightly smaller */
+.career-form textarea {
+  min-height: 110px;        /* was 130px */
+}
+
+/* File input display box */
+.file-area {
+  height: 36px;             /* was 38–40px */
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+/* Labels slightly compact */
+.career-form label {
+  font-size: 13px;          /* was 14px */
+  margin-bottom: 4px;
+}
+
+/* Example text smaller */
+.example-text {
+  font-size: 10.5px;
+}
+@media (max-width: 576px) {
+  .career-form input,
+  .career-form textarea,
+  .career-form .form-control {
+    padding: 6px 8px;
+    font-size: 12.5px;
+  }
+
+  .file-area {
+    height: 34px;
+  }
+}
+/* =========================
+   PREMIUM SLIM FORM LOOK
+   ========================= */
+
+/* 1️⃣ Reduce overall card width */
+.career-box {
+  max-width: 900px;   /* tighter than before */
+}
+
+/* 2️⃣ Center & constrain actual form */
+.career-form {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* 3️⃣ Slim inputs horizontally */
+.career-form input,
+.career-form textarea,
+.career-form .form-control {
+  padding: 8px 10px;        /* less horizontal padding */
+  font-size: 14px;
+}
+
+/* 4️⃣ File upload area slim */
+.file-area {
+  height: 38px;
+  padding: 6px 9px;
+  font-size: 14px;
+}
+
+/* 5️⃣ Buttons not over-wide */
+.choose-btn {
+  padding: 0 22px;
+  font-size: 12px;
+}
+
+.sub {
+  padding: 9px 22px;
+  font-size: 16px;
+}
+
+/* 6️⃣ Reduce visual gap between fields */
+.career-form .mb-3 {
+  margin-bottom: 14px !important;
+}
+
+/* =========================
+   MOBILE — keep full width
+   ========================= */
+@media (max-width: 576px) {
+  .career-box {
+    max-width: 100%;
+  }
+
+  .career-form {
+    max-width: 100%;
+  }
+
+  .career-form input,
+  .career-form textarea,
+  .career-form .form-control {
+    padding: 6px 8px;
+    font-size: 12.5px;
+  }
+}
+/* =========================
+   UNIFIED SLIM WIDTH (FINAL)
+   ========================= */
+
+/* 1️⃣ Control container width ONLY inside career section */
+.career-section .container {
+  max-width: 840px;   /* same visual width as form */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* 2️⃣ Card aligned perfectly with container */
+.career-box {
+  max-width: 840px;
+  margin: 20px auto !important;
+}
+
+/* 3️⃣ Inner form slightly tighter */
+.career-form {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* 4️⃣ Slim input fields */
+.career-form input,
+.career-form textarea,
+.career-form .form-control {
+  padding: 7px 9px;
+  font-size: 13px;
+}
+
+/* 5️⃣ File input */
+.file-area {
+  height: 36px;
+  padding: 6px 9px;
+  font-size: 13px;
+}
+
+/* =========================
+   MOBILE — full width
+   ========================= */
+@media (max-width: 576px) {
+  .career-section .container,
+  .career-box,
+  .career-form {
+    max-width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .career-form input,
+  .career-form textarea,
+  .career-form .form-control {
+    padding: 6px 8px;
+    font-size: 12.5px;
   }
 }

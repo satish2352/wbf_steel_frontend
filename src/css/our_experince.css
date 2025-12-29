@@ -10,13 +10,13 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 30px;
-  color: #055597;
+  color: #000000;
 }
 
 /* Card Style */
 .ourExp-card {
   height: 160px;
-  border-radius: 5px;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;

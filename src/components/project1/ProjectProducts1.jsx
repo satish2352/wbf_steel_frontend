@@ -2,6 +2,8 @@ import "./ProjectProducts1.css";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import StatsSection from "../../components/home/StatsSection";
+
 
 function ProjectProducts1() {
   const navigate = useNavigate();
@@ -120,7 +122,11 @@ function ProjectProducts1() {
           )}
         </div>
       </section>
+
+      <StatsSection />
+
     </>
+    
   );
 }
 

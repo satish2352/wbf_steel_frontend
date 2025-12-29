@@ -160,7 +160,7 @@
 }
 
 .form-group {
-  margin-bottom: 30px !important;
+  margin-bottom: 15px !important;
   
 }
 
@@ -348,8 +348,55 @@
 @media (max-width: 576px) {
   .custom-input {
     width: 90% !important;     /* increase width */
-    margin: 0 auto !important; /* keep centered */
-    padding: 18px !important;
+    margin-top: 15px !important; /* keep centered */
+    padding: 10px !important;
   }
+   .left_faq_col {
+    margin-top: 0 !important;
+    padding-top: 10px !important;
+    margin-bottom: 0 !important;
+   }
+   
+   .parafaq {
+    padding-top: 5px !important;
+   }
+ 
+   .backimge {
+    padding: 20px 0 !important;
+   }
+   .text-danger {
+    margin-left: 20px;
+   }
+   .form-group {
+    margin-bottom: 5px !important;
+}
 }
 
+/* ===== FAQ ARROW ICON ===== */
+.btn_custom {
+  position: relative;
+  padding-right: 45px !important; /* space for arrow */
+}
+
+/* Arrow icon */
+.btn_custom::after {
+  content: "▾";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  font-size: 18px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  color: inherit;
+}
+
+/* Rotate arrow when expanded */
+.btn_custom:not(.collapsed)::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.text-success {
+  
+  text-align: center !important;
+}
