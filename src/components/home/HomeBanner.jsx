@@ -1,29 +1,54 @@
 // HomeBanner.jsx
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./HomeBanner.css";
 
-import desktopBanner from "../../assets/images/Blog/Group 1000005614[1].png";
-import mobileBanner from "../../assets/images/Blog/Group 1000005666.webp";
-
 function HomeBanner() {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 576);
+  const [homeSlider, setHomeSlider] = useState([]);
+
+  const baseURL = axios.defaults.baseURL || "";
+
   useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 576);
+    };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const bannerImage = windowWidth <= 576 ? mobileBanner : desktopBanner;
+  useEffect(() => {
+    axios
+      .get("/homeslider/get-homeslider")
+      .then((response) => {
+        setHomeSlider(response.data.responseData || []);
+      })
+      .catch((error) => {
+        console.error("Error fetching home banner:", error);
+      });
+  }, []);
+
+  const selectedBanner = homeSlider.find(
+    (slide) =>
+      slide.isActive &&
+      (isMobile ? slide.view === "Mobile" : slide.view === "Desktop")
+  );
+
+  const bannerImage = selectedBanner?.img
+    ? selectedBanner.img.startsWith("http")
+      ? selectedBanner.img
+      : `${baseURL.replace(/\/$/, "")}/${selectedBanner.img.replace(/^\//, "")}`
+    : "";
 
   return (
-    <section
-      className="home-banner"
-      style={{
-        backgroundImage: `url(${bannerImage})`,
-      }}
-    >
-      {/* You can add content here */}
+    <section className="home-banner">
+      {bannerImage && (
+        <img
+          src={bannerImage}
+          alt="Home Banner"
+          className="home-banner-img"
+        />
+      )}
     </section>
   );
 }
