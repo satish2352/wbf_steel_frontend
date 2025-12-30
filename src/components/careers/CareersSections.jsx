@@ -545,7 +545,7 @@ const CareersSections = () => {
                 />
               </div>
               {errors.recaptcha && (
-                <p style={{ color: "red", fontSize: "13px" }}>
+                <p className="recapp" style={{ color: "red", fontSize: "13px" }}>
                   {errors.recaptcha}
                 </p>
               )}

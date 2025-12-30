@@ -193,3 +193,14 @@
     padding: 20px !important;
   }
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .team-cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+.team-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}

@@ -354,13 +354,13 @@
 
 /* Mobile: force all sections to show IMAGE first, then TEXT */
 @media (max-width: 767px) {
-  .row {
+     .about-page .row {
     display: flex;
     flex-direction: column;
   }
 
   /* Reverse 2nd row to make image come first */
-  .row:nth-child(2) {
+     .about-page .row:nth-child(2) {
     flex-direction: column-reverse;
   }
 }

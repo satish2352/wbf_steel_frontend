@@ -18,12 +18,10 @@ import export_global from "../../src/assets/about_img/Group (2).png";
 import CountUp from "react-countup";
 import VissionMission from "./VissionMission";
 import FaqCom from "./FaqCom";
-import Testimonials from "./Testimonials";
+import Testimonials from "../components/home/Testimonials";
 import Service_Faqs from "../components/service_faqs/Service_Faqs";
 import OurTeam from "../components/contactus/OurTeam";
-// import VissionMission from '../Vision_mission/VissionMission';
-// import FaqCom from '../FAQ/FaqCom';
-// import Testimonials from '../testimonials/Testimonials';
+
 
 function About() {
   const compoverview = [
@@ -39,6 +37,7 @@ function About() {
 
   return (
     <>
+         <div className="about-page">
       <section className="par">
         {/* <img
           src={about_banner}
@@ -222,6 +221,7 @@ function About() {
       <OurTeam />
       <FaqCom />
       <Testimonials />
+      </div>
     </>
   );
 }

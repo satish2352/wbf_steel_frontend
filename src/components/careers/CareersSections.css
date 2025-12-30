@@ -1,6 +1,4 @@
 
-
-/* Globals for this file */
 .cnt {
   
   color: #777;
@@ -273,7 +271,7 @@
   }
 
   .why-grid {
-    gap: 5px;
+    gap: 15px;
   }
 
   .why-item p,
@@ -370,6 +368,9 @@
   .recaptcha-container {
     transform: scale(0.90);   /* 80% size */
     transform-origin: left top;
+  }
+  .example-text {
+    font-size: 0.1 !important;
   }
 }
 
@@ -680,5 +681,57 @@
 
   .why-title {
     justify-content: center;
+  }
+}
+/* =========================
+   MOBILE INPUT WIDTH FIX
+   ========================= */
+@media (max-width: 576px) {
+
+  .choose-btn {
+    padding: 5px;
+  }
+
+  /* Reduce outer card padding */
+  .career-box {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  /* Let form span full width */
+  .career-form {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Make inputs feel wider */
+  .career-form input,
+  .career-form textarea,
+  .career-form .form-control,
+  .file-area {
+    width: 100%;
+    padding: 10px 12px;   /* horizontal padding ↑ */
+    font-size: 14px;
+  }
+
+  /* Labels aligned better */
+  .career-form label {
+    padding-left: 2px;
+    font-size: 14px;
+  }
+
+  /* Remove Bootstrap row squeeze */
+  .career-form .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .career-form .col,
+  .career-form [class*="col-"] {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  .example-text {
+    font-size: 10.5px;
   }
 }

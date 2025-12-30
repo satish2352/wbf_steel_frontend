@@ -152,7 +152,7 @@
   background-color: #fff;
   color: #fff;
 }
-
+ 
 
 
 /* RESPONSIVE */
@@ -344,6 +344,10 @@
   align-items: center;
 }
 
+.recappp {
+  padding-top: 12px;
+}
+
 .char-count {
   font-size: 12px;
   color: #666;
@@ -353,7 +357,7 @@
 
 .char-count {
   font-size: 12px;
-  margin-top:-10px;
+  
   text-align: left;
   color: #666;
 }
@@ -375,8 +379,8 @@
     transform-origin: left top;
   }
   .contact-section {
-    padding: 10px 2px 0 !important;
-    margin-bottom: -15px !important;
+    padding: 20px 0 0 !important;
+    margin-bottom: -20px !important;
   }
   
 }
@@ -442,6 +446,10 @@
 }
 @media (max-width: 576px) {
 
+    .contact-info h3 {
+      margin-top: -15px !important;
+    }
+
   /* Reduce paragraph spacing */
   .contact-info p {
     margin-bottom: 8px !important;
@@ -468,4 +476,160 @@
   .social-icons {
     margin-top: 8px !important;
   }
+
+  .char-count {
+    text-align:right;
+  }
+
+  .recapp {
+    text-align: center;
+    padding-top: 4px;
+  }
 }
+/* =========================
+   MESSAGE FIELD SPACING FIX
+   ========================= */
+
+/* Remove extra bottom margin only for message textarea */
+.contact-form textarea {
+  margin-bottom: 6px; /* was 14px */
+}
+
+/* Character counter – tight spacing */
+.char-count {
+  margin-top: 2px;      /* remove negative margin */
+  margin-bottom: 4px;   /* small gap before error */
+  font-size: 12px;
+  text-align: right;
+  color: #666;
+}
+
+/* Message error spacing same as other errors */
+.error-message.msg {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+/* =========================
+   MESSAGE ERROR + COUNT ROW
+   ========================= */
+
+.msg-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+.msg-row .error-message {
+  margin: 0;
+  font-size: 12px;
+}
+
+.msg-row .char-count {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.msg-row .char-count.exceeded {
+  color: red;
+}
+
+/* Mobile fine-tuning */
+@media (max-width: 576px) {
+  .msg-row {
+    font-size: 12px;
+  }
+  .msg-row {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .recappp {
+    text-align: center;
+  }
+}
+/* ===============================
+   TABLET: RIGHT SECTION BELOW FORM
+   =============================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* Stack columns vertically */
+  .contact-wrapper {
+    flex-direction: column !important;
+  }
+
+  /* LEFT FORM - full width */
+  .contact-wrapper > .col-lg-6:first-child {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* RIGHT INFO - below form */
+  .contact-wrapper > .inf {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 30px;
+  }
+
+  /* Right section styling (clean & readable) */
+  .contact-info {
+    padding-left: 0 !important;
+    text-align: left !important;
+  }
+
+  .contact-info h3 {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 14px;
+  }
+
+  .contact-info p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    text-align: left !important;
+  }
+
+  /* Info rows still 2-column inside */
+  .info-row {
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 16px;
+  }
+
+  .info-block {
+    width: 48% !important;
+  }
+
+  .info-block h5 {
+    font-size: 17px;
+    margin-bottom: 6px;
+  }
+
+  .info-block p,
+  .info-block a {
+    font-size: 15px;
+  }
+
+  /* Social icons alignment */
+  .social-icons {
+    justify-content: flex-start !important;
+    gap: 8px;
+    margin-top: 8px !important;
+    padding-right: 170px !important;
+  }
+
+  .social-icons a {
+    width: 32px;
+    height: 32px;
+  }
+
+  .social-icons img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+

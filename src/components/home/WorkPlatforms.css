@@ -93,7 +93,7 @@
 }
 
 .work-platform-section .right-text a {
-  text-decoration: underline !important;
+  
   color: #000;
   font-weight: 400;
 }
@@ -179,7 +179,7 @@
 /* 🔵 576px (Mobile Phones) */
 @media (max-width: 576px) {
   .work-platform-section {
-    padding: 25px 5px;
+    padding: 40px 5px;
   }
 
   .work-platform-section .work-platform-box {

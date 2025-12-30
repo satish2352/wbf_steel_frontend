@@ -87,7 +87,7 @@ function Footer() {
                     target="_blank"
                   >
                     <i className="bi bi-geo-alt-fill me-2 text-warning fs-5 mt-1"></i>
-                    1309 Coffeen Ave #1200 <br /> Sheridan, WY 82801, USA
+                    1309 Coffeen Ave #1200 Sheridan, <br></br>WY 82801, USA
                   </a>
                 </li>
 

@@ -370,7 +370,11 @@
    .form-group {
     margin-bottom: 5px !important;
 }
-}
+
+  .faq_section {
+    margin-bottom: -35px !important;
+  }
+} 
 
 /* ===== FAQ ARROW ICON ===== */
 .btn_custom {

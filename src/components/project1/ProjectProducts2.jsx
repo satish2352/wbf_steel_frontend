@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./ProjectProducts2.css";
 import ExpertiseSection from "./ExpertiseSection";
+import ProjectBanner from "../project1/ProjectBanner";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
@@ -63,6 +64,7 @@ function ProjectProducts2() {
 
   return (
     <>
+     <ProjectBanner />
       <section className="project-products">
         <div className="container text-center">
           <h2 className="product-title mt-3">Built to Power Your Product</h2>

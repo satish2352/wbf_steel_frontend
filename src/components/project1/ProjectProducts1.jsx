@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import StatsSection from "../../components/home/StatsSection";
+import ProjectBanner from "../project1/ProjectBanner";
+import { useRef } from "react";
 
 function ProjectProducts1() {
   const navigate = useNavigate();
@@ -11,6 +13,7 @@ function ProjectProducts1() {
   const [activeCategory, setActiveCategory] = useState("");
   const [projects, setProjects] = useState([]);
   const [showAll, setShowAll] = useState(false);
+  const tabsRef = useRef(null);
 
   // ✅ Fetch categories
   useEffect(() => {
@@ -53,15 +56,15 @@ function ProjectProducts1() {
     loadProjects();
   }, [activeCategory]);
   useEffect(() => {
-  const seen = sessionStorage.getItem("tabsSwipeHint");
-  if (seen) return;
+    const seen = sessionStorage.getItem("tabsSwipeHint");
+    if (seen) return;
 
-  sessionStorage.setItem("tabsSwipeHint", "true");
-}, []);
-
+    sessionStorage.setItem("tabsSwipeHint", "true");
+  }, []);
 
   return (
     <>
+      <ProjectBanner />
       {/* PAGE HEADER */}
       <section className="project-products">
         <div className="container text-center">
@@ -75,15 +78,28 @@ function ProjectProducts1() {
               <span className="arrow">⇆</span>
               <span className="text">Swipe</span>
             </div>
-            <div className="product-tabs">
+            <div className="product-tabs" ref={tabsRef}>
               {categories.map((cat) => (
                 <button
                   key={cat.id}
-                  style={{
-                    background: activeCategory === cat.id ? "#FFC442" : "#fff",
-                    fontWeight: activeCategory === cat.id ? "700" : "500",
+                  className={activeCategory === cat.id ? "active" : ""}
+                  onClick={(e) => {
+                    setActiveCategory(cat.id);
+
+                    // ✅ CENTER ACTIVE TAB (MOBILE SAFE)
+                    const tab = e.currentTarget;
+                    const container = tabsRef.current;
+
+                    if (container) {
+                      const tabCenter = tab.offsetLeft + tab.offsetWidth / 2;
+                      const containerCenter = container.offsetWidth / 2;
+
+                      container.scrollTo({
+                        left: tabCenter - containerCenter,
+                        behavior: "smooth",
+                      });
+                    }
                   }}
-                  onClick={() => setActiveCategory(cat.id)}
                 >
                   {cat.title}
                 </button>
@@ -94,7 +110,7 @@ function ProjectProducts1() {
 
         {/* PROJECT GRID */}
         <div className="container mt-5">
-          <div className="row justify-content-center">
+          <div className="row justify-content-center align-items-start">
             {projects
               .slice(0, showAll ? projects.length : 6)
               .map((p, index) => (
@@ -107,6 +123,7 @@ function ProjectProducts1() {
                       .toLowerCase()
                       .replace(/\s+/g, "-");
                     localStorage.setItem("projectData", JSON.stringify(p));
+
                     navigate(`/projectproducts2/${slug}`);
                   }}
                 >

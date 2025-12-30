@@ -4,12 +4,13 @@
   padding: 8px 0;
   background: #fff;
   text-align: center;
+  
 }
 
 .product-title {
   font-size: 32px;
   font-weight: 600;
-  margin-bottom: 6px;
+  margin: 10px;
   line-height: 1.2;
 }
 
@@ -21,7 +22,7 @@
   border-radius: 10px;
   overflow: hidden;
   background: #fff;
-  margin-top: 4px;
+  margin-top: 18px;
 }
 
 /* ================= TABS SCROLL ================= */
@@ -90,7 +91,6 @@
 
 .img_container {
   width: 100%;
-  height: 300px;
   overflow: hidden;
 }
 
@@ -181,4 +181,130 @@
   0% { transform: translateX(0); }
   50% { transform: translateX(6px); }
   100% { transform: translateX(0); }
+}
+/* ================= MOBILE SCROLL FIX ================= */
+
+@media (max-width: 768px) {
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Prevent side cut */
+  .project-products {
+    overflow-x: hidden;
+  }
+
+  /* Better spacing between cards */
+  .col-sm-12 {
+    margin-bottom: 16px;
+  }
+
+  /* Ensure images fully visible */
+  .img_container {
+    border-radius: 8px;
+  }
+}
+/* ================= TABS SCROLL ================= */
+
+.product-tabs {
+  display: flex;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Desktop */
+.product-tabs::-webkit-scrollbar {
+  height: 6px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .product-tabs::-webkit-scrollbar {
+    height: 2px;
+  }
+}
+
+.product-tabs::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 10px;
+}
+
+.product-tabs::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Firefox */
+.product-tabs {
+  scrollbar-width: thin;
+  scrollbar-color: #000 transparent;
+}
+@media (max-width: 768px) {
+  .product-tabs button {
+    max-width: unset;
+    white-space: nowrap;
+  }
+}
+/* ===== SEE MORE BUTTON ===== */
+.see-more-projects {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000; /* Primary button color, adjust to your theme */
+  color: #fff;
+  font-weight: 600;
+  margin-top: 2px !important;
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.see-more-projects:hover {
+  
+  transform: translateY(-2px);
+}
+
+/* Thin arrow after text */
+.see-more-projects .thin-arrow {
+  display: inline-block;
+  margin-left: 10px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when active */
+.see-more-projects.active .thin-arrow {
+  transform: rotate(135deg);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .see-more-projects {
+    font-size: 14px;
+    padding: 10px 22px;
+  }
+
+  .see-more-projects .thin-arrow {
+    width: 6px;
+    height: 6px;
+    margin-left: 6px;
+  }
+}
+
+/* Centering the button properly */
+.text-center .see-more-projects {
+  margin: 20px auto 0 auto;
 }

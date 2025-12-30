@@ -1,6 +1,6 @@
 import "./ContactImage.css";
-import ContactImg from "../../assets/images/Blog/Group 1000005623[1].webp";
-import ContactImgMobile from "../../assets/images/Mobile Banner/Group 1000005623.webp";
+import ContactImg from "../../assets/about_img/contactD.png";
+import ContactImgMobile from "../../assets/about_img/contactM.png";
 
 function ContactImage() {
   return (

@@ -59,34 +59,33 @@ const ContactSection = () => {
     return false;
   };
 
- const handleChange = (e) => {
-  const { name, value } = e.target;
-  let val = value;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    let val = value;
 
-  if (name === "name" && !/^[a-zA-Z\s]*$/.test(val)) return;
+    if (name === "name" && !/^[a-zA-Z\s]*$/.test(val)) return;
 
-  if (name === "mobile") {
-    val = val.replace(/[^0-9+]/g, "");
-    if (val.includes("+") && val.indexOf("+") !== 0) return;
-  }
-
-  // ⭐ STOP message typing after 250 chars
-  if (name === "message" && val.length > 250) return;
-
-  setFormData({ ...formData, [name]: val });
-
-  setErrors((prev) => {
-    const updated = { ...prev };
-
-    if (name === "message") {
-      if (!val.trim()) updated.message = "Message is required.";
-      else updated.message = "";
+    if (name === "mobile") {
+      val = val.replace(/[^0-9+]/g, "");
+      if (val.includes("+") && val.indexOf("+") !== 0) return;
     }
 
-    return updated;
-  });
-};
+    // ⭐ STOP message typing after 250 chars
+    if (name === "message" && val.length > 250) return;
 
+    setFormData({ ...formData, [name]: val });
+
+    setErrors((prev) => {
+      const updated = { ...prev };
+
+      if (name === "message") {
+        if (!val.trim()) updated.message = "Message is required.";
+        else updated.message = "";
+      }
+
+      return updated;
+    });
+  };
 
   // SUBMIT FORM
   const handleSubmit = async (e) => {
@@ -121,7 +120,7 @@ const ContactSection = () => {
     try {
       setLoading(true);
 
-      await axios.post("/carousal-form/addcarousalform", formData); 
+      await axios.post("/carousal-form/addcarousalform", formData);
 
       Swal.fire({
         title: "Success!",
@@ -222,37 +221,46 @@ const ContactSection = () => {
                   value={formData.message}
                   onChange={handleChange}
                 ></textarea>
-                <p
-                  className={`char-count ${
-                    formData.message.length > 250 ? "exceeded" : ""
-                  }`}
-                >
-                  {formData.message.length}/250
-                </p>
-                {errors.message && (
-                  <p className="error-message">{errors.message}</p>
-                )}
+                <div className="msg-row">
+                  {errors.message ? (
+                    <span className="error-message msg">{errors.message}</span>
+                  ) : (
+                    <span />
+                  )}
+
+                  <span
+                    className={`char-count ${
+                      formData.message.length > 250 ? "exceeded" : ""
+                    }`}
+                  >
+                    {formData.message.length}/250
+                  </span>
+                </div>
 
                 {/* ReCAPTCHA (added WITHOUT changing layout) */}
                 <div className="mb-3 recap">
                   <div className="recaptcha-container">
-                  <ReCAPTCHA
-                    ref={captchaRef}
-                    // sitekey="6Lee9gkrAAAAACIG8szun_Hc6Jbn--2D_Cm79cqj"
-                    sitekey="6LcxHCksAAAAADSj9E-lBu29tiaRTaFkhgIzQf9V"
-                    onChange={(value) => {
-                      setRecaptchaValue(value);
-                      setErrors({ ...errors, recaptcha: "" });
-                    }}
-                  />
+                    <ReCAPTCHA
+                      ref={captchaRef}
+                      // sitekey="6Lee9gkrAAAAACIG8szun_Hc6Jbn--2D_Cm79cqj"
+                      sitekey="6LcxHCksAAAAADSj9E-lBu29tiaRTaFkhgIzQf9V"
+                      onChange={(value) => {
+                        setRecaptchaValue(value);
+                        setErrors({ ...errors, recaptcha: "" });
+                      }}
+                    />
                   </div>
                   {errors.recaptcha && (
-                    <p className="error-message">{errors.recaptcha}</p>
+                    <p className="error-message recappp">{errors.recaptcha}</p>
                   )}
                 </div>
 
                 {/* Submit Button with Loader */}
-                <button type="submit" className="submit-btn sbmit" disabled={loading}>
+                <button
+                  type="submit"
+                  className="submit-btn sbmit"
+                  disabled={loading}
+                >
                   {loading ? (
                     <>
                       <div className="spinner-border spinner-border-sm me-2"></div>
@@ -267,7 +275,7 @@ const ContactSection = () => {
           </div>
 
           {/* RIGHT INFO (unchanged) */}
-          <div className="col-lg-6 col-md-12">
+          <div className="col-lg-6 col-md-12 inf">
             {contacts.length > 0 ? (
               <div className="contact-info">
                 <h3>
@@ -276,11 +284,11 @@ const ContactSection = () => {
                   <br /> Here.
                 </h3>
                 <p className="text-justify">
-                  With decades of experience in manufacturing switchgear,
-                  busbars, <br></br> laminations, and transformers, we are trusted by
-                  clients across<br></br> industries and continents.
+                  With decades of experience in manufacturing switchgear,<br></br>
+                  busbars,  laminations, and transformers, we are
+                  trusted by <br></br> clients across industries and continents.
                   <br />
-                  Have questions about our products or services? Reach out to us
+                  Have questions about our products or services? Reach out <br></br>to us
                   and <br></br>we’ll get back to you with the right solution.
                 </p>
 
