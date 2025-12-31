@@ -14,6 +14,38 @@ function ProjectProducts1() {
   const [projects, setProjects] = useState([]);
   const [showAll, setShowAll] = useState(false);
   const tabsRef = useRef(null);
+useEffect(() => {
+  if (window.innerWidth > 1024) return; // mobile + tablet only
+
+  const container = tabsRef.current;
+  const thumb = document.querySelector(".fake-thumb");
+  if (!container || !thumb) return;
+
+  const updateThumb = () => {
+    // Calculate thumb width based on visible area
+    const visibleRatio = container.clientWidth / container.scrollWidth;
+    const thumbWidth = Math.max(visibleRatio * container.clientWidth, 30); // min width 30px
+    thumb.style.width = `${thumbWidth}px`;
+
+    // Calculate thumb position
+    const ratio =
+      container.scrollLeft /
+      (container.scrollWidth - container.clientWidth);
+    const maxLeft = container.clientWidth - thumbWidth;
+    thumb.style.left = `${ratio * maxLeft}px`;
+  };
+
+  updateThumb();
+  container.addEventListener("scroll", updateThumb);
+  window.addEventListener("resize", updateThumb); // update on resize
+
+  return () => {
+    container.removeEventListener("scroll", updateThumb);
+    window.removeEventListener("resize", updateThumb);
+  };
+}, []);
+
+
 
   // ✅ Fetch categories
   useEffect(() => {
@@ -67,17 +99,13 @@ function ProjectProducts1() {
       <ProjectBanner />
       {/* PAGE HEADER */}
       <section className="project-products">
-        <div className="container text-center">
+        <div className="container pp text-center">
           <h2 className="product-title text-center">
             Built to Power Your Product
           </h2>
 
           {/* CATEGORY TABS FROM API */}
           <div className="tabs-scroll-wrapper">
-            <div className="swipe-hint">
-              <span className="arrow">⇆</span>
-              <span className="text">Swipe</span>
-            </div>
             <div className="product-tabs" ref={tabsRef}>
               {categories.map((cat) => (
                 <button
@@ -86,24 +114,28 @@ function ProjectProducts1() {
                   onClick={(e) => {
                     setActiveCategory(cat.id);
 
-                    // ✅ CENTER ACTIVE TAB (MOBILE SAFE)
                     const tab = e.currentTarget;
                     const container = tabsRef.current;
 
-                    if (container) {
-                      const tabCenter = tab.offsetLeft + tab.offsetWidth / 2;
-                      const containerCenter = container.offsetWidth / 2;
+                    if (!container) return;
 
-                      container.scrollTo({
-                        left: tabCenter - containerCenter,
-                        behavior: "smooth",
-                      });
-                    }
+                    const left =
+                      tab.offsetLeft -
+                      container.offsetWidth / 2 +
+                      tab.offsetWidth / 2;
+
+                    container.scrollTo({
+                      left,
+                      behavior: "smooth",
+                    });
                   }}
                 >
                   {cat.title}
                 </button>
               ))}
+            </div>
+            <div className="fake-scrollbar">
+              <div className="fake-thumb" />
             </div>
           </div>
         </div>

@@ -196,15 +196,8 @@
     overflow-x: hidden;
   }
 
-  /* Better spacing between cards */
-  .col-sm-12 {
-    margin-bottom: 16px;
-  }
 
-  /* Ensure images fully visible */
-  .img_container {
-    border-radius: 8px;
-  }
+ 
 }
 /* ================= TABS SCROLL ================= */
 
@@ -307,4 +300,161 @@
 /* Centering the button properly */
 .text-center .see-more-projects {
   margin: 20px auto 0 auto;
+}
+/* ================= TABS SCROLL FIX ================= */
+
+.tabs-scroll-wrapper {
+  width: 100%;
+  border: 1px solid #000;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  margin-top: 18px;
+}
+
+.product-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; /* ✅ MOBILE SWIPE */
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #000 transparent;
+}
+
+/* BLACK SCROLLBAR (Chrome / Edge / Android) */
+.product-tabs::-webkit-scrollbar {
+  height: 4px;
+}
+
+.product-tabs::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 10px;
+}
+
+.product-tabs::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* TAB BUTTONS */
+.product-tabs button {
+  flex: 0 0 auto;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  background: #fff;
+  border: none;
+  border-right: 1px solid #ccc;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.product-tabs button:last-child {
+  border-right: none;
+}
+
+.product-tabs button.active {
+  background: #FFC442;
+  font-weight: 700;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .product-tabs {
+    -webkit-overflow-scrolling: touch; /* iOS / Android swipe */
+  }
+
+  .product-tabs::-webkit-scrollbar {
+    height: 2px; /* thin mobile scrollbar */
+  }
+
+  .product-tabs button {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+}
+/* hide fake scrollbar by default (desktop) */
+.fake-scrollbar {
+  display: none;
+}
+
+/* mobile only */
+@media (max-width: 768px) {
+  .fake-scrollbar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #ddd;
+    border-radius: 2px;
+    margin-top: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fake-thumb {
+    height: 100%;
+    width: 80px;
+    background: #000;
+    border-radius: 6px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  /* hide native scrollbar only on mobile */
+  .product-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .product-tabs {
+    scrollbar-width: none;
+  }
+
+  .project-products {
+    margin-top: 5px !important;
+  }
+}
+/* Mobile + Tablet */
+@media (max-width: 1024px) {
+
+  /* fake scrollbar visible */
+  .fake-scrollbar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #ddd;
+    border-radius: 2px;
+    margin-top: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fake-thumb {
+    height: 100%;
+    width: 10px;
+    background: #000;
+    border-radius: 6px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  /* hide native scrollbar */
+  .product-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .product-tabs {
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .product-tabs button {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+}
+.fake-thumb {
+  transition: left 0.2s ease, width 0.2s ease;
 }

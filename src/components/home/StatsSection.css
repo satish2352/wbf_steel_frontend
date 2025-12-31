@@ -364,3 +364,25 @@
     padding-bottom: 60px;
   }
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Make left column relative */
+  .stats-box .col-lg-4 {
+    position: relative;
+  }
+
+  /* Visually move only the Get in Touch link */
+  .get-in-touch {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -260px;   /* adjust if needed */
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* Add space so link doesn't overlap next section */
+  .stats-box {
+    padding-bottom: 60px;
+  }
+}

@@ -1,6 +1,7 @@
 @media (max-width: 768px) {
 
   .main-image-section {
+    
     display: flex;
     flex-direction: column;
     align-items: center;   /* 🔑 centers title + image */

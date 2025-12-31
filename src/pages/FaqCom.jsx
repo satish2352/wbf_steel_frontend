@@ -221,7 +221,7 @@ function FaqCom() {
             </Col>
 
             {/* RIGHT SIDE (FORM CARD) */}
-            <Col lg={5} md={12} sm={12} className="mt-2 mb-4">
+            <Col lg={5} md={12} sm={12} className="mt-2 mb-4 faqq">
               <div className="card card_faq custom-triangle">
                 <div className="card-body mt-2 mb-2">
                   <h3 className="title_req">Request A Quote</h3>

@@ -238,6 +238,7 @@
 /* <= 900px: why-grid single column */
 @media (max-width: 900px) {
   .why-grid { grid-template-columns: 1fr; gap: 30px; }
+  
 }
 
 /* <= 768px adjustments */
@@ -688,6 +689,7 @@
    ========================= */
 @media (max-width: 576px) {
 
+  
   .choose-btn {
     padding: 5px;
   }
@@ -733,5 +735,178 @@
   }
   .example-text {
     font-size: 10.5px;
+  }
+}
+/* =========================
+   TABLET = DESKTOP LAYOUT (SCALED)
+   ========================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* ===== WHY WORK SECTION ===== */
+  .why-work {
+    padding: 20px 10px 30px;
+  }
+
+  .why-work h2 {
+    font-size: 26px;   /* was 32 */
+  }
+
+  .why-sub {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  /* KEEP 3 COLUMNS (IMPORTANT) */
+  .why-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .why-item {
+    padding: 0 20px;
+  }
+
+  .why-title {
+    font-size: 16px;
+  }
+
+  .why-icon-img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .why-item p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* ===== CAREER / FORM ===== */
+  .career-section {
+    padding: 20px;
+  }
+
+  .career-box {
+    max-width: 760px;     /* desktop feel but smaller */
+    padding: 22px;
+  }
+
+  .job-title {
+    font-size: 24px;
+  }
+
+  .join-title {
+    font-size: 18px;
+  }
+
+  .form-heading {
+    font-size: 16px;
+  }
+
+  .career-form label {
+    font-size: 13px;
+  }
+
+  .career-form input,
+  .career-form textarea,
+  .career-form .form-control {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .career-form textarea {
+    min-height: 110px;
+  }
+
+  .file-area {
+    height: 36px;
+  }
+
+  .choose-btn {
+    font-size: 12px;
+    padding: 0 20px;
+  }
+
+  .sub {
+    font-size: 14px;
+    padding: 9px 22px;
+  }
+
+  /* KEEP recaptcha inline (no stacking) */
+  .recaptcha-submit-row {
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+/* =========================
+   TABLET – FILE + BUTTON LIKE DESKTOP
+   ========================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* Force file + choose button in one row */
+  .career-form .d-flex.gap-2 {
+    flex-direction: row !important;
+    align-items: center;
+  }
+
+  /* File input */
+  .file-area {
+    flex: 1;
+    height: 36px;
+    font-size: 13px;
+  }
+
+  /* Choose file button */
+  .choose-btn {
+    width: auto;
+    padding: 0 22px;
+    height: 36px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  /* Submit + captcha row stays desktop-like */
+  .recaptcha-submit-row {
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+/* =========================
+   TABLET – SUBMIT BUTTON LIKE DESKTOP
+   ========================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* Submit button small like desktop */
+  .sub {
+    width: auto !important;
+    padding: 8px 22px;
+    font-size: 14px;
+    height: 36px;
+    border-radius: 6px;
+  }
+
+  /* Ensure captcha + submit stay in one row */
+  .recaptcha-submit-row {
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* Fix submit button on mobile to mimic desktop */
+@media (max-width: 576px) {
+  .sub {
+    width: auto !important;       /* don’t stretch full width */
+    padding: 8px 22px !important; /* same as desktop */
+    font-size: 14px;
+    display: block;
+    margin: 0 auto;               /* center horizontally */
+  }
+
+  /* Center the captcha + submit row vertically stacked */
+  .recaptcha-submit-row {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 12px; /* space between captcha and button */
   }
 }

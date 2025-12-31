@@ -404,3 +404,11 @@
   
   text-align: center !important;
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+   .left_faq_col {
+    margin-bottom: 0px !important;
+   }
+   .faqq {
+    margin-bottom: 1px !important;
+   }
+}

@@ -468,7 +468,7 @@
 /* =========================
    REMOVE TOGGLER BORDER (MOBILE)
    ========================= */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .navbar-toggler,
   .navbar-toggler:focus,
   .navbar-toggler:active,

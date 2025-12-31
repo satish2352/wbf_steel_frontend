@@ -389,4 +389,102 @@
 
     margin-top: 0;
   }
+  .project-title{
+    text-align: center;
+   }
+}
+
+/* =========================
+   TABLET FIX: Behave like Mobile
+========================= */
+@media (min-width: 768px) and (max-width: 991px) {
+  .info-box {
+    min-height: auto;     /* 🔥 remove forced height */
+    max-height: 290px;    /* ✔ allow scroll if text is large */
+    height: auto;
+
+    overflow-y: auto;     /* ✔ scroll when needed */
+    padding: 16px;
+    font-size: 15px;
+    line-height: 1.4;
+
+    margin-top: 0;
+  }
+   .project-title{
+    text-align: center;
+   }
+   
+}
+/* =========================
+   TABLET FIX: Horizontal Thumbnails
+========================= */
+@media (min-width: 768px) and (max-width: 991px) {
+  
+  /* Thumbnail container behaves like mobile */
+  .image-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;      /* horizontal */
+    align-items: center;
+    justify-content: flex-start;  /* start or center as needed */
+    gap: 12px;
+    overflow-x: auto;         /* horizontal scroll */
+    overflow-y: hidden;
+    padding-bottom: 8px;
+    scroll-behavior: smooth;
+  }
+
+  .image-thumbnails {
+    display: flex;
+    flex-direction: row;      /* horizontal */
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+  }
+
+  .image-thumbnails img {
+    width: auto;
+    height: 140px;            /* adjust height */
+    object-fit: contain;      /* show full image */
+    flex-shrink: 0;           /* don't shrink images */
+    border-radius: 6px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .image-list {
+    flex-direction: row;      /* horizontal */
+    align-items: center;
+    justify-content: flex-start; /* or center */
+    gap: 12px;
+    overflow-x: auto;         /* horizontal scroll */
+    overflow-y: hidden;       /* remove vertical scroll */
+    padding-bottom: 0;        /* remove extra space */
+  }
+
+  .image-thumbnails {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;       /* 🔥 prevent vertical arrow */
+    height: auto;             /* adjust height */
+  }
+
+  .image-thumbnails img {
+    height: 140px;            /* fixed height for tablet */
+    object-fit: contain;
+  }
+
+  
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .project-title {
+    text-align: center;
+  }
+
+  .main-image-holder {
+    justify-content: center;
+    align-items: center;
+  }
 }
