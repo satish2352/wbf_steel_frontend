@@ -12,7 +12,9 @@
   color: #000;
   margin-left: 12px;
 }
-
+ .service-link i {
+    font-size: 12px;
+  }
 
 
 /* Service cards */
@@ -80,6 +82,10 @@
 
 .blue-card .service-link {
   color: #fff;
+}
+
+.service-link .i {
+  font-size: 12px !important;
 }
 
 /* Shadow styling */
