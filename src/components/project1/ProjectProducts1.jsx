@@ -142,30 +142,38 @@ useEffect(() => {
 
         {/* PROJECT GRID */}
         <div className="container mt-5">
-          <div className="row justify-content-center align-items-start">
-            {projects
-              .slice(0, showAll ? projects.length : 6)
-              .map((p, index) => (
-                <div
-                  key={index}
-                  className="col-lg-4 col-md-6 col-sm-12 text-center"
-                  style={{ cursor: "pointer" }}
-                  onClick={() => {
-                    const slug = p.project_name
-                      .toLowerCase()
-                      .replace(/\s+/g, "-");
-                    localStorage.setItem("projectData", JSON.stringify(p));
-
-                    navigate(`/projectproducts2/${slug}`);
-                  }}
-                >
-                  <div className="img_container">
-                    <img src={p.img} className="img-fluid img_product" alt="" />
-                  </div>
-                  <p className="product_name mt-3">{p.project_name}</p>
-                </div>
-              ))}
+           <div className="row justify-content-center align-items-start">
+  {projects.length === 0 ? (
+    <div className="col-12 text-center">
+      <p className="no-projects-msg">
+        Projects are not available at the moment.
+      </p>
+    </div>
+  ) : (
+    projects
+      .slice(0, showAll ? projects.length : 6)
+      .map((p, index) => (
+        <div
+          key={index}
+          className="col-lg-4 col-md-6 col-sm-12 text-center"
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            const slug = p.project_name
+              .toLowerCase()
+              .replace(/\s+/g, "-");
+            localStorage.setItem("projectData", JSON.stringify(p));
+            navigate(`/projectproducts2/${slug}`);
+          }}
+        >
+          <div className="img_container">
+            <img src={p.img} className="img-fluid img_product" alt="" />
           </div>
+          <p className="product_name mt-3">{p.project_name}</p>
+        </div>
+      ))
+  )}
+</div>
+
           {/* SEE MORE BUTTON */}
           {projects.length > 6 && (
             <div className="text-center mt-4">

@@ -531,3 +531,26 @@
     word-wrap: break-word;
   }
 }
+.par {
+  margin: 0;
+  padding: 0;
+}
+.aboutimgs {
+  width: 100% !important;
+  height: 100%;       /* ensure it fills container height */
+  object-fit: cover;  /* crop/fill without distortion */
+  display: block;     /* remove inline spacing */
+}
+.par picture {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.container, .row, .col-lg-6, .col-md-6, .col-sm-12 {
+  margin: 0;
+  padding: 0;
+}
+.par img {
+  height: auto;       /* let image scale naturally */
+  max-width: 100%;
+}

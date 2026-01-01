@@ -55,8 +55,8 @@ function Footer() {
                       className="text-white text-decoration-none"
                     >
                       {contacts[0]?.phone1}
-                    </a> /
-
+                    </a>{" "}
+                    /
                     {contacts[0]?.phone2 && (
                       <a
                         href={`tel:${contacts[0]?.phone2}`}
@@ -79,15 +79,18 @@ function Footer() {
                   </a>
                 </li>
 
-                {/* ADDRESS */}
-                <li>
+                <li className="footer-address">
                   <a
                     href="https://www.google.com/maps?q=1309+Coffeen+Ave+1200+Sheridan+WY+82801"
-                    className="text-white text-decoration-none d-flex align-items-start"
+                    className="text-white text-decoration-none"
                     target="_blank"
                   >
-                    <i className="bi bi-geo-alt-fill me-2 text-warning fs-5 mt-1"></i>
-                    1309 Coffeen Ave #1200 Sheridan, <br></br>WY 82801, USA
+                    <i className="bi bi-geo-alt-fill text-warning"></i>
+                    <span>
+                      1309 Coffeen Ave #1200
+                      <br />
+                      Sheridan, WY 82801, USA
+                    </span>
                   </a>
                 </li>
 
@@ -122,6 +125,11 @@ function Footer() {
                 <li>
                   <NavLink to="/Services" className="menu-link">
                     Services
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/projectproducts1" className="menu-link">
+                    Projects
                   </NavLink>
                 </li>
                 <li>
@@ -185,14 +193,13 @@ function Footer() {
         {/* ===== COPYRIGHT ===== */}
         <div className="footer-bottom text-center py-3">
           <p>
-         © {new Date().getFullYear()} All Rights Reserved.
-
-          <a
-            href="https://www.sumagoinfotech.com/"
-            className="fw-semibold text-white text-decoration-none"
-          >
-            Made With Passion by Sumago Infotech
-          </a>
+            © {new Date().getFullYear()} All Rights Reserved.
+            <a
+              href="https://www.sumagoinfotech.com/"
+              className="fw-semibold text-white text-decoration-none"
+            >
+              Made With Passion by Sumago Infotech
+            </a>
           </p>
         </div>
       </footer>

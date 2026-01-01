@@ -488,3 +488,109 @@
     align-items: center;
   }
 }
+
+.center-column .project-title {
+  text-align: center !important;
+  font-size: 1rem;
+}
+/* =========================
+   FORCE VISIBLE SCROLLBAR (MOBILE ONLY)
+========================= */
+@media (max-width: 767px) {
+
+  /* Info box scrollbar */
+  .info-box,
+  .info-box-content {
+    overflow-y: scroll !important;   /* force scrollbar */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Visible scrollbar styling */
+  .info-box::-webkit-scrollbar,
+  .info-box-content::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .info-box::-webkit-scrollbar-thumb,
+  .info-box-content::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+  }
+
+  .info-box::-webkit-scrollbar-track,
+  .info-box-content::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+/* ============================
+   MOBILE CUSTOM SCROLL INDICATOR
+   ============================ */
+@media (max-width: 767px) {
+
+  .info-box {
+    position: relative;
+    overflow-y: auto; /* real scroll */
+  }
+
+  /* Fake scrollbar track */
+  .info-box::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 4px;
+    width: 3px;
+    height: calc(100% - 20px);
+    background: rgba(14, 1, 1, 0.12);
+    border-radius: 10px;
+    pointer-events: none;
+  }
+
+  /* Fake scrollbar thumb */
+  .info-box::before {
+    content: "";
+    position: absolute;
+    right: 4px;
+    top: 20px;
+    width: 3px;
+    height: 40px;
+    /* background: rgba(0, 0, 0, 0.45); */
+    border-radius: 10px;
+    pointer-events: none;
+    animation: scrollHint 1.8s infinite ease-in-out;
+  }
+}
+
+    @media (min-width: 768px) and (max-width: 992px)            {
+
+  .info-box {
+    position: relative;
+    overflow-y: auto; /* real scroll */
+  }
+
+  /* Fake scrollbar track */
+  .info-box::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 4px;
+    width: 3px;
+    height: calc(100% - 20px);
+    background: rgba(14, 1, 1, 0.12);
+    border-radius: 10px;
+    pointer-events: none;
+  }
+
+  /* Fake scrollbar thumb */
+  .info-box::before {
+    content: "";
+    position: absolute;
+    right: 4px;
+    top: 20px;
+    width: 3px;
+    height: 40px;
+    /* background: rgba(0, 0, 0, 0.45); */
+    border-radius: 10px;
+    pointer-events: none;
+    animation: scrollHint 1.8s infinite ease-in-out;
+  }
+}

@@ -486,3 +486,58 @@
     background-color: transparent !important;
   }
 }
+/* EXTRA MOBILE LOGO */
+.navbar-extra-mobile-logo {
+  display: none;
+  height: 32px;
+  object-fit: contain;
+  margin-left: 10px;
+}
+
+/* Show only on mobile */
+@media (max-width: 768px) {
+  .navbar-extra-mobile-logo {
+    display: block;
+  }
+}
+/* =========================
+   MOBILE LOGO SWITCH
+   ========================= */
+
+/* Hide new mobile logo by default */
+.navbar-only-mobile-logo {
+  display: none;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+
+  /* HIDE original logo */
+  .navbar-mobile-logo {
+    display: none !important;
+  }
+
+  /* SHOW new mobile logo */
+  .navbar-only-mobile-logo {
+    display: block !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px)  {
+
+  /* HIDE original logo */
+  .navbar-mobile-logo {
+    display: none !important;
+  }
+
+  /* SHOW new mobile logo */
+  .navbar-only-mobile-logo {
+    display: block !important;
+  }
+  .navbar-only-mobile-logo {
+  display: none;
+  height: 60px;
+  object-fit: contain;
+}
+}

@@ -5,6 +5,7 @@ import './components/common/Navbar.css';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
+import { HelmetProvider } from "react-helmet-async";
 function App() {
 
   // axios.defaults.baseURL = `http://localhost:8000/`;
@@ -12,7 +13,9 @@ function App() {
   
   return (
     <>
-     <AppRoutes />
+     <HelmetProvider>
+        <AppRoutes />
+     </HelmetProvider>
     </>
   )
 }

@@ -283,24 +283,23 @@ const ContactSection = () => {
                   <br /> Manufacturing Starts
                   <br /> Here.
                 </h3>
-                <p className="text-justify">
-                  With decades of experience in manufacturing switchgear,<br></br>
+                <p className="text-justify with">
+                  With decades of experience in manufacturing switchgear,
                   busbars,  laminations, and transformers, we are
-                  trusted by <br></br> clients across industries and continents.
-                  <br />
-                  Have questions about our products or services? Reach out <br></br>to us
-                  and <br></br>we’ll get back to you with the right solution.
+                  trusted by clients across industries and continents.
+                  Have questions about our products or services? Reach out to us
+                  and we’ll get back to you with the right solution.
                 </p>
 
                 <div className="info-row d-flex flex-wrap justify-content-between">
-                  <div className="info-block mb-3">
+                  <div className="info-block inf">
                     <h5>Our Address</h5>
                     <p className="mb-0">
                       423/17; Talegaon Industrial Area, Igatpuri, Nashik 422403
                     </p>
                   </div>
 
-                  <div className="info-block mb-3 inf">
+                  <div className="info-block inf">
                     <h5>Email</h5>
                     {socialLinks.email && (
                       <p>

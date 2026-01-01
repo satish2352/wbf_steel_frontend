@@ -24,7 +24,7 @@ function VissionMission() {
                             </div>
                         </Col>
                         <Col lg={6} md={12} sm={12}>
-                        <p className='card_name mission d-flex justify-content-end '>MISION</p>
+                        <p className='card_name mission d-flex justify-content-end '>MISSION</p>
                             <div className="card-body mission_card_start mb-5 p-4">
                                 <div className='missionpara d-flex align-items-center'>
                                     <img src={mission_img} className="vision-image" alt="Vision" />

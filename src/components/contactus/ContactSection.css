@@ -73,10 +73,11 @@
 /* RIGHT INFO SECTION */
 .contact-info {
   padding-left: 40px;
+  padding-right: 70px;
 }
 
 .contact-info h3 {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 400;
   color: #000000;
   margin-bottom: 20px;
@@ -85,7 +86,7 @@
 .contact-info p {
   color: #000000;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.7;
   margin-bottom: 5px;
   text-align: justify;
@@ -103,7 +104,7 @@
 }
 
 .info-block h5 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
   color: #000 !important;
   margin-bottom: 8px;
@@ -640,3 +641,160 @@
     padding-bottom: 0px !important;
   }
  }
+ /* =========================
+   MOBILE INFO SPACING FIX
+   ========================= */
+@media (max-width: 576px) {
+
+  /* Uniform spacing between sections */
+  .info-row {
+    margin-bottom: 10px !important;
+    gap: 12px !important;
+  }
+
+  /* Headings: same spacing everywhere */
+  .info-block h5 {
+    margin-bottom: 6px !important;
+  }
+
+  /* Text rows: consistent spacing */
+  .info-block p {
+    margin: 4px 0 !important;
+    text-align: center;
+  }
+
+  /* Social icons block spacing */
+  .social-icons {
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+    justify-content: center;
+  }
+
+  /* Remove extra gap before Contact section */
+  .info-block:last-child {
+    margin-top: 0 !important;
+  }
+}
+/* =========================
+   EXTRA TIGHT: EMAIL & ADDRESS (MOBILE)
+   ========================= */
+@media (max-width: 576px) {
+
+  /* Email + Address text tighter */
+  .info-sub,
+  .info-title {
+    margin: 1px 0 !important;
+    line-height: 1.1 !important;
+  }
+  .contact-info {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+  /* Specifically tighten email link */
+  .info-sub a {
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Address block tighter */
+  .top-infobar .info-item:nth-child(2) .info-title,
+  .top-infobar .info-item:nth-child(2) .info-sub {
+    margin: 1px 0 !important;
+    line-height: 1.1 !important;
+  }
+
+  /* Reduce space between info items */
+  .right-info {
+    gap: 6px !important;
+  }
+
+   .info-block .inf {
+    padding-bottom: 1px !important;
+   }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* Stack form + info vertically */
+  .contact-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+   
+   
+  /* LEFT FORM */
+  .contact-wrapper > .col-lg-6:first-child {
+    width: 100% !important;
+    max-width: 720px;   /* nice tablet width */
+  }
+
+  /* RIGHT INFO – CENTER BELOW FORM */
+  .contact-wrapper > .inf {
+    width: 100% !important;
+    max-width: 720px;
+    margin-top: 10px;
+    margin-bottom: -60px;
+    text-align: center !important;
+  }
+
+  .contact-info {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: center !important;
+  }
+
+  .contact-info h3 {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 14px;
+  }
+
+  .contact-info p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    text-align: center !important;
+  }
+
+  /* Info blocks stay 2-column but centered */
+  .info-row {
+    justify-content: center !important;
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .info-block {
+    width: 45% !important;
+    text-align: center;
+  }
+
+  .info-block h5 {
+    font-size: 17px;
+    margin-bottom: 6px;
+  }
+
+  .info-block p,
+  .info-block a {
+    font-size: 15px;
+  }
+
+  /* Social icons centered */
+  .social-icons {
+    justify-content: center !important;
+    gap: 10px;
+    margin-top: 12px !important;
+    padding-right: 0 !important;
+  }
+
+  .social-icons a {
+    width: 32px;
+    height: 32px;
+  }
+
+  .social-icons img {
+    width: 16px;
+    height: 16px;
+  }
+}

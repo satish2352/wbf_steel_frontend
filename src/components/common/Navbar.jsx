@@ -9,6 +9,7 @@ import instaIcon from "../../assets/icons/insta.png";
 import whatsappIcon from "../../assets/icons/logos_whatsapp-icon.png";
 import linkedinIcon from "../../assets/icons/Group.png";
 import mailIcon from "../../assets/icons/mail.png";
+import mobileExtraLogo from "../../assets/images/wbf-Reverse_Logo.png";
 
 function Navbar() {
   const [hideInfobar, setHideInfobar] = useState(false);
@@ -174,6 +175,13 @@ function Navbar() {
                 src={logo}
                 alt="WBF Logo"
                 className="navbar-mobile-logo d-lg-none"
+              />
+            </NavLink>
+            <NavLink to="/">
+              <img
+                src={mobileExtraLogo}
+                alt="Mobile Logo"
+                className="navbar-only-mobile-logo"
               />
             </NavLink>
 

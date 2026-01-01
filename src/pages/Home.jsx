@@ -14,7 +14,10 @@ function Home() {
   return (
     <>
       <Helmet>
-        <title>WBF Steel</title>
+          <title>Home WBF Steel |Precision Steel Detailing & BIM Solutions | WBF Steel</title>
+          <meta name="description" content="WBF Steel provides expert structural steel detailing, connection design, and BIM solutions worldwide. We deliver accurate, efficient, and high-quality services. Request a quote today!" />
+          <meta name="keywords" content="steel detailing, structural steel, BIM modeling, connection design, shop drawings, erection drawings, steel fabrication, Navi Mumbai, Delaware, Nashik, construction services" />
+          <meta name="author" content="WBF Steel" />
       </Helmet>
       <HomeBanner />
       <HomeAbout />

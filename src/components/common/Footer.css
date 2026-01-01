@@ -771,3 +771,72 @@
     text-align: center !important;
   }
 }
+/* =====================================
+   MOBILE FIX: ADDRESS LINE INDENT
+   ===================================== */
+@media (max-width: 576px) {
+
+  /* Target only ADDRESS row */
+  .footer-contact li a[href*="google.com/maps"] {
+    position: relative;
+    padding-left: 24px;          /* space for icon */
+    text-indent: 0;
+    line-height: 1.4;
+  }
+
+  /* Icon positioning */
+  .footer-contact li a[href*="google.com/maps"] i {
+    position: absolute;
+    left: 0;
+    top: 2px;
+  }
+
+  /* Force wrapped lines to align with first line text */
+  .footer-contact li a[href*="google.com/maps"] {
+    display: block;
+  }
+}
+/* =====================================
+   MOBILE FIX: ADDRESS TEXT ALIGNMENT
+   ===================================== */
+@media (max-width: 576px) {
+
+  .footer-address a {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: left;
+  }
+
+  .footer-address i {
+    flex-shrink: 0;
+    font-size: 1rem;
+    margin-top: 2px;
+  }
+
+  .footer-address span {
+    display: block;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .footer-address a {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: left;
+  }
+
+  .footer-address i {
+    flex-shrink: 0;
+    font-size: 1rem;
+    margin-top: 2px;
+  }
+
+  .footer-address span {
+    display: block;
+    line-height: 1.4;
+  }
+}

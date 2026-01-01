@@ -214,24 +214,7 @@
   font-size: 44px;
 }
 
-@media (max-width: 992px) {
 
-   .btn_custom {
-    margin-left: 50px;
-   }
-
-   .card_data {
-        margin-left: 50px !important;
-    width: 70% !important;
-   }
-
-  .title_req {
-    font-size: 36px;
-  }
-  .Formstart {
-    max-width: 90%;
-  }
-}
 
 @media (max-width: 768px) {
 
@@ -391,7 +374,7 @@
   transform: translateY(-50%) rotate(0deg);
   font-size: 18px;
   font-weight: bold;
-  transition: transform 0.3s ease;
+  transition: transform 0.1s ease;
   color: inherit;
 }
 
@@ -411,4 +394,341 @@
    .faqq {
     margin-bottom: 1px !important;
    }
+}
+/* Arrow icon for btn_custom */
+.btn_custom {
+  position: relative;
+  padding-right: 45px !important; /* space for arrow */
+}
+
+.btn_custom::after {
+  content: "▾";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  font-size: 18px;
+  font-weight: bold;
+  transition: transform 0.1s ease;
+  color: inherit;
+}
+
+/* Rotate arrow when expanded */
+.btn_custom.expanded::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+/* ===== Small and Centered reCAPTCHA in FAQ Section ===== */
+.faq_section .recaptcha-container {
+    display: flex;
+    justify-content: center !important;
+    transform: scale(0.95); /* Make it smaller */
+    transform-origin: 0 0; /* Keep it aligned properly */
+    /* margin: 20px 0; Add vertical spacing */
+}
+
+.faq_section .recaptcha-container iframe {
+    width: 100% !important; /* Ensure iframe scales correctly */
+   
+}
+/* ===== Small and Centered reCAPTCHA in FAQ Section ===== */
+.faq_section .recaptcha-container {
+    display: flex;
+    justify-content: center; /* center horizontally */
+    /* margin: 20px 0; */
+}
+
+.faq_section .recaptcha-wrapper {
+    transform: scale(0.75); /* smaller */
+    transform-origin: top center; /* keep it centered */
+}
+/* Container centers the reCAPTCHA */
+.faq_section .recaptcha-container {
+    display: flex;
+    flex-direction: column; /* stack reCAPTCHA and error */
+    align-items: center;    /* center horizontally */
+    margin: 15px 0;
+}
+
+/* Scale down the reCAPTCHA widget */
+.faq_section .recaptcha-container iframe {
+    transform: scale(0.85);  /* smaller size */
+    transform-origin: top center;
+    border: none !important; /* remove iframe border if any */
+}
+
+/* Error message styling */
+.faq_section .recaptcha-error {
+    color: red;
+    font-size: 14px;
+    margin-top: -2px;
+    text-align: center;
+}
+/* ===============================
+   MAKE FAQ FORM COMPACT (SAFE)
+=============================== */
+
+/* Reduce overall form width */
+.card_faq .Formstart {
+  max-width: 320px;   /* smaller form */
+}
+
+/* Inputs smaller */
+.card_faq .custom-input {
+  width: 100% !important;
+  height: 44px !important;
+  font-size: 13px !important;
+  padding: 8px 10px !important;
+}
+
+/* Reduce gap between fields */
+.card_faq .form-group {
+  margin-bottom: 10px !important;
+}
+
+/* Error text closer & aligned */
+.card_faq .text-danger {
+  font-size: 12px;
+  margin-left: 0 !important;
+  text-align:start;
+  color: red !important;
+}
+
+/* Make reCAPTCHA fit the smaller form */
+.card_faq .recaptcha-container {
+  margin: 10px 0;
+}
+
+/* Smaller SEND button */
+.card_faq .send_btn {
+  width: 140px;
+  padding: 8px;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+/* Success message compact */
+.card_faq .text-success {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .card_faq .Formstart {
+    max-width: 360px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .card_faq .Formstart {
+    max-width: 90%;
+  }
+
+  .card_faq .send_btn {
+    width: 50%;
+  }
+  .send_btn {
+    margin-top: -5px !important;
+  }
+  .faq_section .recaptcha-container {
+    display: flex;
+    flex-direction: column; /* stack reCAPTCHA and error */
+    align-items: center;    /* center horizontally */
+    margin: 15px 0;
+    margin-left: 50px;
+}
+}
+.custom-textarea {
+  height: auto !important;
+  min-height: 100px;
+  resize: vertical;       /* user can expand */
+  line-height: 1.4;
+}
+.custom-triangle::before,
+.custom-triangle::after {
+  pointer-events: none;
+}
+@media (max-width: 576px) {
+  .faq_section .recaptcha-container iframe {
+    transform: none !important; /* allow touch */
+  }
+}
+.send_btn {
+  position: relative;
+  z-index: 10;
+}
+
+/* ================================
+   Tablet View (768px – 1024px)
+================================ */
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  /* Center FAQ and form columns */
+  .faq_section .left_faq_col,
+  .faq_section .faqq {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    float: none !important;
+    text-align: center;
+  }
+
+  /* FAQ buttons and cards full width inside column */
+  .faq_section #accordionExample .btn_custom {
+    margin-left: 0 !important;
+    width: 90% !important;
+    text-align: left !important;
+  }
+
+  .faq_section .card_data {
+    margin-left: 0 !important;
+    width: 90% !important;
+    text-align: left !important;
+  }
+
+  /* Center the Request A Quote card */
+  .card_faq {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Form inside card: smaller and centered */
+  .card_faq .Formstart {
+    max-width: 360px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .card_faq .custom-input {
+    width: 100% !important;
+  }
+
+  /* SEND button smaller and centered */
+  .card_faq .send_btn {
+    width: 140px !important;
+    display: block;
+    margin: 10px auto !important;
+  }
+
+  /* recaptcha centered */
+  .faq_section .recaptcha-container {
+    justify-content: center !important;
+    margin-left: 0 !important;
+  }
+
+  /* Reduce FAQ text size slightly */
+  .faq_section .title,
+  .faq_section .title_req {
+    font-size: 28px !important;
+  }
+
+  .faq_section .parafaq {
+    max-width: 90% !important;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px !important;
+    line-height: 1.5;
+  }
+
+}
+/* ================================
+   FAQ – TABLET CENTER FIX
+   768px to 1024px
+================================ */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* Center accordion wrapper */
+  .faq_section #accordionExample {
+    max-width: 90%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Accordion item */
+  .faq_section .accordion-item {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Accordion button (question) */
+  .faq_section .accordion-button {
+    text-align: left;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Accordion answer (THIS IS THE MAIN FIX) */
+  .faq_section .accordion-body,
+  .faq_section .card_data {
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    text-align: left;
+  }
+
+}
+/* ======================================
+   FAQ – TABLET WIDTH SYNC FIX
+   768px to 1024px
+====================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* Main accordion container */
+  .faq_section #accordionExample {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Accordion item full width */
+  .faq_section .accordion-item {
+    width: 100%;
+  }
+
+  /* Question button */
+  .faq_section .accordion-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Answer panel — MATCH QUESTION WIDTH */
+  .faq_section .accordion-collapse,
+  .faq_section .accordion-body,
+  .faq_section .card_data {
+    width: 100% !important;
+    max-width: 90% !important;
+    box-sizing: border-box;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  
+
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* Accordion container */
+  #accordionExample {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Question button */
+  .btn_custom {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding-left: 16px !important;
+    padding-right: 45px !important;
+    text-align: left;
+  }
+
+  /* Answer */
+  .card_data {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    text-align: left;
+  }
 }

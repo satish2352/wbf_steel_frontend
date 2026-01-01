@@ -83,13 +83,13 @@ function ProjectProducts2() {
   onClick={() => {
     const scrollAmount = scrollRef.current.firstChild?.offsetWidth + 10;
     scrollRef.current.scrollBy({
-      left: window.innerWidth <= 767 ? -scrollAmount : 0,
-      top: window.innerWidth > 767 ? -150 : 0,
+      left: window.innerWidth <= 991 ? -scrollAmount : 0,
+      top: window.innerWidth > 991 ? -150 : 0,
       behavior: "smooth",
     });
   }}
 >
-  <FontAwesomeIcon icon={window.innerWidth <= 767 ? faAngleLeft : faAngleUp} />
+  <FontAwesomeIcon icon={window.innerWidth <= 991 ? faAngleLeft : faAngleUp} />
 </button>
 
 {/* THUMBNAIL LIST */}
@@ -110,14 +110,14 @@ function ProjectProducts2() {
   onClick={() => {
     const scrollAmount = scrollRef.current.firstChild?.offsetWidth + 10;
     scrollRef.current.scrollBy({
-      left: window.innerWidth <= 767 ? scrollAmount : 0,
-      top: window.innerWidth > 767 ? 150 : 0,
+      left: window.innerWidth <= 991 ? scrollAmount : 0,
+      top: window.innerWidth > 991 ? 150 : 0,
       behavior: "smooth",
     });
   }}
 >
   <FontAwesomeIcon 
-    icon={window.innerWidth <= 767 ? faAngleRight : faAngleDown} 
+    icon={window.innerWidth <= 991? faAngleRight : faAngleDown} 
   />
 </button>
 

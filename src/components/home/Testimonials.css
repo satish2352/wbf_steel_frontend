@@ -90,7 +90,7 @@
 
 .testimonial-card h3 {
   
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 15px;
    background: linear-gradient(90deg, #FFC422 0%, #997614 100%);
@@ -230,6 +230,8 @@
 .read-more {
   cursor: pointer;
   font-weight: 400 !important;
+  font-size: 0.9rem !important;
+  
 }
 
 /* MODAL OVERLAY */
@@ -361,7 +363,7 @@
 }
 
 .testimonial-name {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
   color: #000;
@@ -401,3 +403,4 @@ margin-top: 8px;
     gap: 10px;
   }
 }
+
