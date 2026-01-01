@@ -73,7 +73,7 @@ function StatsSection() {
               <h2 className="stats-title">WBF Steel</h2>
               <p className="stats-subtitle">Detailing in Numbers</p>
               <Link to="/ContactUs" className="get-in-touch">
-                Get in Touch <i className="bi bi-box-arrow-up-right"></i>
+                Get in Touch <i className="fa-solid fa-arrow-up-right-from-square"></i>
               </Link>
             </div>
 
