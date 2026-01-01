@@ -346,7 +346,7 @@
     object-fit: contain !important;  /* show full image */
     flex-shrink: 0;
     background: #fff;
-    border-radius: 6px;
+
     /* padding: 4px;           */
   }
 
