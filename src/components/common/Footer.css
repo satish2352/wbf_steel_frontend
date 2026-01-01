@@ -856,27 +856,3 @@
     flex-shrink: 0;
   }
 }
-/* ===============================
-   TABLET: Social icons under CONTACT COMPANY
-   =============================== */
-@media (min-width: 768px) and (max-width: 1024px) {
-
-  /* Show tablet social inside contact */
-  .footer-social-tablet {
-    display: flex !important;
-    justify-content: flex-start;
-    gap: 10px;
-    margin-top: 15px;
-  }
-
-  /* Hide original social (right column) */
-  .footer-follow-title,
-  .footer-social:not(.footer-social-tablet) {
-    display: none !important;
-  }
-}
-
-/* Hide duplicated social everywhere else */
-.footer-social-tablet {
-  display: none;
-}
