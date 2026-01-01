@@ -8,11 +8,14 @@ import StatsSection from "../components/home/StatsSection";
 import Projects from "../components/home/Projects";
 import WorkPlatforms from "../components/home/WorkPlatforms";
 import Testimonials from "../components/home/Testimonials";
+import { Helmet } from "react-helmet-async";
 
 function Home() {
   return (
     <>
-      
+      <Helmet>
+        <title>WBF Steel</title>
+      </Helmet>
       <HomeBanner />
       <HomeAbout />
       <ChooseUs />
