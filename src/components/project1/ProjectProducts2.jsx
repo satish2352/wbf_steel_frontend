@@ -19,6 +19,19 @@ function ProjectProducts2() {
   const [projectFull, setProjectFull] = useState(null);
   const [mainImage, setMainImage] = useState("");
 
+  useEffect(() => {
+  const container = scrollRef.current;
+  if (!container) return;
+
+  // start from middle for infinite illusion
+  if (window.innerWidth <= 991) {
+    container.scrollLeft = container.scrollWidth / 4;
+  } else {
+    container.scrollTop = container.scrollHeight / 4;
+  }
+}, [projectFull]);
+
+
   // Load basic localStorage info
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem("projectData"));
@@ -62,6 +75,51 @@ function ProjectProducts2() {
     return <h2 className="text-center mt-5">Project Not Found</h2>;
   }
 
+  const handleNextThumb = () => {
+  const container = scrollRef.current;
+  if (!container) return;
+
+  const scrollAmount = container.firstChild?.offsetWidth + 14;
+
+  if (window.innerWidth <= 991) {
+    container.scrollLeft += scrollAmount;
+
+    if (container.scrollLeft >= container.scrollWidth / 2) {
+      container.scrollLeft = container.scrollWidth / 4;
+    }
+  } else {
+    container.scrollTop += scrollAmount;
+
+    if (container.scrollTop >= container.scrollHeight / 2) {
+      container.scrollTop = container.scrollHeight / 4;
+    }
+  }
+};
+
+
+const handlePrevThumb = () => {
+  const container = scrollRef.current;
+  if (!container) return;
+
+  const scrollAmount = container.firstChild?.offsetWidth + 14;
+
+  if (window.innerWidth <= 991) {
+    container.scrollLeft -= scrollAmount;
+
+    if (container.scrollLeft <= 0) {
+      container.scrollLeft = container.scrollWidth / 4;
+    }
+  } else {
+    container.scrollTop -= scrollAmount;
+
+    if (container.scrollTop <= 0) {
+      container.scrollTop = container.scrollHeight / 4;
+    }
+  }
+};
+
+
+
   return (
     <>
      <ProjectBanner />
@@ -78,48 +136,28 @@ function ProjectProducts2() {
             {/* LEFT THUMBNAILS */}
             <div className="image-list">
               {/* TOP / LEFT ARROW */}
-<button
-  className="arrow-btn"
-  onClick={() => {
-    const scrollAmount = scrollRef.current.firstChild?.offsetWidth + 10;
-    scrollRef.current.scrollBy({
-      left: window.innerWidth <= 991 ? -scrollAmount : 0,
-      top: window.innerWidth > 991 ? -150 : 0,
-      behavior: "smooth",
-    });
-  }}
->
+<button className="arrow-btn" onClick={handlePrevThumb}>
   <FontAwesomeIcon icon={window.innerWidth <= 991 ? faAngleLeft : faAngleUp} />
 </button>
 
-{/* THUMBNAIL LIST */}
+
 <div className="image-thumbnails" ref={scrollRef}>
-  {projectFull?.project_images?.map((img, i) => (
+  {[...(projectFull?.project_images || []),
+    ...(projectFull?.project_images || [])].map((img, i) => (
     <img
       key={i}
       src={`${axios.defaults.baseURL}${img}`}
       className={mainImage === img ? "active" : ""}
-      onClick={() => setMainImage(img)}
+      onClick={() => setMainImage(img)}   // ✅ only click affects main image
     />
   ))}
 </div>
 
-{/* BOTTOM / RIGHT ARROW */}
-<button
-  className="arrow-btn"
-  onClick={() => {
-    const scrollAmount = scrollRef.current.firstChild?.offsetWidth + 10;
-    scrollRef.current.scrollBy({
-      left: window.innerWidth <= 991 ? scrollAmount : 0,
-      top: window.innerWidth > 991 ? 150 : 0,
-      behavior: "smooth",
-    });
-  }}
->
-  <FontAwesomeIcon 
-    icon={window.innerWidth <= 991? faAngleRight : faAngleDown} 
-  />
+
+<button className="arrow-btn" onClick={handleNextThumb}>
+  <FontAwesomeIcon icon={window.innerWidth <= 991 ? faAngleRight : faAngleDown} />
 </button>
+
 
               {/* <button className="arrow-btn" 
                 onClick={() => scrollRef.current.scrollBy({ top: -120, behavior: "smooth" })}
