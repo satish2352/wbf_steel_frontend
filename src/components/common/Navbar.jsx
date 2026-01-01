@@ -144,22 +144,47 @@ function Navbar() {
               </div>
 
               <div className="social-icons d-flex align-items-center">
-                <a href={socialLinks.facebook} className="me-2">
+                <a
+                  href={socialLinks.facebook}
+                  className="me-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={facebookIcon} alt="Facebook" />
                 </a>
-                <a href={socialLinks.instagram} className="me-2">
+
+                <a
+                  href={socialLinks.instagram}
+                  className="me-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={instaIcon} alt="Instagram" />
                 </a>
+
                 <a
                   href={`https://wa.me/${socialLinks.whatsapp}`}
                   className="me-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <img src={whatsappIcon} alt="WhatsApp" />
                 </a>
-                <a href={socialLinks.linkedin} className="me-2">
+
+                <a
+                  href={socialLinks.linkedin}
+                  className="me-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={linkedinIcon} alt="LinkedIn" />
                 </a>
-                <a href={`mailto:${socialLinks.email}`}>
+
+                <a
+                  href={`mailto:${socialLinks.email}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={mailIcon} alt="Mail" />
                 </a>
               </div>
