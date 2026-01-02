@@ -21,6 +21,7 @@ import FaqCom from "./FaqCom";
 import Testimonials from "../components/home/Testimonials";
 import Service_Faqs from "../components/service_faqs/Service_Faqs";
 import OurTeam from "../components/contactus/OurTeam";
+import { Helmet } from "react-helmet-async";
 
 
 function About() {
@@ -37,6 +38,19 @@ function About() {
 
   return (
     <>
+         <Helmet>
+        <title>About Us | WBF Steel | Structural Engineering & BIM Solutions</title>
+        <meta
+          name="description"
+          content="Learn about WBF Steel, a trusted structural engineering firm specializing in steel detailing, connection design, BIM, and rebar detailing. Delivering precise and cost-effective solutions worldwide."
+        />
+        <meta
+          name="keywords"
+          content="About WBF Steel, structural engineering, steel detailing, BIM modeling, connection design, rebar detailing, pre-engineered metal buildings"
+        />
+        <meta name="author" content="WBF Steel" />
+      </Helmet>
+       
          <div className="about-page">
       <section className="par">
         {/* <img

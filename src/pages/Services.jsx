@@ -18,10 +18,23 @@ import Service_Faqs from "../../src/components/service_faqs/Service_Faqs";
 import services_banner from "../../src/assets/about_img/SD.png";
 import WorkPlatforms from "../components/home/WorkPlatforms";
 import services_banner_mobile from "../../src/assets/about_img/SERM.png";
+import { Helmet } from "react-helmet-async";
 
 function Services() {
   return (
     <>
+     <Helmet>
+        <title>Our Services | WBF Steel | Steel Detailing & BIM Solutions</title>
+        <meta
+          name="description"
+          content="Explore WBF Steel's professional services including structural steel detailing, connection design, BIM modeling, and rebar detailing. Delivering accurate and efficient solutions for residential, industrial, and commercial projects."
+        />
+        <meta
+          name="keywords"
+          content="WBF Steel services, steel detailing, BIM modeling, connection design, rebar detailing, structural engineering services, pre-engineered metal buildings"
+        />
+        <meta name="author" content="WBF Steel" />
+      </Helmet>
       <picture>
         <source media="(max-width: 767px)" srcSet={services_banner_mobile} />
         <img

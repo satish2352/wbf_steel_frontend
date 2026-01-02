@@ -5,6 +5,7 @@ import axios from "axios";
 import StatsSection from "../../components/home/StatsSection";
 import ProjectBanner from "../project1/ProjectBanner";
 import { useRef } from "react";
+import { Helmet } from "react-helmet-async"; 
 
 function ProjectProducts1() {
   const navigate = useNavigate();
@@ -14,38 +15,35 @@ function ProjectProducts1() {
   const [projects, setProjects] = useState([]);
   const [showAll, setShowAll] = useState(false);
   const tabsRef = useRef(null);
-useEffect(() => {
-  if (window.innerWidth > 1024) return; // mobile + tablet only
+  useEffect(() => {
+    if (window.innerWidth > 1024) return; // mobile + tablet only
 
-  const container = tabsRef.current;
-  const thumb = document.querySelector(".fake-thumb");
-  if (!container || !thumb) return;
+    const container = tabsRef.current;
+    const thumb = document.querySelector(".fake-thumb");
+    if (!container || !thumb) return;
 
-  const updateThumb = () => {
-    // Calculate thumb width based on visible area
-    const visibleRatio = container.clientWidth / container.scrollWidth;
-    const thumbWidth = Math.max(visibleRatio * container.clientWidth, 30); // min width 30px
-    thumb.style.width = `${thumbWidth}px`;
+    const updateThumb = () => {
+      // Calculate thumb width based on visible area
+      const visibleRatio = container.clientWidth / container.scrollWidth;
+      const thumbWidth = Math.max(visibleRatio * container.clientWidth, 30); // min width 30px
+      thumb.style.width = `${thumbWidth}px`;
 
-    // Calculate thumb position
-    const ratio =
-      container.scrollLeft /
-      (container.scrollWidth - container.clientWidth);
-    const maxLeft = container.clientWidth - thumbWidth;
-    thumb.style.left = `${ratio * maxLeft}px`;
-  };
+      // Calculate thumb position
+      const ratio =
+        container.scrollLeft / (container.scrollWidth - container.clientWidth);
+      const maxLeft = container.clientWidth - thumbWidth;
+      thumb.style.left = `${ratio * maxLeft}px`;
+    };
 
-  updateThumb();
-  container.addEventListener("scroll", updateThumb);
-  window.addEventListener("resize", updateThumb); // update on resize
+    updateThumb();
+    container.addEventListener("scroll", updateThumb);
+    window.addEventListener("resize", updateThumb); // update on resize
 
-  return () => {
-    container.removeEventListener("scroll", updateThumb);
-    window.removeEventListener("resize", updateThumb);
-  };
-}, []);
-
-
+    return () => {
+      container.removeEventListener("scroll", updateThumb);
+      window.removeEventListener("resize", updateThumb);
+    };
+  }, []);
 
   // ✅ Fetch categories
   useEffect(() => {
@@ -96,6 +94,19 @@ useEffect(() => {
 
   return (
     <>
+
+      <Helmet>
+        <title>Our Projects | WBF Steel | Structural Engineering & BIM Solutions</title>
+        <meta
+          name="description"
+          content="Browse WBF Steel’s portfolio of projects featuring steel detailing, connection design, BIM modeling, and pre-engineered metal buildings for residential, industrial, and commercial clients."
+        />
+        <meta
+          name="keywords"
+          content="WBF Steel projects, structural engineering projects, steel detailing projects, BIM modeling projects, connection design, pre-engineered metal buildings"
+        />
+        <meta name="author" content="WBF Steel" />
+      </Helmet>
       <ProjectBanner />
       {/* PAGE HEADER */}
       <section className="project-products">
@@ -142,37 +153,41 @@ useEffect(() => {
 
         {/* PROJECT GRID */}
         <div className="container mt-5">
-           <div className="row justify-content-center align-items-start">
-  {projects.length === 0 ? (
-    <div className="col-12 text-center">
-      <p className="no-projects-msg">
-        Projects are not available at the moment.
-      </p>
-    </div>
-  ) : (
-    projects
-      .slice(0, showAll ? projects.length : 6)
-      .map((p, index) => (
-        <div
-          key={index}
-          className="col-lg-4 col-md-6 col-sm-12 text-center"
-          style={{ cursor: "pointer" }}
-          onClick={() => {
-            const slug = p.project_name
-              .toLowerCase()
-              .replace(/\s+/g, "-");
-            localStorage.setItem("projectData", JSON.stringify(p));
-            navigate(`/projectproducts2/${slug}`);
-          }}
-        >
-          <div className="img_container">
-            <img src={p.img} className="img-fluid img_product" alt="" />
+          <div className="row justify-content-center align-items-start">
+            {projects.length === 0 ? (
+              <div className="col-12 text-center">
+                <p className="no-projects-msg">
+                  Projects are not available at the moment.
+                </p>
+              </div>
+            ) : (
+              projects
+                .slice(0, showAll ? projects.length : 6)
+                .map((p, index) => (
+                  <div
+                    key={index}
+                    className="col-lg-4 col-md-6 col-sm-12 text-center"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => {
+                      const slug = p.project_name
+                        .toLowerCase()
+                        .replace(/\s+/g, "-");
+                      localStorage.setItem("projectData", JSON.stringify(p));
+                      navigate(`/projectproducts2/${slug}`);
+                    }}
+                  >
+                    <div className="img_container">
+                      <img
+                        src={p.img}
+                        className="img-fluid img_product"
+                        alt=""
+                      />
+                    </div>
+                    <p className="product_name mt-3">{p.project_name}</p>
+                  </div>
+                ))
+            )}
           </div>
-          <p className="product_name mt-3">{p.project_name}</p>
-        </div>
-      ))
-  )}
-</div>
 
           {/* SEE MORE BUTTON */}
           {projects.length > 6 && (
