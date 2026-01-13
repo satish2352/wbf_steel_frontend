@@ -17,7 +17,7 @@ const BlogDetails = () => {
 
   useEffect(() => {
     axios
-      .get("/blogdetails/get-blogdetails") // Fetch all blogs
+      .get("/blogdetails/get-web-blogdetails") // Fetch all blogs
       .then((response) => {
         const blogs = response.data.responseData || [];
         // Find blog matching the slug

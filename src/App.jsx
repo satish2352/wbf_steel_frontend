@@ -8,8 +8,8 @@ import axios from "axios";
 import { HelmetProvider } from "react-helmet-async";
 function App() {
 
-  // axios.defaults.baseURL = `http://localhost:8000/`;
-  axios.defaults.baseURL = `https://api.wbf.sumagodemo.com/`;
+  axios.defaults.baseURL = `http://localhost:8000/`;
+  // axios.defaults.baseURL = `https://api.wbf.sumagodemo.com/`;
   
   return (
     <>

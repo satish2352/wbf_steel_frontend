@@ -54,6 +54,7 @@ function Services_cards() {
             const imgSrc =
               service.img || (index % 2 === 0 ? service_img1 : service_img2);
             const title = safeText(service.title, "No Title");
+            const subtitle = safeText(service.subtitle, "");
             const desc = safeText(service.desc, "No Description");
 
             const rowClass = `mt-3 service-card-row ${
@@ -79,6 +80,11 @@ function Services_cards() {
                       className="d-flex flex-column justify-content-center align-items-start p-3 colum_backcolor text-col"
                     >
                       <p className="service_card1_headingstrature">{title}</p>
+
+                      {subtitle && (
+                        <p className="service_card_subtitle">{subtitle}</p>
+                      )}
+
                       <p className="service_card_para text-justify">{desc}</p>
                     </Col>
                   </>
@@ -90,6 +96,11 @@ function Services_cards() {
                       className="d-flex flex-column justify-content-center align-items-start p-3 colum_backcolor text-col"
                     >
                       <p className="service_card1_headingstrature">{title}</p>
+
+                      {subtitle && (
+                        <p className="service_card_subtitle">{subtitle}</p>
+                      )}
+
                       <p className="service_card_para text-justify">{desc}</p>
                     </Col>
 

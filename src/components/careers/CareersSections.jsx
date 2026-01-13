@@ -174,6 +174,8 @@ const CareersSections = () => {
       formData.append("subject", subject);
       formData.append("message", message);
       formData.append("cv", file);
+      formData.append("captchaToken", recaptchaValue);
+
 
       const res = await axios.post("/uploadcv/create-uploadcv", formData, {
         headers: { "Content-Type": "multipart/form-data" },
