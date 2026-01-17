@@ -62,7 +62,13 @@ function ProjectProducts2() {
         };
 
         setProjectFull(formatted);
-        setMainImage(formatted.project_images[0]);
+        useEffect(() => {
+  if (projectDetails?.img) {
+    setMainImage(projectDetails.img);
+  }
+}, [projectDetails]);
+
+        // setMainImage(formatted.project_images[0]);
       } catch (err) {
         console.log("Image API Error:", err);
       }
@@ -147,11 +153,12 @@ const handlePrevThumb = () => {
     <img
       key={i}
       src={`${axios.defaults.baseURL}${img}`}
-      className={mainImage === img ? "active" : ""}
-      onClick={() => setMainImage(img)}   // ✅ only click affects main image
+      className="thumb-image"
+      alt="Project thumbnail"
     />
   ))}
 </div>
+
 
 
 <button className="arrow-btn" onClick={handleNextThumb}>
@@ -187,14 +194,16 @@ const handlePrevThumb = () => {
             <div className="center-column">
               <h3 className="project-title">{projectDetails.project_name}</h3>
 
-              <div className="main-image-holder">
-                {mainImage && (
-                  <img
-                    src={`${axios.defaults.baseURL}${mainImage}`}
-                    className="main-image"
-                  />
-                )}
-              </div>
+             <div className="main-image-holder">
+  {projectDetails?.img && (
+    <img
+      src={projectDetails.img}
+      className="main-image"
+      alt={projectDetails.project_name}
+    />
+  )}
+</div>
+
             </div>
 
             {/* RIGHT INFO BOX */}

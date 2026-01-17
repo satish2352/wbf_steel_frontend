@@ -39,10 +39,10 @@ const BlogDetails = () => {
       <div className="container">
         <h1 className="blog-details-title">{blog.title}</h1>
 
-        {blog.img && (
+        {blog.img2 && (
           <div className="blog-details-image">
             <img
-              src={blog.img}
+              src={blog.img2}
               alt={blog.title}
               className="img-fluid blog-image"
             />
