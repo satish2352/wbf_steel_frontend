@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./BlogDetails.css";
 
+
 // Function to generate slug from title
 const generateSlug = (title) =>
   title
@@ -42,7 +43,8 @@ const BlogDetails = () => {
         {blog.img2 && (
           <div className="blog-details-image">
             <img
-              src={blog.img2}
+               src={blog.img2}
+              
               alt={blog.title}
               className="img-fluid blog-image"
             />

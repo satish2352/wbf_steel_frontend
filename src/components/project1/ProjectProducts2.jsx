@@ -6,8 +6,12 @@ import ExpertiseSection from "./ExpertiseSection";
 import ProjectBanner from "../project1/ProjectBanner";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import { faAngleUp, faAngleDown, faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleUp,
+  faAngleDown,
+  faAngleLeft,
+  faAngleRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 function ProjectProducts2() {
   const { slug } = useParams();
@@ -19,31 +23,26 @@ function ProjectProducts2() {
   const [projectFull, setProjectFull] = useState(null);
   const [mainImage, setMainImage] = useState("");
 
-  useEffect(() => {
-  const container = scrollRef.current;
-  if (!container) return;
-
-  // start from middle for infinite illusion
-  if (window.innerWidth <= 991) {
-    container.scrollLeft = container.scrollWidth / 4;
-  } else {
-    container.scrollTop = container.scrollHeight / 4;
-  }
-}, [projectFull]);
-
-
-  // Load basic localStorage info
+  /* ----------------------------------
+     Load basic project data (localStorage)
+  ---------------------------------- */
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem("projectData"));
     if (!stored) return;
 
-    const storedSlug = stored.project_name.toLowerCase().replace(/\s+/g, "-");
+    const storedSlug = stored.project_name
+      .toLowerCase()
+      .replace(/\s+/g, "-");
+
     if (storedSlug === slug) {
       setProjectDetails(stored);
+      setMainImage(stored.img); // default main image
     }
   }, [slug]);
 
-  // Fetch project images using ID
+  /* ----------------------------------
+     Fetch project images by ID
+  ---------------------------------- */
   useEffect(() => {
     if (!projectDetails) return;
 
@@ -62,73 +61,53 @@ function ProjectProducts2() {
         };
 
         setProjectFull(formatted);
-        useEffect(() => {
-  if (projectDetails?.img) {
-    setMainImage(projectDetails.img);
-  }
-}, [projectDetails]);
-
-        // setMainImage(formatted.project_images[0]);
-      } catch (err) {
-        console.log("Image API Error:", err);
+      } catch (error) {
+        console.error("Image API Error:", error);
       }
     };
 
     loadFullProject();
   }, [projectDetails]);
 
+  /* ----------------------------------
+     Thumbnail scroll handlers
+  ---------------------------------- */
+  const handleNextThumb = () => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const amount = container.firstChild?.offsetWidth + 14;
+
+    if (window.innerWidth <= 991) {
+      container.scrollBy({ left: amount, behavior: "smooth" });
+    } else {
+      container.scrollBy({ top: amount, behavior: "smooth" });
+    }
+  };
+
+  const handlePrevThumb = () => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const amount = container.firstChild?.offsetWidth + 14;
+
+    if (window.innerWidth <= 991) {
+      container.scrollBy({ left: -amount, behavior: "smooth" });
+    } else {
+      container.scrollBy({ top: -amount, behavior: "smooth" });
+    }
+  };
+
   if (!projectDetails) {
     return <h2 className="text-center mt-5">Project Not Found</h2>;
   }
 
-  const handleNextThumb = () => {
-  const container = scrollRef.current;
-  if (!container) return;
-
-  const scrollAmount = container.firstChild?.offsetWidth + 14;
-
-  if (window.innerWidth <= 991) {
-    container.scrollLeft += scrollAmount;
-
-    if (container.scrollLeft >= container.scrollWidth / 2) {
-      container.scrollLeft = container.scrollWidth / 4;
-    }
-  } else {
-    container.scrollTop += scrollAmount;
-
-    if (container.scrollTop >= container.scrollHeight / 2) {
-      container.scrollTop = container.scrollHeight / 4;
-    }
-  }
-};
-
-
-const handlePrevThumb = () => {
-  const container = scrollRef.current;
-  if (!container) return;
-
-  const scrollAmount = container.firstChild?.offsetWidth + 14;
-
-  if (window.innerWidth <= 991) {
-    container.scrollLeft -= scrollAmount;
-
-    if (container.scrollLeft <= 0) {
-      container.scrollLeft = container.scrollWidth / 4;
-    }
-  } else {
-    container.scrollTop -= scrollAmount;
-
-    if (container.scrollTop <= 0) {
-      container.scrollTop = container.scrollHeight / 4;
-    }
-  }
-};
-
-
+  const images = projectFull?.project_images || [];
 
   return (
     <>
-     <ProjectBanner />
+      <ProjectBanner />
+
       <section className="project-products">
         <div className="container text-center">
           <h2 className="product-title mt-3">Built to Power Your Product</h2>
@@ -141,75 +120,56 @@ const handlePrevThumb = () => {
 
             {/* LEFT THUMBNAILS */}
             <div className="image-list">
-              {/* TOP / LEFT ARROW */}
-<button className="arrow-btn" onClick={handlePrevThumb}>
-  <FontAwesomeIcon icon={window.innerWidth <= 991 ? faAngleLeft : faAngleUp} />
-</button>
-
-
-<div className="image-thumbnails" ref={scrollRef}>
-  {[...(projectFull?.project_images || []),
-    ...(projectFull?.project_images || [])].map((img, i) => (
-    <img
-      key={i}
-      src={`${axios.defaults.baseURL}${img}`}
-      className="thumb-image"
-      alt="Project thumbnail"
-    />
-  ))}
-</div>
-
-
-
-<button className="arrow-btn" onClick={handleNextThumb}>
-  <FontAwesomeIcon icon={window.innerWidth <= 991 ? faAngleRight : faAngleDown} />
-</button>
-
-
-              {/* <button className="arrow-btn" 
-                onClick={() => scrollRef.current.scrollBy({ top: -120, behavior: "smooth" })}
-              >
-                <FontAwesomeIcon icon={faAngleUp} />
+              <button className="arrow-btn" onClick={handlePrevThumb}>
+                <FontAwesomeIcon
+                  icon={window.innerWidth <= 991 ? faAngleLeft : faAngleUp}
+                />
               </button>
 
               <div className="image-thumbnails" ref={scrollRef}>
-                {projectFull?.project_images?.map((img, i) => (
+                {images.map((img, index) => (
                   <img
-                    key={i}
+                    key={img}
                     src={`${axios.defaults.baseURL}${img}`}
-                    className={mainImage === img ? "active" : ""}
+                    className={`thumb-image ${
+                      mainImage === img ? "active" : ""
+                    }`}
+                    alt="Project thumbnail"
                     onClick={() => setMainImage(img)}
                   />
                 ))}
               </div>
 
-              <button className="arrow-btn" 
-                onClick={() => scrollRef.current.scrollBy({ top: 120, behavior: "smooth" })}
-              >
-                <FontAwesomeIcon icon={faAngleDown} />
-              </button> */}
+              <button className="arrow-btn" onClick={handleNextThumb}>
+                <FontAwesomeIcon
+                  icon={window.innerWidth <= 991 ? faAngleRight : faAngleDown}
+                />
+              </button>
             </div>
 
             {/* CENTER MAIN IMAGE */}
             <div className="center-column">
-              <h3 className="project-title">{projectDetails.project_name}</h3>
+              <h3 className="project-title">
+                {projectDetails.project_name}
+              </h3>
 
-             <div className="main-image-holder">
-  {projectDetails?.img && (
-    <img
-      src={projectDetails.img}
-      className="main-image"
-      alt={projectDetails.project_name}
-    />
-  )}
-</div>
-
+              <div className="main-image-holder">
+                {mainImage && (
+                  <img
+                    src={mainImage}
+                    className="main-image"
+                    alt={projectDetails.project_name}
+                  />
+                )}
+              </div>
             </div>
 
-            {/* RIGHT INFO BOX */}
+            {/* RIGHT INFO */}
             <div className="info-box">
               <div className="info-box-content" ref={infoRef}>
-                <p className="mob-font-size text-justify">{projectDetails.project_info}</p>
+                <p className="mob-font-size text-justify">
+                  {projectDetails.project_info}
+                </p>
 
                 <h5><strong>Location:</strong> {projectDetails.project_location}</h5>
                 <h5><strong>Total Tonnage:</strong> {projectDetails.project_total_tonnage}</h5>
