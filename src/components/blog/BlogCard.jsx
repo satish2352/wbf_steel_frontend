@@ -35,6 +35,12 @@ const BlogCard = () => {
 
             <h3 className="blog-card-title">{blog.title}</h3>
 
+            <p className="blog-card-shortdesc">
+              {blog.shortDesc.length > 150
+                ? blog.shortDesc.substring(0, 150) + "..."
+                : blog.shortDesc}
+            </p>
+
             <Link
               className="blog-readmore read"
               to={`/blog/${generateSlug(blog.title)}`}
