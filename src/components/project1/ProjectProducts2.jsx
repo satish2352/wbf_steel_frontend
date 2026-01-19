@@ -102,7 +102,12 @@ function ProjectProducts2() {
     return <h2 className="text-center mt-5">Project Not Found</h2>;
   }
 
-  const images = projectFull?.project_images || [];
+  // const images = projectFull?.project_images || [];
+  const images =
+  projectFull && projectFull.isDelete === false
+    ? projectFull.project_images || []
+    : [];
+
 
   return (
     <>
@@ -120,11 +125,13 @@ function ProjectProducts2() {
 
             {/* LEFT THUMBNAILS */}
             <div className="image-list">
+              {images.length > 3 && (
               <button className="arrow-btn" onClick={handlePrevThumb}>
                 <FontAwesomeIcon
                   icon={window.innerWidth <= 991 ? faAngleLeft : faAngleUp}
                 />
               </button>
+              )}
 
               <div className="image-thumbnails" ref={scrollRef}>
                 {images.map((img, index) => (
@@ -140,11 +147,13 @@ function ProjectProducts2() {
                 ))}
               </div>
 
+              {images.length > 3 && (
               <button className="arrow-btn" onClick={handleNextThumb}>
                 <FontAwesomeIcon
                   icon={window.innerWidth <= 991 ? faAngleRight : faAngleDown}
                 />
               </button>
+              )}
             </div>
 
             {/* CENTER MAIN IMAGE */}
