@@ -78,7 +78,7 @@
   height: 160px;                  /* increased height */
 
   object-fit: cover;
-  cursor: pointer;
+  cursor: auto;
 }
 
 .image-thumbnails img.active {

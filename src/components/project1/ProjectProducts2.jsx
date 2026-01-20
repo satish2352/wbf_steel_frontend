@@ -52,15 +52,32 @@ function ProjectProducts2() {
           `/projectDetailsWithImages/projects/${projectDetails.id}`
         );
 
-        const formatted = {
-          ...res.data,
-          project_images:
-            typeof res.data.project_images === "string"
-              ? JSON.parse(res.data.project_images)
-              : res.data.project_images,
-        };
+        // const formatted = {
+        //   ...res.data,
+        //   project_images:
+        //     typeof res.data.project_images === "string"
+        //       ? JSON.parse(res.data.project_images)
+        //       : res.data.project_images,
+        // };
 
-        setProjectFull(formatted);
+        // setProjectFull(formatted);
+
+        const activeProject = Array.isArray(res.data)
+        ? res.data.find(item => item.isDelete === false)
+        : res.data;
+
+      if (!activeProject) return;
+
+      const formatted = {
+        ...activeProject,
+        project_images:
+          typeof activeProject.project_images === "string"
+            ? JSON.parse(activeProject.project_images)
+            : activeProject.project_images,
+      };
+
+      setProjectFull(formatted);
+
       } catch (error) {
         console.error("Image API Error:", error);
       }
@@ -142,7 +159,7 @@ function ProjectProducts2() {
                       mainImage === img ? "active" : ""
                     }`}
                     alt="Project thumbnail"
-                    onClick={() => setMainImage(img)}
+                    // onClick={() => setMainImage(img)}
                   />
                 ))}
               </div>
